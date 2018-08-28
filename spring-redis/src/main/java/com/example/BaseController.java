@@ -20,4 +20,10 @@ public class BaseController {
         User user = userService.findUserByName("nihao");
         return JSONObject.toJSONString(user);
     }
+    @RequestMapping("/clear")
+    @ResponseBody
+    public boolean clear(){
+        userService.clear();
+        return true;
+    }
 }
