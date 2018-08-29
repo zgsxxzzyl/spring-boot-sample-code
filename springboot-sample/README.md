@@ -1,3 +1,8 @@
+* `@Controller`配合视图解析器InternalResourceViewResolver返回视图jsp、html
+* `@RestController`相当于@ResponseBody ＋ @Controller返回是字符串或者json
+
+---
+
 # 过滤器
 
 
