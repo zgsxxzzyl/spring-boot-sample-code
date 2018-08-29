@@ -1,5 +1,8 @@
-* 过滤器
-* 拦截器
+# 过滤器
+
+
+---
+# 拦截器
 ```
 public class MyInterceptor implements HandlerInterceptor {
     @Override
@@ -32,9 +35,10 @@ public class MyConfig implements WebMvcConfigurer {
 
 >*  `/*` 指文件夹下的所有文件（不包括子文件夹）
 >* `/**` 指文件夹下的所有文件（包括子文件夹）
-
-* 监听器
-* Servlet
+---
+# 监听器
+---
+# Servlet
 > * `< url-pattern>/</url-pattern>`  会匹配到/login这样的路径型url，不会匹配到模式为`*.jsp`这样的后缀型url
 > * `< url-pattern>/*</url-pattern>` 会匹配所有url：路径型的和后缀型的url(包括`/login`,`*.jsp`,`*.js`和`*.html`等)
 ```
@@ -58,7 +62,7 @@ public class MyServlet extends HttpServlet {
         super.service(req, resp);
     }
 ```
-* 配置文件解析
+# 配置文件解析
 *application.properties*文件内容：
 ```
 com.dudu.name="嘟嘟MD"
