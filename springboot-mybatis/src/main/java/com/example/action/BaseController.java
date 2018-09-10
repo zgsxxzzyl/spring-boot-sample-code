@@ -23,19 +23,41 @@ public class BaseController {
     @Autowired
     private UserMapper userMapper;
 
-    @RequestMapping()
-    public String index() {
-//        userMapper.insert("AAA", 20);
+    @RequestMapping("insert1")
+    public int insert(){
+        int count = userMapper.insert("admin1",123);
+        return count;
+    }
+
+    /**
+     *  插入对象之后使用getId（）可以获取主键
+     * @return 主键
+     */
+    @RequestMapping("insert2")
+    public Long insertPojo(){
+        User user = new User();
+        user.setName("admin");
+        user.setAge(20);
+        int count = userMapper.insertPojo(user);
+        return user.getId();
+    }
+
+    /**
+     * 插入对象之后使用getId（）可以获取主键
+     * @return 主键
+     */
+    @RequestMapping("insert3")
+    public String insertProvider() {
         User user = new User();
         user.setAge(18);
         user.setName("AAA");
         Test t = new Test();
         t.setValue("123");
-        userMapper.insert(user);
-        userMapper.insert(t);
-        List<User> users = userMapper.findByName("AAA");
-        return JSONObject.toJSONString(users);
+        int userCount = userMapper.insertProvider(user);
+        int testCount = userMapper.insertProvider(t);
+        return "userid-->"+user.getId()+"\r\n"+"testid-->"+t.getId();
     }
+
     @RequestMapping("page")
     public String page(){
         PageHelper.startPage(1,6);
@@ -48,5 +70,15 @@ public class BaseController {
         List<User> users = userMapper.findByName("AAA");
         PageInfo info = new PageInfo(users);
         return JSONObject.toJSONString(info);
+    }
+    @RequestMapping("all")
+    public String all(){
+        return JSONObject.toJSONString(userMapper.queryAll());
+    }
+
+    @RequestMapping("clear")
+    public boolean clear(){
+        boolean isClear = userMapper.clear();
+        return isClear;
     }
 }

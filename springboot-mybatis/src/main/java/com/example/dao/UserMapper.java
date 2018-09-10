@@ -11,11 +11,24 @@ import java.util.List;
 public interface UserMapper {
 
     @Select("SELECT * FROM USER WHERE NAME = #{name}")
-    List<User> findByName(@Param("name") String name);
+    public List<User> findByName(@Param("name") String name);
 
-//    @Insert("INSERT INTO USER(NAME, AGE) VALUES(#{name}, #{age})")
-//    int insert(@Param("name") String name, @Param("age") Integer age);
+    @Select("SELECT * FROM USER")
+    public List<User> queryAll();
+
+    @Insert({"INSERT INTO USER(NAME, AGE) VALUES(#{name}, #{age})"})
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    public int insert(@Param("name") String name, @Param("age") Integer age);
+
+    @Insert({"INSERT INTO USER(NAME, AGE) VALUES(#{user.name}, #{user.age})"})
+    @Options(useGeneratedKeys = true,keyProperty = "user.id",keyColumn = "id")
+    public int insertPojo(@Param("user") User user);
 
     @InsertProvider(type = SqlProvider.class,method = "insert")
-    int insert(Object obj);
+    @Options(useGeneratedKeys = true,keyProperty = "id",keyColumn = "id")
+    public int insertProvider(Object obj);
+
+    @Delete({"DELETE FROM USER"})
+    public boolean clear();
+
 }
