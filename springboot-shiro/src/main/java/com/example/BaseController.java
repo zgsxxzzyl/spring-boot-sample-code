@@ -12,13 +12,6 @@ public class BaseController {
 
     @RequestMapping({"/", "/index"})
     public String index() {
-//        Subject subject = SecurityUtils.getSubject();
-//        subject.getSession().setAttribute("user", "mabh");
-//        if (!subject.isAuthenticated()) {
-//            UsernamePasswordToken token = new UsernamePasswordToken("user", "mabh");
-//            token.setRememberMe(true);
-//            subject.login(token);
-//        }
         return "/login";
     }
 
@@ -31,10 +24,10 @@ public class BaseController {
     public String login(String username, String password) {
         if (username != null && password != null) {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-            token.setRememberMe(true);
+            token.setRememberMe(false);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
         }
-        return "/index";
+        return "redirect:index.html";
     }
 }

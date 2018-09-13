@@ -20,21 +20,19 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         //3.LinkedHashMap是有序的，进行顺序拦截器配置
         Map<String, String> filterChainMap = new LinkedHashMap<String, String>();
-        //4.配置logout过滤器
-        filterChainMap.put("/logout", "logout");
-        //5.所有url必须通过认证才可以访问
         filterChainMap.put("/static/**", "anon");
         filterChainMap.put("/login", "anon");
+        filterChainMap.put("/logout", "logout");
         filterChainMap.put("/**", "authc");
 
         //6.设置默认登录的url
-        shiroFilterFactoryBean.setLoginUrl("/login");
+        shiroFilterFactoryBean.setLoginUrl("/login.html");
         //7.设置成功之后要跳转的链接
-        shiroFilterFactoryBean.setSuccessUrl("/index");
+        shiroFilterFactoryBean.setSuccessUrl("/index.html");
         //8.设置未授权界面
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         //9.设置shiroFilterFactoryBean的FilterChainDefinitionMap
-//        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
     }
 
@@ -44,7 +42,13 @@ public class ShiroConfiguration {
     @Bean
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
+        securityManager.setRealm(realm());
         return securityManager;
+    }
+
+    @Bean
+    public CustomElseRealm realm() {
+        return new CustomElseRealm();
     }
 
 }
