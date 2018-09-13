@@ -1,6 +1,5 @@
 package com.example.action;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.example.dao.UserMapper;
 import com.example.entity.Test;
@@ -8,10 +7,6 @@ import com.example.entity.User;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.JsonParser;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,17 +19,18 @@ public class BaseController {
     private UserMapper userMapper;
 
     @RequestMapping("insert1")
-    public int insert(){
-        int count = userMapper.insert("admin1",123);
+    public int insert() {
+        int count = userMapper.insert("admin1", 123);
         return count;
     }
 
     /**
-     *  插入对象之后使用getId（）可以获取主键
+     * 插入对象之后使用getId（）可以获取主键
+     *
      * @return 主键
      */
     @RequestMapping("insert2")
-    public Long insertPojo(){
+    public Long insertPojo() {
         User user = new User();
         user.setName("admin");
         user.setAge(20);
@@ -44,6 +40,7 @@ public class BaseController {
 
     /**
      * 插入对象之后使用getId（）可以获取主键
+     *
      * @return 主键
      */
     @RequestMapping("insert3")
@@ -55,29 +52,31 @@ public class BaseController {
         t.setValue("123");
         int userCount = userMapper.insertProvider(user);
         int testCount = userMapper.insertProvider(t);
-        return "userid-->"+user.getId()+"\r\n"+"testid-->"+t.getId();
+        return "userid-->" + user.getId() + "\r\n" + "testid-->" + t.getId();
     }
 
     @RequestMapping("page")
-    public String page(){
-        PageHelper.startPage(1,6);
+    public String page() {
+        PageHelper.startPage(1, 6);
         List<User> users = userMapper.findByName("AAA");
         return JSONObject.toJSONString(users);
     }
+
     @RequestMapping("pageinfo")
-    public String pageInfo(){
-        PageHelper.startPage(1,2);
+    public String pageInfo() {
+        PageHelper.startPage(1, 2);
         List<User> users = userMapper.findByName("AAA");
         PageInfo info = new PageInfo(users);
         return JSONObject.toJSONString(info);
     }
+
     @RequestMapping("all")
-    public String all(){
+    public String all() {
         return JSONObject.toJSONString(userMapper.queryAll());
     }
 
     @RequestMapping("clear")
-    public boolean clear(){
+    public boolean clear() {
         boolean isClear = userMapper.clear();
         return isClear;
     }

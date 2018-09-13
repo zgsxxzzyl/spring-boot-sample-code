@@ -1,6 +1,5 @@
 package com.springboot.interceptor;
 
-import com.springboot.entity.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 

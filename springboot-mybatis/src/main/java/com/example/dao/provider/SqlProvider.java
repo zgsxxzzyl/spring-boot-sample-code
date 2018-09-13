@@ -1,7 +1,5 @@
 package com.example.dao.provider;
 
-import org.apache.ibatis.jdbc.SQL;
-
 import java.lang.reflect.Field;
 
 public class SqlProvider {
@@ -16,20 +14,20 @@ public class SqlProvider {
         sql.append("(");
         values.append("(");
         for (int i = 0; i < fields.length; i++) {
-            Field field=  fields[i];
+            Field field = fields[i];
             sql.append(field.getName());
             sql.append(",");
             field.setAccessible(true);
-            if(field.getType() == String.class){
-                values.append("'"+field.get(o)+"'");
+            if (field.getType() == String.class) {
+                values.append("'" + field.get(o) + "'");
                 values.append(",");
-            }else{
+            } else {
                 values.append(field.get(o));
                 values.append(",");
             }
         }
-        sql.deleteCharAt(sql.length()-1);
-        values.deleteCharAt(values.length()-1);
+        sql.deleteCharAt(sql.length() - 1);
+        values.deleteCharAt(values.length() - 1);
         sql.append(")");
         values.append(")");
         sql.append(values);

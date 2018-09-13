@@ -14,8 +14,9 @@ import java.util.Properties;
 public class CustomConfiguration {
     @Autowired
     private Environment env;
+
     //destroy-method="close"的作用是当数据库连接不使用的时候,就把该连接重新放到数据池中,方便下次使用调用.
-    @Bean(destroyMethod =  "close")
+    @Bean(destroyMethod = "close")
     public DataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
         dataSource.setUrl(env.getProperty("spring.datasource.url"));
@@ -35,13 +36,13 @@ public class CustomConfiguration {
 
     //配置mybatis的分页插件pageHelper并再pom文件中加入相应依赖即可
     @Bean
-    public PageHelper pageHelper(){
+    public PageHelper pageHelper() {
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
-        properties.setProperty("offsetAsPageNum","true");
-        properties.setProperty("rowBoundsWithCount","true");
-        properties.setProperty("reasonable","true");
-        properties.setProperty("dialect","mysql");    //配置mysql数据库的方言
+        properties.setProperty("offsetAsPageNum", "true");
+        properties.setProperty("rowBoundsWithCount", "true");
+        properties.setProperty("reasonable", "true");
+        properties.setProperty("dialect", "mysql");    //配置mysql数据库的方言
         pageHelper.setProperties(properties);
         return pageHelper;
     }

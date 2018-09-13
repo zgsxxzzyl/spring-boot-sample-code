@@ -15,14 +15,16 @@ public class BaseController {
     private UserService userService;
     @Resource
     private RedisTemplate redisTemplate;
+
     @RequestMapping
-    public String user(String name){
+    public String user(String name) {
         User user = userService.findUserByName("nihao");
         return JSONObject.toJSONString(user);
     }
+
     @RequestMapping("/clear")
     @ResponseBody
-    public boolean clear(){
+    public boolean clear() {
         userService.clear();
         return true;
     }

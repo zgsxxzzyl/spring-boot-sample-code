@@ -1,8 +1,6 @@
 package com.springboot;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @ServletComponentScan //添加拦截、过滤、监听扫描
@@ -14,6 +12,6 @@ public class StepApplication {
 //        SpringApplication springApplication = new SpringApplication(Step1Application.class);
 //        springApplication.setBannerMode(Banner.Mode.OFF);
 //        springApplication.run(args);
-        SpringApplication.run(StepApplication.class,args);
+        SpringApplication.run(StepApplication.class, args);
     }
 }

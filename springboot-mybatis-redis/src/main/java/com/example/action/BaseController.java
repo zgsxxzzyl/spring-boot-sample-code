@@ -23,13 +23,12 @@ public class BaseController {
     public String getAll() {
         if (!stringRedisTemplate.hasKey("shabao")) {
             stringRedisTemplate.opsForValue().append("shabao", "我是傻宝");
-        }else{
+        } else {
             stringRedisTemplate.delete("shabao");
         }
         String result = baseService.getAll();
         return result;
     }
-
 
 
 }

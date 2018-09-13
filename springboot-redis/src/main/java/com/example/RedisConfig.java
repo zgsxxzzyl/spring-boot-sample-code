@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.cache.interceptor.CacheResolver;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +12,11 @@ import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 
 import java.lang.reflect.Method;
-import java.time.Duration;
 
 @Configuration
 public class RedisConfig extends CachingConfigurerSupport {
@@ -28,11 +24,11 @@ public class RedisConfig extends CachingConfigurerSupport {
     public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheWriter redisCacheWriter = RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory);
         RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
-        return new RedisCacheManager(redisCacheWriter,redisCacheConfiguration);
+        return new RedisCacheManager(redisCacheWriter, redisCacheConfiguration);
     }
 
     @Bean
-    public RedisTemplate<String,String> redisTemplate(RedisConnectionFactory redisConnectionFactory){
+    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         StringRedisTemplate stringRedisTemplate = new StringRedisTemplate(redisConnectionFactory);
 
         //一些配置信息
@@ -48,8 +44,8 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * @Cacheable(value = "user", key = "'user'.concat(#name)")如果配置key这个方法不生效
      * @return
+     * @Cacheable(value = "user", key = "'user'.concat(#name)")如果配置key这个方法不生效
      */
     @Override
     public KeyGenerator keyGenerator() {

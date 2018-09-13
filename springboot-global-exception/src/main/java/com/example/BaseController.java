@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BaseController {
 
-    @RequestMapping(value="/ex")
+    @RequestMapping(value = "/ex")
     @ResponseBody
-    public String error(){
-        int i=5/0;
+    public String error() {
+        int i = 5 / 0;
         return "ex";
     }
 }

@@ -23,7 +23,10 @@ public class ShiroConfiguration {
         //4.配置logout过滤器
         filterChainMap.put("/logout", "logout");
         //5.所有url必须通过认证才可以访问
+        filterChainMap.put("/static/**", "anon");
+        filterChainMap.put("/login", "anon");
         filterChainMap.put("/**", "authc");
+
         //6.设置默认登录的url
         shiroFilterFactoryBean.setLoginUrl("/login");
         //7.设置成功之后要跳转的链接
@@ -31,13 +34,12 @@ public class ShiroConfiguration {
         //8.设置未授权界面
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         //9.设置shiroFilterFactoryBean的FilterChainDefinitionMap
-        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
+//        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainMap);
         return shiroFilterFactoryBean;
     }
 
     /**
      * 配置安全管理器
-     *
      */
     @Bean
     public SecurityManager securityManager() {

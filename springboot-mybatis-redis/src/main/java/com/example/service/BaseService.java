@@ -14,7 +14,7 @@ public class BaseService {
     @Autowired
     private UserMapper userMapper;
 
-    public String test(){
+    public String test() {
         User user = new User();
         user.setAge(18);
         user.setName("AAA");
@@ -26,12 +26,11 @@ public class BaseService {
         return JSONObject.toJSONString(users);
     }
 
-//    @Cacheable(value="json_users")
-    public String getAll(){
+    //    @Cacheable(value="json_users")
+    public String getAll() {
         List<User> users = userMapper.findByName("AAA");
         return JSONObject.toJSONString(users);
     }
-
 
 
 }

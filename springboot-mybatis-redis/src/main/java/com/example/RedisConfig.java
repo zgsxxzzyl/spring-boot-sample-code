@@ -1,7 +1,6 @@
 package com.example;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -49,6 +48,7 @@ public class RedisConfig {
 
     class Receiver {
         private CountDownLatch latch;
+
         @Autowired
         public Receiver(CountDownLatch latch) {
             this.latch = latch;
