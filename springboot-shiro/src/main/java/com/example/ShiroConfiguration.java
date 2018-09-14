@@ -1,12 +1,18 @@
 package com.example;
 
+import org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy;
+import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
 import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.realm.Realm;
+import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Configuration
@@ -42,13 +48,37 @@ public class ShiroConfiguration {
     @Bean
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(realm());
+        securityManager.setAuthenticator(modularRealmAuthenticator());
+//        securityManager.setRealm(userRealm());
+        List<Realm> realms = new ArrayList<>();
+        realms.add(userRealm());
+        realms.add(realm());
+        securityManager.setRealms(realms);
         return securityManager;
     }
 
     @Bean
     public CustomElseRealm realm() {
         return new CustomElseRealm();
+    }
+
+    @Bean
+    public UserRealm userRealm() {
+        return new UserRealm();
+    }
+
+    @Bean
+    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
+        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
+        authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
+        return authorizationAttributeSourceAdvisor;
+    }
+
+    public ModularRealmAuthenticator modularRealmAuthenticator(){
+        ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
+        modularRealmAuthenticator.setAuthenticationStrategy(new AtLeastOneSuccessfulStrategy());
+        return modularRealmAuthenticator;
+
     }
 
 }

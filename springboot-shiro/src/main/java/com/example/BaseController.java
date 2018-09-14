@@ -12,7 +12,7 @@ public class BaseController {
 
     @RequestMapping({"/", "/index"})
     public String index() {
-        return "/login";
+        return "redirect:login.html";
     }
 
     public boolean validate() {

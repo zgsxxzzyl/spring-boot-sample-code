@@ -1,6 +1,7 @@
 package com.example;
 
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.Realm;
 
 public class CustomElseRealm implements Realm {
@@ -21,10 +22,13 @@ public class CustomElseRealm implements Realm {
         String password = new String((char[]) token.getCredentials());
         // TODO: 2018/9/8 实现具体的验证 如果身份认证验证成功，返回一个AuthenticationInfo实现；
         System.out.println("username:" + username + "---password:" + password);
-//        if ("zhang".equals(username)) {
-//            throw new AuthenticationException();
-//        }
-
-        return new SimpleAuthenticationInfo(username, password, getName());
+        if ("zhang".equals(username)) {
+            throw new AuthenticationException();
+        }
+        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username, password, getName());
+        return simpleAuthenticationInfo;
     }
+
+
+
 }
