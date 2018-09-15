@@ -1,5 +1,10 @@
 package com.example.dao.provider;
 
+import com.example.entity.User;
+import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.jdbc.SQL;
+
 import java.lang.reflect.Field;
 
 public class SqlProvider {
@@ -32,6 +37,13 @@ public class SqlProvider {
         values.append(")");
         sql.append(values);
         return sql.toString();
+    }
+
+    public String insertNormal(@Param("user") User user){
+        return new SQL(){{
+            INSERT_INTO("user");
+            VALUES("name,age,sex","#{user.name},#{user.age},#{user.sex}");
+        }}.toString();
     }
 
 }

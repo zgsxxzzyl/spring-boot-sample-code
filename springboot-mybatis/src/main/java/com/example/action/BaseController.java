@@ -26,7 +26,7 @@ public class BaseController {
 
     /**
      * 插入对象之后使用getId（）可以获取主键
-     *
+     *  插入enum
      * @return 主键
      */
     @RequestMapping("insert2")
@@ -34,6 +34,7 @@ public class BaseController {
         User user = new User();
         user.setName("admin");
         user.setAge(20);
+        user.setSex(User.Sex.WOMAN);
         int count = userMapper.insertPojo(user);
         return user.getId();
     }
@@ -55,6 +56,17 @@ public class BaseController {
         return "userid-->" + user.getId() + "\r\n" + "testid-->" + t.getId();
     }
 
+    @RequestMapping("insert4")
+    public Long insertDynamicSQL() {
+        // TODO: 2018/9/15
+        User user = new User();
+        user.setName("adminsql");
+        user.setAge(20);
+        user.setSex(User.Sex.WOMAN);
+        int count = userMapper.insertDynamic(user);
+        return user.getId();
+    }
+
     @RequestMapping("page")
     public String page() {
         PageHelper.startPage(1, 6);
@@ -71,8 +83,8 @@ public class BaseController {
     }
 
     @RequestMapping("all")
-    public String all() {
-        return JSONObject.toJSONString(userMapper.queryAll());
+    public List<User> all() {
+        return userMapper.queryAll();
     }
 
     @RequestMapping("clear")

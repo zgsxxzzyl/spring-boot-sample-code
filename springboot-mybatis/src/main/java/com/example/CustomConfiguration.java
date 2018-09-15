@@ -10,7 +10,7 @@ import org.springframework.core.env.Environment;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
+//@Configuration
 public class CustomConfiguration {
     @Autowired
     private Environment env;

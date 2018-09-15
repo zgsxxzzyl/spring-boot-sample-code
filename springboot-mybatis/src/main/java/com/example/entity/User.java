@@ -6,6 +6,15 @@ public class User implements Serializable {
     private Long id;
     private String name;
     private Integer age;
+    private Sex sex;
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
 
     public Long getId() {
         return id;
@@ -38,5 +47,9 @@ public class User implements Serializable {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    public enum Sex{
+        MAN,WOMAN
     }
 }
