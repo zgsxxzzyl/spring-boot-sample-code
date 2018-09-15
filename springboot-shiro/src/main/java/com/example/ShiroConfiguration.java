@@ -2,11 +2,14 @@ package com.example;
 
 import org.apache.shiro.authc.pam.AtLeastOneSuccessfulStrategy;
 import org.apache.shiro.authc.pam.ModularRealmAuthenticator;
+import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -49,6 +52,7 @@ public class ShiroConfiguration {
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setAuthenticator(modularRealmAuthenticator());
+        securityManager.setRememberMeManager(cookieRememberMeManager());
 //        securityManager.setRealm(userRealm());
         List<Realm> realms = new ArrayList<>();
         realms.add(userRealm());
@@ -74,11 +78,34 @@ public class ShiroConfiguration {
         return authorizationAttributeSourceAdvisor;
     }
 
+    @Bean
     public ModularRealmAuthenticator modularRealmAuthenticator(){
+        System.out.println("ShiroConfiguration.modularRealmAuthenticator()");
         ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
         modularRealmAuthenticator.setAuthenticationStrategy(new AtLeastOneSuccessfulStrategy());
         return modularRealmAuthenticator;
 
+    }
+
+    @Bean
+    public SimpleCookie simpleCookie(){
+        System.out.println("ShiroConfiguration.simpleCookie()");
+        SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
+        simpleCookie.setMaxAge(259200);
+        return simpleCookie;
+    }
+
+    @Bean
+    public CookieRememberMeManager cookieRememberMeManager(){
+        System.out.println("ShiroConfiguration.cookieRememberMeManager()");
+        CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
+//        KeyGenerator keygen = KeyGenerator.getInstance("AES");
+//        //SecretKey deskey = keygen.generateKey();
+//        //System.out.println(Base64.encodeToString(deskey.getEncoded()));
+        byte[] cipherKey = Base64.decode("wGiHplamyXlVB11UXWol8g==");
+        cookieRememberMeManager.setCipherKey(cipherKey);
+        cookieRememberMeManager.setCookie(simpleCookie());
+        return cookieRememberMeManager;
     }
 
 }

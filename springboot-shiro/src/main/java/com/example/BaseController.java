@@ -24,7 +24,7 @@ public class BaseController {
     public String login(String username, String password) {
         if (username != null && password != null) {
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-            token.setRememberMe(false);
+            token.setRememberMe(true);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
         }
