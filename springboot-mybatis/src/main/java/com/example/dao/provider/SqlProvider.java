@@ -4,6 +4,7 @@ import com.example.entity.User;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 
