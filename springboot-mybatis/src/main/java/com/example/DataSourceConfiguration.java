@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.Properties;
 
-@Configuration
-public class ElseConfiguration {
+//@Configuration
+public class DataSourceConfiguration {
 
 }
