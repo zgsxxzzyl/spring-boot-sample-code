@@ -18,6 +18,7 @@
         <module>springboot-shiro</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-data-jpa</module>
+        <module>springboot-mybatis-datasource</module>
     </modules>
     <build>
         <plugins>
