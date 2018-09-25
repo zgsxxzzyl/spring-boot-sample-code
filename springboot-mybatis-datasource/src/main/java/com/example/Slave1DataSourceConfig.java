@@ -7,10 +7,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
@@ -27,8 +25,8 @@ public class Slave1DataSourceConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.slave1")
-    public DataSource slave1DataSource(){
-        return slave1DataSourceProperties().initializeDataSourceBuilder().build();
+    public DataSource slave1DataSource(@Qualifier("slave1DataSourceProperties") DataSourceProperties slave1DataSourceProperties) {
+        return slave1DataSourceProperties.initializeDataSourceBuilder().build();
     }
 
     @Bean

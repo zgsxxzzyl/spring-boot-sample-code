@@ -7,7 +7,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -27,8 +26,8 @@ public class MasterDataSourceConfig {
     }
 
     @Bean
-    public DataSource masterDataSource(){
-        return masterDataSourceProperties().initializeDataSourceBuilder().build();
+    public DataSource masterDataSource(@Qualifier("masterDataSourceProperties") DataSourceProperties masterDataSourceProperties) {
+        return masterDataSourceProperties.initializeDataSourceBuilder().build();
     }
 
     @Bean
