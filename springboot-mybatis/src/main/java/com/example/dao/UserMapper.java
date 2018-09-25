@@ -9,7 +9,7 @@ import java.sql.JDBCType;
 import java.util.List;
 
 
-@Mapper
+//@Mapper //配置了@MapperScan可以省略
 public interface UserMapper {
 
     @Select("SELECT * FROM USER WHERE NAME = #{name}")

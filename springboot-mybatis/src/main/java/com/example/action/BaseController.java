@@ -67,7 +67,7 @@ public class BaseController {
         return user.getId();
     }
 
-    @RequestMapping("page")
+    @RequestMapping({"page",""})
     public String page() {
         PageHelper.startPage(1, 6);
         List<User> users = userMapper.findByName("AAA");

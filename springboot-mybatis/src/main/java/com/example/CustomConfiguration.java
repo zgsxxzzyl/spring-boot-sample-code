@@ -35,7 +35,12 @@ public class CustomConfiguration {
     }
 
     //配置mybatis的分页插件pageHelper并再pom文件中加入相应依赖即可
-    @Bean
+
+    /**
+     * 不配置这个也可以生效
+     * @return
+     */
+   /* @Bean
     public PageHelper pageHelper() {
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
@@ -45,5 +50,5 @@ public class CustomConfiguration {
         properties.setProperty("dialect", "mysql");    //配置mysql数据库的方言
         pageHelper.setProperties(properties);
         return pageHelper;
-    }
+    }*/
 }
