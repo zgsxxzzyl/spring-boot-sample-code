@@ -14,7 +14,9 @@
         <module>springboot-mybatis-redis</module>
         <module>springboot-redis</module>
         <module>springboot-sample</module>
+        <module>springboot-web-sample</module>
         <module>springboot-shiro</module>
+        <module>springboot-web-thymeleaf</module>
     </modules>
     <build>
         <plugins>
