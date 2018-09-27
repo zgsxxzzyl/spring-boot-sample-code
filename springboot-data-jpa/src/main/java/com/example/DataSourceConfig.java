@@ -1,3 +1,6 @@
+/**
+ * 这个类生成两个数据源
+ */
 package com.example;
 
 import org.springframework.beans.factory.annotation.Qualifier;

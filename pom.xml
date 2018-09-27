@@ -19,6 +19,7 @@
         <module>springboot-web-thymeleaf</module>
         <module>springboot-data-jpa</module>
         <module>springboot-mybatis-datasource</module>
+        <module>springboot-dynamic-datasource</module>
     </modules>
     <build>
         <plugins>
