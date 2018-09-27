@@ -19,6 +19,7 @@ public class BaseController {
     private UserMapper userMapper;
 
     @RequestMapping("insert1")
+//    @Transactional(readOnly = true)
     public int insert() {
         int count = userMapper.insert("admin1", 123);
         return count;
