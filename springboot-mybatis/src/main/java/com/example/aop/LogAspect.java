@@ -19,7 +19,8 @@ public class LogAspect {
     }
 
     @Pointcut("execution(public * com.example.action.*.*(..))")
-    public void webLog(){}
+    public void webLog() {
+    }
 
     @Before("webLog()")
     public void deBefore(JoinPoint joinPoint) throws Throwable {
@@ -43,13 +44,13 @@ public class LogAspect {
 
     //后置异常通知
     @AfterThrowing("webLog()")
-    public void throwss(JoinPoint jp){
+    public void throwss(JoinPoint jp) {
         System.out.println("方法异常时执行.....");
     }
 
     //后置最终通知,final增强，不管是抛出异常或者正常退出都会执行
     @After("webLog()")
-    public void after(JoinPoint jp){
+    public void after(JoinPoint jp) {
         System.out.println("方法最后执行.....");
     }
 
@@ -58,7 +59,7 @@ public class LogAspect {
     public Object arround(ProceedingJoinPoint pjp) {
         System.out.println("方法环绕start.....");
         try {
-            Object o =  pjp.proceed();
+            Object o = pjp.proceed();
             System.out.println("方法环绕proceed，结果是 :" + o);
             return o;
         } catch (Throwable e) {

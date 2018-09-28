@@ -14,12 +14,12 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.slave1.mapper",sqlSessionTemplateRef = "slave1SqlSessionTemplate")
+@MapperScan(basePackages = "com.example.slave1.mapper", sqlSessionTemplateRef = "slave1SqlSessionTemplate")
 public class Slave1DataSourceConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.slave1")
-    public DataSourceProperties slave1DataSourceProperties(){
+    public DataSourceProperties slave1DataSourceProperties() {
         return new DataSourceProperties();
     }
 

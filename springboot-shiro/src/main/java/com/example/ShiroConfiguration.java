@@ -79,7 +79,7 @@ public class ShiroConfiguration {
     }
 
     @Bean
-    public ModularRealmAuthenticator modularRealmAuthenticator(){
+    public ModularRealmAuthenticator modularRealmAuthenticator() {
         System.out.println("ShiroConfiguration.modularRealmAuthenticator()");
         ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
         modularRealmAuthenticator.setAuthenticationStrategy(new AtLeastOneSuccessfulStrategy());
@@ -88,7 +88,7 @@ public class ShiroConfiguration {
     }
 
     @Bean
-    public SimpleCookie simpleCookie(){
+    public SimpleCookie simpleCookie() {
         System.out.println("ShiroConfiguration.simpleCookie()");
         SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
         simpleCookie.setMaxAge(259200);
@@ -96,7 +96,7 @@ public class ShiroConfiguration {
     }
 
     @Bean
-    public CookieRememberMeManager cookieRememberMeManager(){
+    public CookieRememberMeManager cookieRememberMeManager() {
         System.out.println("ShiroConfiguration.cookieRememberMeManager()");
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
 //        KeyGenerator keygen = KeyGenerator.getInstance("AES");

@@ -49,7 +49,7 @@ public class User implements Serializable {
                 '}';
     }
 
-    public enum Sex{
-        MAN,WOMAN
+    public enum Sex {
+        MAN, WOMAN
     }
 }

@@ -13,9 +13,9 @@ public class UserRowMapper implements RowMapper<User> {
         user.setId(resultSet.getLong("id"));
         user.setName(resultSet.getString("name"));
         user.setAge(resultSet.getInt("age"));
-        if("MAN".equals(resultSet.getString("sex"))){
+        if ("MAN".equals(resultSet.getString("sex"))) {
             user.setSex(User.Sex.MAN);
-        }else{
+        } else {
             user.setSex(User.Sex.WOMAN);
         }
         return user;

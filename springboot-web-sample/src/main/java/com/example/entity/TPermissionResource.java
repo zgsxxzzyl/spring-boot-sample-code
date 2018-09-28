@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * t_permission_resource
- * @author 
+ *
+ * @author
  */
 public class TPermissionResource implements Serializable {
     private Integer permissionid;

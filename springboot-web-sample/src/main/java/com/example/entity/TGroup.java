@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * t_group
- * @author 
+ *
+ * @author
  */
 public class TGroup implements Serializable {
     private Integer id;

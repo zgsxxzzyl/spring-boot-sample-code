@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * t_user
- * @author 
+ *
+ * @author
  */
 public class TUser implements Serializable {
     private Integer id;

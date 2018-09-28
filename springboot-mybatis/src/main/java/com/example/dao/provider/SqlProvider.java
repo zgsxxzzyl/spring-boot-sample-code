@@ -1,10 +1,8 @@
 package com.example.dao.provider;
 
 import com.example.entity.User;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.jdbc.SQL;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 
@@ -40,10 +38,10 @@ public class SqlProvider {
         return sql.toString();
     }
 
-    public String insertNormal(@Param("user") User user){
-        return new SQL(){{
+    public String insertNormal(@Param("user") User user) {
+        return new SQL() {{
             INSERT_INTO("user");
-            VALUES("name,age,sex","#{user.name},#{user.age},#{user.sex}");
+            VALUES("name,age,sex", "#{user.name},#{user.age},#{user.sex}");
         }}.toString();
     }
 
