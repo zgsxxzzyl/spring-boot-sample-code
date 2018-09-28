@@ -20,6 +20,8 @@
         <module>springboot-data-jpa</module>
         <module>springboot-mybatis-datasource</module>
         <module>springboot-dynamic-datasource</module>
+        <module>springboot-mail</module>
+        <module>springboot-restful</module>
     </modules>
     <build>
         <plugins>
