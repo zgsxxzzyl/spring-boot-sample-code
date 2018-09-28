@@ -19,7 +19,10 @@ import java.util.Map;
 @Configuration
 @MapperScan(basePackages = "com.example.dao")
 public class DataSourceConfiguration {
-
+    /**
+     * @return
+     * @Primary 需要配置一个默认的数据源
+     */
     @Primary
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.master")
@@ -65,6 +68,10 @@ public class DataSourceConfiguration {
         return sqlSessionFactoryBean.getObject();
     }
 
+    /**
+     * 配置事务管理
+     * @return
+     */
     @Bean
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dynamicDataSource());

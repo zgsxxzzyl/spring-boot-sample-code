@@ -1,10 +1,9 @@
 package com.example.dao;
 
 import com.example.entity.User;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,4 +18,16 @@ public interface UserDao {
             @Result(property = "sex", column = "sex", javaType = User.Sex.class, jdbcType = JdbcType.VARCHAR)
     )
     public List<User> queryAll();
+
+
+    /**
+     * 参数中包含enum
+     *
+     * @param user
+     * @return
+     */
+    @Transactional(readOnly = true)
+    @Insert({"INSERT INTO USER(NAME, AGE,SEX) VALUES(#{user.name}, #{user.age},#{user.sex})"})
+    @Options(useGeneratedKeys = true, keyProperty = "user.id", keyColumn = "id")
+    public int insertPojo(@Param("user") User user);
 }

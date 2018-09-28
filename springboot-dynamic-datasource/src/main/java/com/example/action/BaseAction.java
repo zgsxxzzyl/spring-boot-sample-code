@@ -29,4 +29,27 @@ public class BaseAction {
 //        DynamicDataSourceHolder.setDataSource("slave1");
         return userDao.queryAll();
     }
+
+    @RequestMapping("slave1")
+    @TargetDataSource("slave")
+    public Long insertPojo() {
+        User user = new User();
+        user.setName("admin");
+        user.setAge(20);
+        user.setSex(User.Sex.WOMAN);
+        int count = userDao.insertPojo(user);
+        return user.getId();
+    }
+
+    @RequestMapping("master")
+    @TargetDataSource("master")
+    public Long insert() {
+        User user = new User();
+        user.setName("admin");
+        user.setAge(20);
+        user.setSex(User.Sex.WOMAN);
+        int count = userDao.insertPojo(user);
+        return user.getId();
+    }
+
 }
