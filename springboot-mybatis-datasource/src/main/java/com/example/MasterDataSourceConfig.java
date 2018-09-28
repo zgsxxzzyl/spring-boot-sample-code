@@ -15,13 +15,13 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "com.example.master.mapper",sqlSessionTemplateRef = "masterSqlSessionTemplate")
+@MapperScan(basePackages = "com.example.master.mapper", sqlSessionTemplateRef = "masterSqlSessionTemplate")
 public class MasterDataSourceConfig {
 
     @Primary
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.master")
-    public DataSourceProperties masterDataSourceProperties(){
+    public DataSourceProperties masterDataSourceProperties() {
         return new DataSourceProperties();
     }
 

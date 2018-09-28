@@ -19,13 +19,13 @@ public class BaseAction {
 
 
     @RequestMapping("a")
-    public List<User> master(){
+    public List<User> master() {
         return masterUserMapper.queryAll();
     }
 
 
     @RequestMapping("b")
-    public List<User> slave(){
+    public List<User> slave() {
         return slave1UserMapper.queryAll();
     }
 }

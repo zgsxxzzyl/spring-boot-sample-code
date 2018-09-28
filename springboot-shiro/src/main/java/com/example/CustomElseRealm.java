@@ -1,7 +1,6 @@
 package com.example;
 
 import org.apache.shiro.authc.*;
-import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.Realm;
 
 public class CustomElseRealm implements Realm {
@@ -28,7 +27,6 @@ public class CustomElseRealm implements Realm {
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username, password, getName());
         return simpleAuthenticationInfo;
     }
-
 
 
 }
