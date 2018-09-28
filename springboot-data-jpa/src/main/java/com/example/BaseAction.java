@@ -20,12 +20,12 @@ public class BaseAction {
     public JdbcTemplate slave1JdbcTemplate;
 
     @RequestMapping("a")
-    public List<User> master(){
-        return masterJdbcTemplate.query("SELECT * FROM USER",new UserRowMapper());
+    public List<User> master() {
+        return masterJdbcTemplate.query("SELECT * FROM USER", new UserRowMapper());
     }
 
     @RequestMapping("b")
-    public List<User> slave1(){
-        return slave1JdbcTemplate.query("SELECT * FROM USER",new UserRowMapper());
+    public List<User> slave1() {
+        return slave1JdbcTemplate.query("SELECT * FROM USER", new UserRowMapper());
     }
 }

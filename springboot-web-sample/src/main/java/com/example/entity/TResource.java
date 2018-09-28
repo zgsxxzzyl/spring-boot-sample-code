@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * t_resource
- * @author 
+ *
+ * @author
  */
 public class TResource implements Serializable {
     private Integer id;

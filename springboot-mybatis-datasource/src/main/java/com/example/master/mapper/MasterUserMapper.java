@@ -15,11 +15,12 @@ public interface MasterUserMapper {
 
     /**
      * 绑定枚举类型
+     *
      * @return
      */
     @Select("SELECT * FROM USER")
     @Results(
-            @Result(property = "sex",column = "sex",javaType = User.Sex.class,jdbcType = JdbcType.VARCHAR)
+            @Result(property = "sex", column = "sex", javaType = User.Sex.class, jdbcType = JdbcType.VARCHAR)
     )
     public List<User> queryAll();
 

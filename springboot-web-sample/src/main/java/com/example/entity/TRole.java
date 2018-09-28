@@ -4,7 +4,8 @@ import java.io.Serializable;
 
 /**
  * t_role
- * @author 
+ *
+ * @author
  */
 public class TRole implements Serializable {
     private Integer id;

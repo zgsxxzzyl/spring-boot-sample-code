@@ -14,7 +14,7 @@ public class RoleAction {
 
     }
 
-    @RequestMapping(value = "/delete",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
     public void delete(@PathVariable String id) {
 
     }
@@ -24,7 +24,7 @@ public class RoleAction {
 
     }
 
-    @RequestMapping(value = "{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public void query(@PathVariable String id) {
 
     }

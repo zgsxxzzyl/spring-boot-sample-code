@@ -5,7 +5,6 @@ import com.example.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 
-import java.sql.JDBCType;
 import java.util.List;
 
 
@@ -17,11 +16,12 @@ public interface UserMapper {
 
     /**
      * 绑定枚举类型
+     *
      * @return
      */
     @Select("SELECT * FROM USER")
     @Results(
-            @Result(property = "sex",column = "sex",javaType = User.Sex.class,jdbcType = JdbcType.VARCHAR)
+            @Result(property = "sex", column = "sex", javaType = User.Sex.class, jdbcType = JdbcType.VARCHAR)
     )
     public List<User> queryAll();
 
@@ -31,6 +31,7 @@ public interface UserMapper {
 
     /**
      * 参数中包含enum
+     *
      * @param user
      * @return
      */
