@@ -20,6 +20,7 @@
         <module>springboot-mybatis-datasource</module>
         <module>springboot-dynamic-datasource</module>
         <module>springboot-restful</module>
+        <module>springboot-fastjson</module>
     </modules>
     <build>
         <plugins>
