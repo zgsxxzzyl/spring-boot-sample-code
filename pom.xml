@@ -21,6 +21,7 @@
         <module>springboot-dynamic-datasource</module>
         <module>springboot-restful</module>
         <module>springboot-fastjson</module>
+        <module>springboot-web</module>
     </modules>
     <build>
         <plugins>
