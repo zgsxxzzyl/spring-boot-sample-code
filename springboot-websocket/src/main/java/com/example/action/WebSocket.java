@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 
 @Component
 @ServerEndpoint(value = "/websocket")
@@ -19,6 +20,7 @@ public class WebSocket {
     @OnMessage
     public void onMessage(String message, Session session) {
         System.out.println("--> onMessage : " + message);
+        sendMessage("--> Receive : " + message);
     }
 
     @OnClose
@@ -31,5 +33,13 @@ public class WebSocket {
     public void onError(Session session, Throwable throwable) {
         System.out.println("--> onError");
         throwable.printStackTrace();
+    }
+
+    public void sendMessage(String message) {
+        try {
+            this.session.getBasicRemote().sendText(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
