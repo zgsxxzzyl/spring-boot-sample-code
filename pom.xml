@@ -23,6 +23,7 @@
         <module>springboot-fastjson</module>
         <module>springboot-web</module>
         <module>springboot-websocket</module>
+        <module>springboot-quartz</module>
     </modules>
     <build>
         <plugins>
