@@ -22,6 +22,7 @@
         <module>springboot-restful</module>
         <module>springboot-fastjson</module>
         <module>springboot-web</module>
+        <module>springboot-websocket</module>
     </modules>
     <build>
         <plugins>
