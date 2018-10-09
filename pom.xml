@@ -24,7 +24,7 @@
         <module>springboot-web</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
-        <module>sprinboot-activemq</module>
+        <module>springboot-activemq</module>
     </modules>
     <build>
         <plugins>
