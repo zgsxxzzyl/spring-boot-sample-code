@@ -40,6 +40,7 @@ public class SprinbootActivemqApplication {
     @Bean
     public JmsListenerContainerFactory<?> jmsListenerContainerTopic(ActiveMQConnectionFactory connectionFactory) {
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();
+        // 当消费者要接收topic的消息时，pubSubDomain必须设置为true。
         bean.setPubSubDomain(true);
         bean.setConnectionFactory(connectionFactory);
         return bean;
@@ -48,6 +49,7 @@ public class SprinbootActivemqApplication {
     @Bean
     public JmsListenerContainerFactory<?> jmsListenerContainerQueue(ActiveMQConnectionFactory connectionFactory) {
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();
+        //当消费者要接收queue的消息时，pubSubDomain必须设置为false。
         bean.setConnectionFactory(connectionFactory);
         return bean;
     }
