@@ -1,5 +1,4 @@
-package com.example;
-
+package com.example.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
@@ -7,27 +6,19 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import javax.jms.Queue;
+import javax.jms.Topic;
 
 @Component
 @EnableScheduling
-public class Producer {
-
+public class Publisher {
     @Autowired
     private JmsMessagingTemplate jmsMessagingTemplate;
 
     @Autowired
-    private Queue queue;
+    private Topic topic;
 
-
-    /**
-     * <a href="https://blog.csdn.net/jack_bob/article/details/78786740">关于@Scheduled的讲解</a>
-     * <a href="http://cron.qqe2.com/">cron生成网站</a><br/>
-     */
     @Scheduled(fixedDelay = 3000)//每3s执行1次
     public void send() {
-        this.jmsMessagingTemplate.convertAndSend(this.queue, "hi,activeMQ");
+        jmsMessagingTemplate.convertAndSend(topic, "hi,activeMQ-topic");
     }
-
-
 }

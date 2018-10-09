@@ -1,12 +1,11 @@
-package com.example;
+package com.example.queue;
 
 import org.springframework.jms.annotation.JmsListener;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Consumer {
 
-    @JmsListener(destination = "sample.queue")
+    @JmsListener(destination = "test-queue", containerFactory = "jmsListenerContainerQueue")
     public void receiveQueue(String text) {
         System.out.println(text);
     }
