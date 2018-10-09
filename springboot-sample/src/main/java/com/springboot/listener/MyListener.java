@@ -6,6 +6,11 @@ import javax.servlet.annotation.WebListener;
 
 @WebListener("/*")
 public class MyListener implements ServletContextListener {
+    /**
+     * 启动时加载一次
+     *
+     * @param servletContextEvent
+     */
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         System.out.println("contextInitialized");
