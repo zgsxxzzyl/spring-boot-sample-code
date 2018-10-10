@@ -1,13 +1,54 @@
 * `@Controller`配合视图解析器InternalResourceViewResolver返回视图jsp、html
 * `@RestController`相当于@ResponseBody ＋ @Controller返回是字符串或者json
 
----
 
-# 过滤器
-
+# Listener
 
 ---
-# 拦截器
+
+* HttpSessionListener(用来监控session的创建，销毁等)
+
+* ServletRequestListener(用于监控servlet上下文request)
+
+* ServletRequestAttributeListener(用于监控request中的attribute的操作)
+
+
+
+---
+
+# Filter
+
+
+---
+
+# Servlet
+> * `< url-pattern>/</url-pattern>`  会匹配到/login这样的路径型url，不会匹配到模式为`*.jsp`这样的后缀型url
+> * `< url-pattern>/*</url-pattern>` 会匹配所有url：路径型的和后缀型的url(包括`/login`,`*.jsp`,`*.js`和`*.html`等)
+```
+@WebServlet(urlPatterns = "/*")
+public class MyServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doGet");
+        super.doGet(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("doPost");
+        super.doPost(req, resp);
+    }
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("service HttpServletRequest");
+        super.service(req, resp);
+    }
+```
+
+---
+
+# Interceptor
 ```
 public class MyInterceptor implements HandlerInterceptor {
     @Override
@@ -40,33 +81,9 @@ public class MyConfig implements WebMvcConfigurer {
 
 >*  `/*` 指文件夹下的所有文件（不包括子文件夹）
 >* `/**` 指文件夹下的所有文件（包括子文件夹）
----
-# 监听器
----
-# Servlet
-> * `< url-pattern>/</url-pattern>`  会匹配到/login这样的路径型url，不会匹配到模式为`*.jsp`这样的后缀型url
-> * `< url-pattern>/*</url-pattern>` 会匹配所有url：路径型的和后缀型的url(包括`/login`,`*.jsp`,`*.js`和`*.html`等)
-```
-@WebServlet(urlPatterns = "/*")
-public class MyServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doGet");
-        super.doGet(req, resp);
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("doPost");
-        super.doPost(req, resp);
-    }
 
-    @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("service HttpServletRequest");
-        super.service(req, resp);
-    }
-```
+
 # 配置文件解析
 *application.properties*文件内容：
 ```
@@ -89,3 +106,4 @@ public class UserController {
     }
 }
 ```
+
