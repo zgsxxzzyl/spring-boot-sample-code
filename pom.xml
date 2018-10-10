@@ -27,6 +27,8 @@
         <module>springboot-activemq</module>
         <module>springboot-dynamic-bean</module>
         <module>springboot-schedule</module>
+        <module>springboot-eureka-server</module>
+        <module>springboot-eureka-client</module>
     </modules>
     <build>
         <plugins>
