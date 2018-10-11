@@ -29,6 +29,7 @@
         <module>springboot-schedule</module>
         <module>springboot-eureka-server</module>
         <module>springboot-eureka-client</module>
+        <module>springboot-eureka-ribbon</module>
     </modules>
     <build>
         <plugins>
