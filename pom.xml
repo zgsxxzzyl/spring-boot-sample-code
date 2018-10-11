@@ -30,6 +30,7 @@
         <module>springcloud-eureka-client</module>
         <module>springcloud-eureka-server</module>
         <module>springcloud-ribbon</module>
+        <module>springcloud-hystrix</module>
     </modules>
     <build>
         <plugins>
