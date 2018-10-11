@@ -10,8 +10,14 @@ public class HelloService {
     @Autowired
     RestTemplate restTemplate;
 
-    public String hiService(String name) {
-        return restTemplate.getForObject("http://SERVICE-CLIENT/user/" + name, String.class);
+    /**
+     * 采用restTemplate远程调用rest api
+     *
+     * @param arg
+     * @return
+     */
+    public String remoteService(String arg) {
+        return restTemplate.getForObject("http://SERVICE-CLIENT/user/{1}", String.class, arg);
     }
 
 

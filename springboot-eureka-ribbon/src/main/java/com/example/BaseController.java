@@ -11,8 +11,8 @@ public class BaseController {
     @Autowired
     HelloService helloService;
 
-    @GetMapping(value = "/hi")
+    @GetMapping(value = "/server")
     public String hi(@RequestParam String name) {
-        return helloService.hiService(name);
+        return helloService.remoteService(name);
     }
 }
