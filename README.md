@@ -32,7 +32,7 @@
 * ### spring-cloud-starter-netflix-eureka-client
 > 注册的服务
 
-## 服务的消费者（REST+ribbon）
+## 服务的消费者（REST+ribbon、Feign）
 > Spring cloud有两种服务调用方式，一种是ribbon+restTemplate，另一种是feign。
 >
 > ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。Feign默认集成了ribbon。
