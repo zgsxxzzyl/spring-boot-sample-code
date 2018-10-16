@@ -33,6 +33,7 @@
         <module>springcloud-feign</module>
         <module>springcloud-hystrix</module>
         <module>springcloud-zuul</module>
+        <module>custom-spring-boot-starter</module>
     </modules>
     <build>
         <plugins>
