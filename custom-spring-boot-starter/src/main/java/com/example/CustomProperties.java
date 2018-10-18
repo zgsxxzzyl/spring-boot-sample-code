@@ -4,6 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "custom")
 public class CustomProperties {
+
     private String name;
 
     public String getName() {
