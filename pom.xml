@@ -34,6 +34,7 @@
         <module>springcloud-hystrix</module>
         <module>springcloud-zuul</module>
         <module>custom-spring-boot-starter</module>
+        <module>springboot-multi-sample</module>
     </modules>
     <build>
         <plugins>

@@ -3,21 +3,22 @@
 > Github官方参照： [https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples)
 
 ## SpringBoot常用注解
+
 | 名称                     | 描述 |
 | ------------------------ | ---- |
 | @SpringBootApplication   |      |
-| @ResponseBody            |      |
-| @Controller              |      |
-| @RestController          |      |
-| @RequestMapping          |      |
 | @EnableAutoConfiguration |      |
 | @ComponentScan           |      |
 | @Configuration           |      |
+| @RestController          |      |
+| @Controller              |      |
+| @RequestMapping          |      |
+| @ResponseBody            |      |
+| @Service                 |      |
+| @Repository              |      |
 | @Import                  |      |
 | @ImportResource          |      |
 | @Autowired               |      |
-| @Service                 |      |
-| @Repository              |      |
 | @Bean                    |      |
 | @Value                   |      |
 | @Qualifier               |      |
@@ -46,5 +47,5 @@
 
 ## 路由网关（Zuul）
 
-
+* ### [spring-cloud-starter-netflix-zuul](https://github.com/zgsxxzzyl/spring-boot-sample-code/tree/master/springcloud-zuul)
 未完待续。。。
