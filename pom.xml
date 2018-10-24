@@ -9,10 +9,14 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>custom-spring-boot-starter</module>
+        <module>springboot-activemq</module>
         <module>springboot-data-jpa</module>
+        <module>springboot-dynamic-bean</module>
         <module>springboot-dynamic-datasource</module>
         <module>springboot-fastjson</module>
         <module>springboot-global-exception</module>
+        <module>springboot-multi-sample</module>
         <module>springboot-mybatis</module>
         <module>springboot-mybatis-datasource</module>
         <module>springboot-mybatis-redis</module>
@@ -20,21 +24,18 @@
         <module>springboot-redis</module>
         <module>springboot-restful</module>
         <module>springboot-sample</module>
+        <module>springboot-schedule</module>
         <module>springboot-shiro</module>
+        <module>springboot-shiro-sso</module>
         <module>springboot-web</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
-        <module>springboot-activemq</module>
-        <module>springboot-dynamic-bean</module>
-        <module>springboot-schedule</module>
         <module>springcloud-eureka-client</module>
         <module>springcloud-eureka-server</module>
-        <module>springcloud-ribbon</module>
         <module>springcloud-feign</module>
         <module>springcloud-hystrix</module>
+        <module>springcloud-ribbon</module>
         <module>springcloud-zuul</module>
-        <module>custom-spring-boot-starter</module>
-        <module>springboot-multi-sample</module>
     </modules>
     <build>
         <plugins>
