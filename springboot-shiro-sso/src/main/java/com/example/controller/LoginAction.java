@@ -14,18 +14,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController()
 public class LoginAction {
 
-    @RequestMapping("/")
-    public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView("/login.html");
-        return modelAndView;
-    }
-
     @PostMapping("/login")
-    public Object login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        @RequestParam(value = "remember", required = false) String remember) {
-        System.out.println(username + "--" + password);
+    public ModelAndView login(@RequestParam("username") String username,
+                              @RequestParam("password") String password,
+                              @RequestParam(value = "remember", required = false) String remember) {
+//        System.out.println(username + "--" + password);
         Subject subject = SecurityUtils.getSubject();
+
         UsernamePasswordToken token = new UsernamePasswordToken(username, password);
         if (!StringUtils.isEmpty(remember) && Boolean.valueOf(remember)) {
             token.setRememberMe(true);
@@ -34,15 +29,20 @@ public class LoginAction {
         }
         try {
             if (subject.isRemembered() || subject.isAuthenticated()) {
-                return username + "--" + password;
+                return new ModelAndView("index.html");
             } else {
                 subject.login(token);
             }
+            return new ModelAndView("index.html");
         } catch (AuthenticationException e) {
             e.printStackTrace();
+            return new ModelAndView("403");
         }
-        return username + "--" + password;
     }
 
+    @RequestMapping("de1")
+    public ModelAndView de() {
+        return new ModelAndView("detail.html");
+    }
 
 }

@@ -6,11 +6,12 @@ import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
-@Configuration
+//@Configuration
 public class ShiroConfig {
 
     @Bean
@@ -41,10 +42,22 @@ public class ShiroConfig {
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
+        Map<String, String> filterChainDefinitionMap = new HashMap<>();
+
+//        filterChainDefinitionMap.put("/plugin/**","anon");
+//        filterChainDefinitionMap.put("/css/**","anon");
+//        filterChainDefinitionMap.put("/js/**","anon");
+//
+//        filterChainDefinitionMap.put("/**","authc");
+//        filterChainDefinitionMap.put("/login/","anon");
+//        filterChainDefinitionMap.put("/logout","logout");
+
+        shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
+
         shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager());
         shiroFilterFactoryBean.setLoginUrl("/login.html");
-        shiroFilterFactoryBean.setSuccessUrl("/index.html");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/403.html");
+//        shiroFilterFactoryBean.setSuccessUrl("/index.html");
+//        shiroFilterFactoryBean.setUnauthorizedUrl("/403");
 
         return shiroFilterFactoryBean;
     }
