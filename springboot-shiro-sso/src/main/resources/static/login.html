@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="./plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="./css/login.css"/>
+    <script src="./js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<!-- 你的HTML代码 -->
+<div class="custom-div-center">
+    <form class="layui-form" action="/login/" method="post">
+        <div class="layui-form-item">
+            <label class="layui-form-label">username</label>
+            <div class="layui-input-block">
+                <input type="text" name="username" required lay-verify="required" placeholder="" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">password</label>
+            <div class="layui-input-block">
+                <input type="text" name="password" required lay-verify="required" placeholder="" autocomplete="off"
+                       class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" style="text-align: center">
+            <input type="submit" value="Sign in" class="layui-btn layui-btn-primary">
+            <input type="button" value="Cancel" class="layui-btn layui-btn-primary">
+            <div style="display: inline-block;float: right;height: 38px">
+                <input type="checkbox" lay-skin="primary" title="Remember me" name="remember" value="true"></div>
+        </div>
+    </form>
+</div>
+
+<script src="./plugin/layui/layui.all.js"></script>
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function () {
+        var layer = layui.layer
+            , form = layui.form;
+
+        // layer.msg('Hello World');
+    }();
+</script>
+</body>
+</html>
