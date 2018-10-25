@@ -42,7 +42,7 @@ public class LoginAction {
 
     @RequestMapping("de1")
     public ModelAndView de() {
-        return new ModelAndView("detail.html");
+        return new ModelAndView("redirect:detail.html");
     }
 
 }

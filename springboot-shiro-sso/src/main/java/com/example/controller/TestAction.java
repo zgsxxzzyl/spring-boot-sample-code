@@ -10,4 +10,9 @@ public class TestAction {
     public String demo() {
         return "redirect:detail.html";
     }
+
+    @RequestMapping("de2")
+    public String demo1() {
+        return "demo";
+    }
 }
