@@ -31,19 +31,18 @@ public class UserAction {
                 defalutUrl = takemeback;
             }
             Subject subject = SecurityUtils.getSubject();
-            UsernamePasswordToken token = new UsernamePasswordToken(username, password);
-            if (!StringUtils.isEmpty(remember) && Boolean.valueOf(remember)) {
-                token.setRememberMe(true);
-            } else {
-                token.setRememberMe(false);
-            }
-
             if (subject.isRemembered() || subject.isAuthenticated()) {
                 return REDIRECT + defalutUrl;
             } else {
+                UsernamePasswordToken token = new UsernamePasswordToken(username, password);
+                if (!StringUtils.isEmpty(remember) && Boolean.valueOf(remember)) {
+                    token.setRememberMe(true);
+                } else {
+                    token.setRememberMe(false);
+                }
                 subject.login(token);
                 Session session = subject.getSession();
-                session.setTimeout(5000);       //设置会话超时时间
+                session.setTimeout(60000);       //设置会话超时时间
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 System.out.println(simpleDateFormat.format(session.getLastAccessTime()) + "-->>" + session.getHost());
             }

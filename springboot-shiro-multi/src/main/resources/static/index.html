@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>首页</title>
     <link rel="stylesheet" href="./plugin/layui/css/layui.css">
+    <script src="./js/jquery-3.3.1.js"></script>
 </head>
 <body>
 这里是首页
 <!-- 你的HTML代码 -->
-<button class="layui-btn" onclick="javascript:window.location.href='/logout'">退出</button>
-
+<button class="layui-btn" onclick="javascript:window.location.href='/user/logout'">退出</button>
+<div id="time"></div>
 <script src="./plugin/layui/layui.all.js"></script>
 <script>
     //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
@@ -18,6 +19,31 @@
         var layer = layui.layer
             , form = layui.form;
     }();
+</script>
+<script type="text/javascript">
+    //获取当前时间并拼接放到div中的函数
+    function nowTime() {
+        var nowDate = new Date();
+        var year = nowDate.getFullYear();
+        var month = nowDate.getMonth() + 1;
+        month = month > 9 ? month : "0" + month;
+        var date = nowDate.getDate();
+        date = date > 9 ? date : "0" + date;
+        var hour = nowDate.getHours();
+        hour = hour > 9 ? hour : "0" + hour;
+        var miunte = nowDate.getMinutes();
+        miunte = miunte > 9 ? miunte : "0" + miunte;
+        var second = nowDate.getSeconds();
+        second = second > 9 ? second : "0" + second;
+
+        $("#time").text(year + "年" + month + "月" + date + "日" + hour + "时" + miunte + "分" + second + "秒");
+    }
+
+    //加载后执行一次函数，以后每秒再执行
+    $(function () {
+        nowTime();
+        setInterval("nowTime()", 1000);
+    });
 </script>
 </body>
 </html>

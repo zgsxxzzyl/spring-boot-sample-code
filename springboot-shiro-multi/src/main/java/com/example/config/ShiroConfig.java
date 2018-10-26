@@ -3,6 +3,7 @@ package com.example.config;
 import com.example.shiro.CustomSessionListenter;
 import com.example.shiro.ElseSessionListener;
 import com.example.shiro.UserRealm;
+import org.apache.shiro.codec.Base64;
 import org.apache.shiro.session.SessionListener;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -13,7 +14,11 @@ import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 @Configuration
 public class ShiroConfig {
@@ -30,7 +35,7 @@ public class ShiroConfig {
     @Bean
     public CookieRememberMeManager cookieRememberMeManager() {
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
-        cookieRememberMeManager.setCipherKey(Base64.getDecoder().decode("zyl"));
+        cookieRememberMeManager.setCipherKey(Base64.decode("4AvVhmFLUs0KTA3Kprsdag=="));
         cookieRememberMeManager.setCookie(simpleCookie());
         return cookieRememberMeManager;
     }
