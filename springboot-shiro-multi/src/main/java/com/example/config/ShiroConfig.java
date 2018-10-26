@@ -64,15 +64,13 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         Map<String, String> filterChainDefinitionMap = new HashMap<>();
 
-        filterChainDefinitionMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/**", "user");
 
         filterChainDefinitionMap.put("/plugin/**", "anon");
         filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
 
-        filterChainDefinitionMap.put("/user/login", "anon");
-
-        filterChainDefinitionMap.put("/logout", "logout");
+        filterChainDefinitionMap.put("/user/**", "anon");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
