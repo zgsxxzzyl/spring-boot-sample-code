@@ -1,23 +1,27 @@
 package com.example.config;
 
+import com.example.shiro.CustomSessionListenter;
+import com.example.shiro.ElseSessionListener;
 import com.example.shiro.UserRealm;
+import org.apache.shiro.session.SessionListener;
+import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
-import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-//@Configuration
+@Configuration
 public class ShiroConfig {
 
     @Bean
     public SimpleCookie simpleCookie() {
         SimpleCookie simpleCookie = new SimpleCookie();
-        simpleCookie.setName("springboot-shiro-sso");
+        simpleCookie.setName("COOKIE_ID");
         simpleCookie.setHttpOnly(true);
         simpleCookie.setMaxAge(180000);
         return simpleCookie;
@@ -34,9 +38,20 @@ public class ShiroConfig {
     @Bean(name = "securityManager")
     public DefaultWebSecurityManager defaultWebSecurityManager() {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
+        defaultWebSecurityManager.setSessionManager(sessionManager());
         defaultWebSecurityManager.setRealm(new UserRealm());
         defaultWebSecurityManager.setRememberMeManager(cookieRememberMeManager());
         return defaultWebSecurityManager;
+    }
+
+    @Bean
+    public SessionManager sessionManager() {
+        DefaultWebSessionManager defaultWebSessionManager = new DefaultWebSessionManager();
+        List<SessionListener> listeners = new ArrayList<>();
+        listeners.add(new CustomSessionListenter());
+        listeners.add(new ElseSessionListener());
+        defaultWebSessionManager.setSessionListeners(listeners);
+        return defaultWebSessionManager;
     }
 
     @Bean
@@ -44,13 +59,15 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         Map<String, String> filterChainDefinitionMap = new HashMap<>();
 
-//        filterChainDefinitionMap.put("/plugin/**","anon");
-//        filterChainDefinitionMap.put("/css/**","anon");
-//        filterChainDefinitionMap.put("/js/**","anon");
-//
-//        filterChainDefinitionMap.put("/**","authc");
-//        filterChainDefinitionMap.put("/login/","anon");
-//        filterChainDefinitionMap.put("/logout","logout");
+        filterChainDefinitionMap.put("/**", "authc");
+
+        filterChainDefinitionMap.put("/plugin/**", "anon");
+        filterChainDefinitionMap.put("/css/**", "anon");
+        filterChainDefinitionMap.put("/js/**", "anon");
+
+        filterChainDefinitionMap.put("/user/login", "anon");
+
+        filterChainDefinitionMap.put("/logout", "logout");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 

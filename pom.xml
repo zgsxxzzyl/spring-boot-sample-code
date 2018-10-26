@@ -26,7 +26,7 @@
         <module>springboot-sample</module>
         <module>springboot-schedule</module>
         <module>springboot-shiro</module>
-        <module>springboot-shiro-sso</module>
+        <module>springboot-shiro-multi</module>
         <module>springboot-web</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>

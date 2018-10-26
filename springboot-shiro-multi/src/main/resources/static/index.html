@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>非模块化方式使用layui</title>
+    <title>首页</title>
     <link rel="stylesheet" href="./plugin/layui/css/layui.css">
 </head>
 <body>
-
+这里是首页
 <!-- 你的HTML代码 -->
+<button class="layui-btn" onclick="javascript:window.location.href='/logout'">退出</button>
 
 <script src="./plugin/layui/layui.all.js"></script>
 <script>
@@ -16,8 +17,6 @@
     ;!function () {
         var layer = layui.layer
             , form = layui.form;
-
-        layer.msg('Hello World');
     }();
 </script>
 </body>
