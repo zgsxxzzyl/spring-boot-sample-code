@@ -18,6 +18,7 @@ import java.text.SimpleDateFormat;
 @RequestMapping("/user")
 public class UserAction {
     private final static String REDIRECT = "redirect:";
+    private final static String FORWARD = "forward:";
     private String defalutUrl = "/index.html";
     private String loginUrl = "/login.html";
 
