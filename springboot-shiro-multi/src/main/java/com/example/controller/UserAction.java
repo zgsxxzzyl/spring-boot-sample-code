@@ -58,4 +58,5 @@ public class UserAction {
         subject.logout();
         return REDIRECT + loginUrl;
     }
+
 }
