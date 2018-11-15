@@ -1,6 +1,33 @@
-# SpringBoot 
-
+# SpringBoot全家桶
+> 学习Sprngboot过程中积累的例子，涵盖广泛，贡献出来，共勉！
+> 教程基于SpringBoot2.0+
+>
 > Github官方参照： [https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples)
+
+## 知识点：
+
+* servlet
+* listener
+* filter
+* interceptor
+* shiro
+* activemq
+* mybatis
+* quartz
+* restful
+* redis
+* hikari
+* undertow
+  - 用java编写的灵活的高性能Web服务器，提供基于NIO的阻塞和非阻塞API。
+  - [Enable HTTPS/HTTP2 in Undertow]()
+* jpa
+* freemarker
+* lombok
+* ehcache
+* rome
+* thumbnailator
+* i8n
+
 
 ## SpringBoot常用注解
 
@@ -23,7 +50,7 @@
 | @Value                   |      |
 | @Qualifier               |      |
 | @Inject                  |      |
-|                          |      |
+
 
 # SpringCloud（Finchley版本）
 

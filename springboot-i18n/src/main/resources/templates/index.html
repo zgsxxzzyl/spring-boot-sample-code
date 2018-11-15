@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+多语言测试
+<h1 th:text="#{login.failure.msg }"></h1>
+<h1 th:text="#{hello }"></h1>
+
+<form action="/changeSessionLanauage" method="get">
+
+    <input name="lang" type="hidden" value="zh"/>
+
+    <button>切换为中文</button>
+
+</form>
+
+
+<form action="/changeSessionLanauage" method="get">
+
+    <input name="lang" type="hidden" value="en"/>
+
+    <button>切换为英文</button>
+
+</form>
+</body>
+</html>

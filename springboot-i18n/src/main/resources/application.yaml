@@ -1,0 +1,9 @@
+spring:
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  thymeleaf:
+    cache: false
+    suffix: .html
+    servlet:
+      content-type: text/html

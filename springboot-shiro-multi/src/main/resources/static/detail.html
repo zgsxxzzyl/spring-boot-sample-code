@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="./plugin/layui/css/layui.css">
+    <link rel="stylesheet" href="./css/login.css"/>
+    <script src="./js/jquery-3.3.1.js"></script>
 </head>
 <body>
-detail.html
+<script src="./plugin/layui/layui.all.js"></script>
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function () {
+        var layer = layui.layer
+            , form = layui.form;
+
+        layer.open({
+            type: 1,
+            title: false,
+            content: '<div style="height: auto;width: auto;"><ul><li><a>锁表机制测试</a></li>' +
+                '<li><a>锁表机制测试</a></li>' +
+                '<li><a>锁表机制测试</a></li>' +
+                '</ul></div>'
+        });
+        // layer.msg('Hello World');
+    }();
+</script>
 </body>
 </html>
