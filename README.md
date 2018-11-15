@@ -19,7 +19,7 @@
 * hikari
 * undertow
   - 用java编写的灵活的高性能Web服务器，提供基于NIO的阻塞和非阻塞API。
-  - [Enable HTTPS/HTTP2 in Undertow]()
+  - [Enable HTTPS/HTTP2 in Undertow](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-undertow)
 * jpa
 * freemarker
 * lombok
