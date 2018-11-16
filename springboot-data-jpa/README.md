@@ -1,4 +1,24 @@
+> 介绍：项目中实现了JdbcTemplate和JPA两种操作数据库方式
+> JdbcTemplate偏向底层，使用起来较为不便，但是灵活性高，便于封装处理，个人较为推崇
+
+
 # JPA命名
+
+# JPA通用策略生成器
+```java
+@Target({ElementType.METHOD, ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface GeneratedValue {
+    GenerationType strategy() default GenerationType.AUTO;
+
+    String generator() default "";
+}
+```
+
+* TABLE：使用一个特定的数据库表格来保存主键。
+* SEQUENCE：根据底层数据库的序列来生成主键，条件是数据库支持序列。
+* IDENTITY：主键由数据库自动生成（主要是自动增长型）
+* AUTO：主键由程序控制。
 
 | Keyword           | Sample                                                  | JPQL snippet                                                   |
 | ----------------- | ------------------------------------------------------- | -------------------------------------------------------------- |

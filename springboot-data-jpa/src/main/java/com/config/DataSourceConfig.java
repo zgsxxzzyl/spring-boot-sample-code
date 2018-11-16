@@ -1,7 +1,7 @@
 /**
  * 这个类生成两个数据源
  */
-package com;
+package com.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
