@@ -1,0 +1,28 @@
+spring:
+  jta:
+    enabled: true
+    service: com.atomikos.icatch.standalone.UserTransactionServiceFactory
+    max-actives: 200
+    enable-logging: false
+    atomikos:
+      datasource:
+        oneData:
+          unique-resource-name: dataSourceOne
+          xa-data-source-class-name: com.alibaba.druid.pool.xa.DruidXADataSource
+          xa-properties:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/testTwo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false
+            username: root
+            password: root
+        twoData:
+          unique-resource-name: dataSourceTwo
+          xa-data-source-class-name: com.alibaba.druid.pool.xa.DruidXADataSource
+          xa-properties:
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/testTwo?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false
+            username: root
+            password: root
+logging:
+  level:
+    com.xin.dream.one.dao: debug
+    com.xin.dream.two.dao: debug

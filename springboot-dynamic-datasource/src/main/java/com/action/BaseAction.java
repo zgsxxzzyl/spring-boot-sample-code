@@ -25,7 +25,6 @@ public class BaseAction {
     @RequestMapping("b")
     @TargetDataSource("slave1")
     public List<User> other() {
-        // TODO: 2018/9/28 实际过程中可以使用aop切换数据源，添加注解
 //        DynamicDataSourceHolder.setDataSource("slave1");
         return userDao.queryAll();
     }

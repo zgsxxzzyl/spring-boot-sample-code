@@ -27,6 +27,8 @@
 * rome
 * thumbnailator
 * i8n
+* atomikos
+* bitronix
 
 
 ## SpringBoot常用注解
