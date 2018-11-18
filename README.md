@@ -8,6 +8,8 @@
 
 * servlet listener filter interceptor
   - [基础使用](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-sample)
+* fastjson
+  - [springboot默认使用jackson来处理消息](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-fastjson)
 * shiro
 * activemq
 * mybatis
