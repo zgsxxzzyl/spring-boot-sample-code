@@ -46,6 +46,7 @@
         <module>springboot-i18n</module>
         <module>springboot-web-freemarker</module>
         <module>springboot-undertow</module>
+        <module>springboot-atomikos</module>
     </modules>
     <build>
         <plugins>
