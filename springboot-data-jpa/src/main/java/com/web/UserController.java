@@ -18,7 +18,11 @@ public class UserController {
         user.setAge(123);
         user.setName("gl");
         user.setSex(User.Sex.WOMAN);
-        userService.saveUser(user);
+        try {
+            userService.saveUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return user;
     }
 }

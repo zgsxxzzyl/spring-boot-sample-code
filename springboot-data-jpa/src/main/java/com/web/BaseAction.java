@@ -2,6 +2,7 @@ package com.web;
 
 import com.model.User;
 import com.model.UserRowMapper;
+import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -22,13 +23,17 @@ public class BaseAction {
     @Qualifier("slave1JdbcTemplate")
     public JdbcTemplate slave1JdbcTemplate;
 
-    @RequestMapping("a")
+    @Autowired
+    public UserService userService;
+
+    @RequestMapping("/a")
     public List<User> master() {
         return masterJdbcTemplate.query("SELECT * FROM USER", new UserRowMapper());
     }
 
-    @RequestMapping("b")
+    @RequestMapping("/b")
     public List<User> slave1() {
         return slave1JdbcTemplate.query("SELECT * FROM USER", new UserRowMapper());
     }
+
 }

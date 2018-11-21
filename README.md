@@ -6,32 +6,40 @@
 
 ## 知识点：
 
+* 前端模板
+  - freemarker
+  - thymeleaf
 * servlet listener filter interceptor
   - [基础使用](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-sample)
+* 数据库连接池
+  - hikari
 * fastjson
   - [springboot默认使用jackson来处理消息](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-fastjson)
 * shiro
-* activemq
-* mybatis
-* quartz
-  - [注解定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
-* restful
+* 消息队列
+  - activemq
+* 持久化
+  - mybatis
+  - jpa
 * redis
   - [使用Redis做缓存](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-redis)
-* hikari
+* 缓存
+  - ehcache
+* restful
+  - swagger
+* quartz
+  - [注解定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
 * undertow
   - 用java编写的灵活的高性能Web服务器，提供基于NIO的阻塞和非阻塞API。
   - [Enable HTTPS/HTTP2 in Undertow](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-undertow)
-* jpa
-* freemarker
 * lombok
-* ehcache
 * rome
 * thumbnailator
-* i8n
-* atomikos
-* bitronix
-
+* 语言
+  - i8n
+* 分布式事务
+  - atomikos
+  - bitronix
 
 ## SpringBoot常用注解
 
