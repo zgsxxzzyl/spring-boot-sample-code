@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootDataJpaApplication {
+public class SpringbootJpaDatasourceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootDataJpaApplication.class, args);
+        SpringApplication.run(SpringbootJpaDatasourceApplication.class, args);
     }
 }
