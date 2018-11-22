@@ -47,6 +47,7 @@
         <module>springboot-web-freemarker</module>
         <module>springboot-undertow</module>
         <module>springboot-atomikos</module>
+        <module>springboot-jpa-datasource</module>
     </modules>
     <build>
         <plugins>
