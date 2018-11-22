@@ -3,7 +3,6 @@ package com.config;
 import com.atomikos.icatch.jta.UserTransactionImp;
 import com.atomikos.icatch.jta.UserTransactionManager;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -20,7 +19,6 @@ import javax.transaction.UserTransaction;
  * 用于注册Atomikos事务管理器
  */
 @Configuration
-@ComponentScan
 @EnableTransactionManagement
 public class MainConfig {
 

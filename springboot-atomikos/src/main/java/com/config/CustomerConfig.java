@@ -1,8 +1,9 @@
 package com.config;
 
+import com.atomikos.jdbc.AtomikosDataSourceBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
@@ -12,6 +13,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
 import javax.sql.DataSource;
 import java.util.HashMap;
+import java.util.Properties;
 
 @Configuration
 @DependsOn("transactionManager")
@@ -21,10 +23,25 @@ public class CustomerConfig {
     @Autowired
     private JpaVendorAdapter jpaVendorAdapter;
 
+    @Value("${spring.datasource.customer.jdbc-url}")
+    private String url;
+    @Value("${spring.datasource.customer.username}")
+    private String username;
+    @Value("${spring.datasource.customer.password}")
+    private String password;
+
     @Bean(name = "customerDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.customer")
     public DataSource customerDataSource() {
-        return DataSourceBuilder.create().build();
+        AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
+        atomikosDataSourceBean.setUniqueResourceName("customerDataSource");
+        Properties properties = new Properties();
+        properties.setProperty("url", url);
+        properties.setProperty("user", username);
+        properties.setProperty("password", password);
+        atomikosDataSourceBean.setXaProperties(properties);
+        atomikosDataSourceBean.setXaDataSourceClassName("com.mysql.jdbc.jdbc2.optional.MysqlXADataSource");
+        return atomikosDataSourceBean;
     }
 
     @Bean(name = "customerEntityManager")

@@ -26,7 +26,7 @@ public class StoreServiceImpl implements StoreService {
         orderRepository.save(order);
     }
 
-    @Transactional(rollbackFor = StoreException.class, value = "transactionManager")
+    @Transactional(rollbackFor = StoreException.class)
     @Override
     public void storeWithStoreException(Customer customer, Order order) throws StoreException {
         customerRepository.save(customer);
@@ -41,5 +41,13 @@ public class StoreServiceImpl implements StoreService {
         orderRepository.save(order);
         throw new NoRollbackException();
     }
+
+    @Transactional
+    public void storeWithUnChecked(Customer customer, Order order) {
+        customerRepository.save(customer);
+        orderRepository.save(order);
+        int i = 1 / 0;
+    }
+
 
 }
