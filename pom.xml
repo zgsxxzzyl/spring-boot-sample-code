@@ -18,7 +18,6 @@
     <modules>
         <module>custom-spring-boot-starter</module>
         <module>springboot-activemq</module>
-        <module>springboot-data-jpa</module>
         <module>springboot-dynamic-bean</module>
         <module>springboot-dynamic-datasource</module>
         <module>springboot-fastjson</module>
@@ -47,6 +46,7 @@
         <module>springboot-web-freemarker</module>
         <module>springboot-undertow</module>
         <module>springboot-atomikos</module>
+        <module>springboot-jpa</module>
     </modules>
     <build>
         <plugins>
