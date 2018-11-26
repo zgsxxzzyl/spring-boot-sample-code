@@ -38,6 +38,12 @@
 * 语言
   - i8n
 * 分布式事务
+> spring提供了一个`PlatformTransactionManager`接口,其有2个重要的实现类：
+>
+> `DataSourceTransactionManager`：用于支持本地事务，事实上，其内部也是通过操作java.sql.Connection来开启、提交和回滚事务。
+>
+> `JtaTransactionManager`：用于支持分布式事务，其实现了JTA规范，使用XA协议进行两阶段提交。需要注意的是，这只是一个代理，我们需要为其提供一个JTA provider，一般是Java EE容器提供的事务协调器(Java EE server's transaction coordinator)，也可以不依赖容器，配置一个本地的JTA provider。
+
   - atomikos
   - bitronix
 

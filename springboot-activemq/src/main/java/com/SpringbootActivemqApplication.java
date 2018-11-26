@@ -17,9 +17,9 @@ import javax.jms.Topic;
  * 参照<a href="https://segmentfault.com/a/1190000011190467">https://segmentfault.com/a/1190000011190467</a>
  */
 @SpringBootApplication
-public class SprinbootActivemqApplication {
+public class SpringbootActivemqApplication {
     public static void main(String[] args) {
-        SpringApplication.run(SprinbootActivemqApplication.class, args);
+        SpringApplication.run(SpringbootActivemqApplication.class, args);
     }
 
     @Bean
