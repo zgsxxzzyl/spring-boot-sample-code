@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class User {
     private int id;
-    @JSONField(serialize = false)
+    //    @JSONField(serialize = false)
     private String name;
     @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date curTime;

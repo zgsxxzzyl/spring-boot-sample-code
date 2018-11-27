@@ -12,7 +12,7 @@ public class BaseAction {
     public User a() {
         User user = new User();
         user.setId(123);
-        user.setName("name");
+//        user.setName("name");
         user.setCurTime(new Date());
         return user;
     }
