@@ -28,7 +28,7 @@ public class OrderConfig {
 
     @Bean(name = "orderDataSource")
 //    @ConfigurationProperties(prefix = "spring.datasource.order")
-    @ConfigurationProperties(prefix = "spring.jta.atomikos.datasource.twodata")
+    @ConfigurationProperties(prefix = "spring.jta.atomikos.datasource.two-data")
     public DataSource orderDataSource() {
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
 //        atomikosDataSourceBean.setUniqueResourceName("orderDataSource");

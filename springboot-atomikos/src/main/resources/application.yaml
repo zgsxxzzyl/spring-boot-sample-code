@@ -17,14 +17,14 @@ spring:
       properties:
         enable-logging: false
       datasource:
-        onedata:
+        one-data:
           unique-resource-name: dataSourceOne
           xa-data-source-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
           xa-properties:
             url: jdbc:mysql://localhost:3306/db1?serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
             user: root
             password: root
-        twodata:
+        two-data:
           unique-resource-name: dataSourceTwo
           xa-data-source-class-name: com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
           xa-properties:

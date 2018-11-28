@@ -29,7 +29,7 @@ public class CustomerConfig {
 //    private String password;
 
     @Bean(name = "customerDataSource")
-    @ConfigurationProperties(prefix = "spring.jta.atomikos.datasource.onedata")
+    @ConfigurationProperties(prefix = "spring.jta.atomikos.datasource.one-data")
 //    @ConfigurationProperties(prefix = "spring.datasource.customer")
     public DataSource customerDataSource() {
         AtomikosDataSourceBean atomikosDataSourceBean = new AtomikosDataSourceBean();
