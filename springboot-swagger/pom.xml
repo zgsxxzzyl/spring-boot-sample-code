@@ -67,6 +67,7 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
+            <!--为什么要这样引入 https://github.com/springfox/springfox/issues/2265-->
             <exclusions>
                 <exclusion>
                     <groupId>io.swagger</groupId>
