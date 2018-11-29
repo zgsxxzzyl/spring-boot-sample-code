@@ -1,8 +1,6 @@
 package com;
 
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -14,6 +12,9 @@ public class UserController {
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
     @ApiOperation(value = "获取用户列表", notes = "")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "success")
+    })
     @RequestMapping(value = {""}, method = RequestMethod.GET)
     public List<User> getUserList() {
         List<User> r = new ArrayList<User>(users.values());
