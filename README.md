@@ -38,14 +38,37 @@
 * 语言
   - i8n
 * 分布式事务
-> spring提供了一个`PlatformTransactionManager`接口,其有2个重要的实现类：
->
-> `DataSourceTransactionManager`：用于支持本地事务，事实上，其内部也是通过操作java.sql.Connection来开启、提交和回滚事务。
->
-> `JtaTransactionManager`：用于支持分布式事务，其实现了JTA规范，使用XA协议进行两阶段提交。需要注意的是，这只是一个代理，我们需要为其提供一个JTA provider，一般是Java EE容器提供的事务协调器(Java EE server's transaction coordinator)，也可以不依赖容器，配置一个本地的JTA provider。
-
   - atomikos
   - bitronix
+
+> **什么是分布式事务**
+> * 而随着微服务架构的普及，一个大型业务系统往往由若干个子系统构成，这些子系统又拥有各自独立的数据库。往往一个业务流程需要由多个子系统共同完成，而且这些操作可能需要在一个事务中完成。在微服务系统中，这些业务场景是普遍存在的。此时，我们就需要在数据库之上通过某种手段，实现支持跨数据库的事务支持，这也就是大家常说的“分布式事务”。
+>
+> **事务的四大特性ACID**
+> * 原子性(Atomicity) 原子性要求，事务是一个不可分割的执行单元，事务中的所有操作要么全都执行，要么全都不执行。
+> * 一致性(Consistency) 一致性要求，事务在开始前和结束后，数据库的完整性约束没有被破坏。
+> * 隔离性(Isolation) 事务的执行是相互独立的，它们不会相互干扰，一个事务不会看到另一个正在运行过程中的事务的数据。
+> * 持久性(Durability) 持久性要求，一个事务完成之后，事务的执行结果必须是持久化保存的。即使数据库发生崩溃，在数据库恢复后事务提交的结果仍然不会丢失。
+>
+>
+> **分布式事务的解决方案**
+> * 全局消息
+> * 基于可靠消息服务的分布式事务
+> * TCC（Try Confirm Cancel，它属于补偿型分布式事务）
+> * 最大努力通知
+>
+>
+> spring提供了一个`PlatformTransactionManager`接口,其有2个重要的实现类：
+>
+> `DataSourceTransactionManager`：用于支持本地事务，事实上，其内部也是通过操  作java.sql.Connection来开启、提交和回滚事务。
+>
+> `JtaTransactionManager`：用于支持分布式事务，其实现了JTA规范，使用XA协议进行两阶段提交。需要注意的是，这只是一个代理，我们需要为其提供一个JTA provider，一般是Java EE容器提供的事务协调器(Java EE server's transaction coordinator)，也可以不依赖容器，配置一个本地的JTA provider。
+>
+> **相关文档：**
+> * [常用的分布式事务解决方案](https://juejin.im/post/5aa3c7736fb9a028bb189bca)
+> * [Saga分布式事务解决方案与实践](http://servicecomb.apache.org/cn/docs/distributed-transactions-saga-implementation/)
+>
+
 
 ## SpringBoot常用注解
 
