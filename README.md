@@ -70,28 +70,13 @@
 >
 
 
-## SpringBoot常用注解
+## SpringBoot常用注解（关于描述查看API文档比较详细）
 
-| 名称                     | 描述 |
-| ------------------------ | ---- |
-| @SpringBootApplication   |      |
-| @EnableAutoConfiguration |      |
-| @ComponentScan           |      |
-| @Configuration           |      |
-| @RestController          |      |
-| @Controller              |      |
-| @RequestMapping          |      |
-| @ResponseBody            |      |
-| @Service                 |      |
-| @Repository              |      |
-| @Import                  |      |
-| @ImportResource          |      |
-| @Autowired               |      |
-| @Bean                    |      |
-| @Value                   |      |
-| @Qualifier               |      |
-| @Inject                  |      |
-
+| 名称                     | 描述                                       |
+| ------------------------ | ------------------------------------------ |
+| @SpringBootApplication   |                                            |
+| @EnableJpaRepositories   | Annotation to enable JPA repositories <br> |
+| @EnableAutoConfiguration | 启用Spring Application Context的自动配置，尝试猜测和配置您可能需要的bean。 自动配置类通常基于您的类路径和您定义的bean来应用。 |
 
 # SpringCloud（Finchley版本）
 
