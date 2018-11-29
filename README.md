@@ -26,7 +26,7 @@
 * 缓存
   - ehcache
 * restful
-  - swagger
+  - [swagger](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-swagger)
 * quartz
   - [注解定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
 * undertow
