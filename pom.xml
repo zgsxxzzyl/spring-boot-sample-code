@@ -37,6 +37,7 @@
         <module>springboot-schedule</module>
         <module>springboot-shiro</module>
         <module>springboot-shiro-multi</module>
+        <module>springboot-swagger</module>
         <module>springboot-undertow</module>
         <module>springboot-web</module>
         <module>springboot-web-freemarker</module>
