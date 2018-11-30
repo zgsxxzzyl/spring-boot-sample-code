@@ -17,6 +17,7 @@ public class SpringbootSample {
     public static void main(String[] args) {
 //        SpringApplication springApplication = new SpringApplication(Step1Application.class);
 //        springApplication.setBannerMode(Banner.Mode.OFF);
+//        springApplication.addListeners();
 //        springApplication.run(args);
         ApplicationContext run = SpringApplication.run(SpringbootSample.class, args);
         DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) run.getAutowireCapableBeanFactory();
