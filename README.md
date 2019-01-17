@@ -16,6 +16,7 @@
 * fastjson
   - [springboot默认使用jackson来处理消息](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-fastjson)
 * shiro
+* 分布式session共享
 * 消息队列
   - activemq
 * 持久化
