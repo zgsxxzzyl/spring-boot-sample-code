@@ -12,4 +12,14 @@ public class MyConfig implements WebMvcConfigurer {
         registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/user/login/**");
 
     }
+
+
+    /*public FilterRegistrationBean registrationBean(){
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.setFilter(new Myfilter());
+        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.setName("Myfilter");
+        filterRegistrationBean.setOrder(1);
+        return filterRegistrationBean;
+    }*/
 }

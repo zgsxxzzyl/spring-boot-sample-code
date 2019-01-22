@@ -18,12 +18,47 @@
 
 # Filter
 
+```
+@Configuration
+public class MyConfig {
+    public FilterRegistrationBean registrationBean(){
+        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        filterRegistrationBean.setFilter(new Myfilter());
+        filterRegistrationBean.addUrlPatterns("/*");
+        filterRegistrationBean.setName("Myfilter");
+        filterRegistrationBean.setOrder(1);
+        return filterRegistrationBean;
+    }
+}
+```
+```
+@WebFilter(urlPatterns = "/*")
+public class Myfilter implements Filter {
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("init");
+    }
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        System.out.println("doFilter");
+        filterChain.doFilter(new XssHttpServletRequestWrapperNew((HttpServletRequest) servletRequest), servletResponse);
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("destroy");
+    }
+}
+
+```
 
 ---
 
 # Servlet
 > * `< url-pattern>/</url-pattern>`  会匹配到/login这样的路径型url，不会匹配到模式为`*.jsp`这样的后缀型url
 > * `< url-pattern>/*</url-pattern>` 会匹配所有url：路径型的和后缀型的url(包括`/login`,`*.jsp`,`*.js`和`*.html`等)
+
 ```
 @WebServlet(urlPatterns = "/*")
 public class MyServlet extends HttpServlet {
@@ -49,6 +84,7 @@ public class MyServlet extends HttpServlet {
 ---
 
 # Interceptor
+
 ```
 public class MyInterceptor implements HandlerInterceptor {
     @Override
@@ -68,6 +104,7 @@ public class MyInterceptor implements HandlerInterceptor {
     }
 }
 ```
+
 ```
 @Configuration
 public class MyConfig implements WebMvcConfigurer {
@@ -106,4 +143,3 @@ public class UserController {
     }
 }
 ```
-
