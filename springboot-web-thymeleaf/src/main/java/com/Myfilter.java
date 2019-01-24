@@ -1,12 +1,9 @@
-package com.filter;
+package com;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/*")
+//@WebFilter(urlPatterns = "/filter/")
 public class Myfilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -16,9 +13,12 @@ public class Myfilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("doFilter");
-        HttpServletResponse response = (HttpServletResponse) servletResponse;
-        response.sendRedirect("");
-        filterChain.doFilter(new XssHttpServletRequestWrapperNew((HttpServletRequest) servletRequest), servletResponse);
+//        HttpServletResponse response = (HttpServletResponse) servletResponse;
+//        response.sendRedirect("/index.html");
+
+        servletRequest.getRequestDispatcher("/static.html").forward(servletRequest, servletResponse);
+        return;
+//        filterChain.doFilter(servletRequest,servletResponse);
     }
 
     @Override
