@@ -11,12 +11,12 @@ public class Myfilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("doFilter");
 //        HttpServletResponse response = (HttpServletResponse) servletResponse;
 //        response.sendRedirect("/index.html");
 
-        servletRequest.getRequestDispatcher("/static.html").forward(servletRequest, servletResponse);
+        request.getRequestDispatcher("/static.html").forward(request, response);
         return;
 //        filterChain.doFilter(servletRequest,servletResponse);
     }

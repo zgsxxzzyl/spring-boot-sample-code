@@ -38,7 +38,7 @@
 * thumbnailator
 * 语言
   - i8n
-* 分布式事务
+* 分布式事务(未实现)
   - atomikos
   - bitronix
 
