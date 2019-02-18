@@ -17,7 +17,14 @@ public class Myfilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("doFilter");
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        response.sendRedirect("");
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+        String requestURI = request.getRequestURI();
+        String contextPath = request.getContextPath();
+
+//        response.sendRedirect("");
+
         filterChain.doFilter(new XssHttpServletRequestWrapperNew((HttpServletRequest) servletRequest), servletResponse);
     }
 
