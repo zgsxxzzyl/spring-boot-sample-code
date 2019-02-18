@@ -2,17 +2,18 @@ package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-//@ServletComponentScan
-//public class SpringbootWebThymeleafApplication implements WebMvcConfigurer {
-
+@ServletComponentScan
 @SpringBootApplication
-public class SpringbootWebThymeleafApplication {
+public class SpringbootWebThymeleafApplication implements WebMvcConfigurer {
 
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/inter/**").excludePathPatterns("/ca/**");
-//    }
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/inter/**").excludePathPatterns("/ca/**");
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootWebThymeleafApplication.class, args);
