@@ -19,6 +19,21 @@ public class ControllerAction {
         return new ModelAndView("forward:/static.html");
     }
 
+    @RequestMapping("/de10")
+    public ModelAndView de10() {
+        return new ModelAndView("template");
+    }
+
+    @RequestMapping("/de11")
+    public ModelAndView de11() {
+        return new ModelAndView("/template");
+    }
+
+    @RequestMapping("/de12")//访问不到
+    public ModelAndView de12() {
+        return new ModelAndView("static.html");
+    }
+
     //访问不到
     @RequestMapping("/de7")
     public String de7() {
