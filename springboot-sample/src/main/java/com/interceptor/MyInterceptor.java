@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        request.getContextPath();
+//        request.getRequestURI();
+//        request.getSession().setAttribute();
         System.out.println("preHandle");
         return true;
     }

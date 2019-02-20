@@ -62,7 +62,7 @@ public class DataSourceConfiguration {
     }
 
     @Bean
-    public SqlSessionFactory slave1SqlSessionFactory() throws Exception {
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dynamicDataSource());
         return sqlSessionFactoryBean.getObject();

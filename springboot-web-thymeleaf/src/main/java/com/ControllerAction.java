@@ -13,7 +13,6 @@ public class ControllerAction {
         return new ModelAndView("redirect:/static.html");
     }
 
-
     @RequestMapping("/de6")
     public ModelAndView de6() {
         return new ModelAndView("forward:/static.html");
@@ -29,7 +28,8 @@ public class ControllerAction {
         return new ModelAndView("/template");
     }
 
-    @RequestMapping("/de12")//访问不到
+    //访问不到
+    @RequestMapping("/de12")
     public ModelAndView de12() {
         return new ModelAndView("static.html");
     }
@@ -39,7 +39,6 @@ public class ControllerAction {
     public String de7() {
         return "/static.html";
     }
-
 
     @RequestMapping("/de8")
     public String de8() {
