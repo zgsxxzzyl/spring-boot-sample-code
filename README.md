@@ -19,6 +19,7 @@
   - [shiro](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro)
   - [springboot-shiro-multi](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro-multi)
 * 分布式session共享
+  - @EnableRedisHttpSession
 * 消息队列
   - activemq
 * 持久化
