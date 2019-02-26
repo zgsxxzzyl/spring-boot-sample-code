@@ -43,12 +43,6 @@
         <module>springboot-web-freemarker</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
-        <module>springcloud-eureka-client</module>
-        <module>springcloud-eureka-server</module>
-        <module>springcloud-feign</module>
-        <module>springcloud-hystrix</module>
-        <module>springcloud-ribbon</module>
-        <module>springcloud-zuul</module>
     </modules>
     <build>
         <plugins>
