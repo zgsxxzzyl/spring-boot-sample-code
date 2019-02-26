@@ -16,31 +16,75 @@
 * fastjson
   - [springboot默认使用jackson来处理消息](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-fastjson)
 * shiro
+  - [shiro](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro)
+  - [springboot-shiro-multi](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro-multi)
 * 分布式session共享
 * 消息队列
   - activemq
 * 持久化
-  - mybatis
-  - jpa
+  - [mybatis](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis) [mybatis多数据源](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis-datasource)
+  - [jpa](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-jpa)
 * redis
   - [使用Redis做缓存](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-redis)
+  - [redis与mybati集成](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis-redis)
 * 缓存
   - ehcache
 * restful
+  - [mybatis实现restful](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-restful)
   - [swagger](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-swagger)
-* quartz
-  - [注解定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
+* 注解定时任务
+  - [基于quartz注解实现的定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
+  - [基于spring实现的定时任务,ThreadPoolTaskScheduler](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-schedule)
 * undertow
   - 用java编写的灵活的高性能Web服务器，提供基于NIO的阻塞和非阻塞API。
   - [Enable HTTPS/HTTP2 in Undertow](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-undertow)
 * lombok
 * rome
 * thumbnailator
+  - 一个图片压缩工具
+* [websocket](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-websocket)
 * 语言
   - i8n
+* [动态注册bean](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-dynamic-bean)
+```
+        ApplicationContext applicationContext = (ApplicationContext) SpringApplication.run(SpringbootDynamicBeanApplication.class, args);
+        //获取BeanFactory
+        DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory();
+        //创建bean信息
+        BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
+        beanDefinitionBuilder.addPropertyValue("id", 123);
+        beanDefinitionBuilder.addPropertyValue("name", "名字");
+        beanDefinitionBuilder.addPropertyValue("age", 18);
+        beanDefinitionBuilder.addPropertyValue("sex", User.Sex.MAN);
+        //动态注册bean
+        defaultListableBeanFactory.registerBeanDefinition("user", beanDefinitionBuilder.getBeanDefinition());
+        //获取动态注册的bean
+        User bean = applicationContext.getBean(User.class);
+        System.out.println(bean.toString());
+
+        //删除bean
+        defaultListableBeanFactory.removeBeanDefinition("user");
+```
+* 获取加载的全部bean
+```
+        ConfigurableApplicationContext run = SpringApplication.run(SpringbootDynamicDatasourceApplication.class, args);
+        // 获取加载的全部bean
+        String[] beanDefinitionNames = run.getBeanDefinitionNames();
+        // 获取加载指定注解的全部bean
+        String[] beanNamesForAnnotation = run.getBeanNamesForAnnotation(RestController.class);
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
+        }
+```
+* [基于注解实现的动态切换数据源](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-dynamic-datasource)
+* [全局异常处理](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-global-exception)
+* [多语言](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-i18n)
+
+
 * 分布式事务(未实现)
   - atomikos
   - bitronix
+
 
 > **什么是分布式事务**
 > * 而随着微服务架构的普及，一个大型业务系统往往由若干个子系统构成，这些子系统又拥有各自独立的数据库。往往一个业务流程需要由多个子系统共同完成，而且这些操作可能需要在一个事务中完成。在微服务系统中，这些业务场景是普遍存在的。此时，我们就需要在数据库之上通过某种手段，实现支持跨数据库的事务支持，这也就是大家常说的“分布式事务”。
@@ -78,4 +122,3 @@
 | @SpringBootApplication   |                                            |
 | @EnableJpaRepositories   | Annotation to enable JPA repositories <br> |
 | @EnableAutoConfiguration | 启用Spring Application Context的自动配置，尝试猜测和配置您可能需要的bean。 自动配置类通常基于您的类路径和您定义的bean来应用。 |
-
