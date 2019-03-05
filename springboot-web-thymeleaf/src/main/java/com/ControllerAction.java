@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller()
 @RequestMapping("/ca")
 public class ControllerAction {
@@ -49,5 +52,18 @@ public class ControllerAction {
     @RequestMapping("/de9")
     public String de9() {
         return "/static";
+    }
+
+    @RequestMapping("/de13")
+    public ModelAndView de13(HttpServletRequest request, HttpServletResponse response, ModelAndView modelAndView) {
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+        String requestURI = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        System.out.println(path);
+        System.out.println(basePath);
+        System.out.println(requestURI);
+        System.out.println(contextPath);
+        return new ModelAndView("/template");
     }
 }
