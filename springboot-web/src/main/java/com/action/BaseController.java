@@ -1,6 +1,9 @@
-package com;
+package com.action;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.entity.User;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,10 +25,20 @@ public class BaseController {
         return new User("jz", "123");
     }
 
+    @ModelAttribute("un")
+    public void addAccount(Model model) {
+        model.addAttribute("un", "qwe");
+    }
+
     @RequestMapping(value = "/helloWorld")
     public String helloWorld(@ModelAttribute("user") User user) {
         user.setUsername("jizhou");
-        return "helloWorld";
+        return "helloWorld" + JSON.toJSONString(user);
+    }
+
+    @RequestMapping("/q")
+    public String test(String un, Model model) {
+        return un;
     }
 
     @RequestMapping("/upload")
