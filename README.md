@@ -77,6 +77,17 @@
             System.out.println(beanDefinitionName);
         }
 ```
+* Spring中如何获取ApplicationContext
+
+```
+@Resource
+private ApplicationContext ctx;
+
+ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(ServletContext sc);
+
+WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
+```
+
 * [基于注解实现的动态切换数据源](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-dynamic-datasource)
 * [全局异常处理](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-global-exception)
 * [多语言](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-i18n)
