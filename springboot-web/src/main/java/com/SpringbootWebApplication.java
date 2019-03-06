@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class SpringbootWebApplication implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/inter/**").excludePathPatterns("/ca/**");
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/inter/**");
     }
 
     public static void main(String[] args) {

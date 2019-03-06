@@ -5,7 +5,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class MyInterceptor implements HandlerInterceptor {
     /**
@@ -19,12 +18,8 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
-        String isSysLogin = (String) session.getAttribute("isSysLogin"); //判断是否登陆
-        if (isSysLogin == null || isSysLogin.equals("0")) {
-            response.sendRedirect("/sys/login");
-        }
-        return false;
+//        response.sendRedirect("/sys/login");
+        return true;
     }
 
     /**
@@ -38,9 +33,6 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-//        modelAndView = new ModelAndView("redirect:/static.html");
-//        modelAndView.setView();
-//        response.sendRedirect("/template");
     }
 
     /**
@@ -54,6 +46,5 @@ public class MyInterceptor implements HandlerInterceptor {
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-
     }
 }
