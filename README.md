@@ -134,3 +134,11 @@ WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
 | @SpringBootApplication   |                                            |
 | @EnableJpaRepositories   | Annotation to enable JPA repositories <br> |
 | @EnableAutoConfiguration | 启用Spring Application Context的自动配置，尝试猜测和配置您可能需要的bean。 自动配置类通常基于您的类路径和您定义的bean来应用。 |
+
+
+## Spring源码笔记
+
+* 启动WEB项目的时候，会读取web.xml，读取顺序content-param --> listener --> filter --> servlet
+* ContextLoaderListener监听器的作用就是启动Web容器时，自动装配ApplicationContext的配置信息
+* 在Servlet3.0规范中，Servlet容器启动时会自动扫描javax.servlet.ServletContainerInitializer的实现类，在实现类中我们可以定制需要加载的类。 通过注解@HandlesTypes(WebApplicationInitializer.class)，让Servlet容器在启动该类时，会自动寻找所有的WebApplicationInitializer实现类。
+
