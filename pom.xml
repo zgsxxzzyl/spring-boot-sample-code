@@ -21,6 +21,7 @@
         <module>springboot-atomikos</module>
         <module>springboot-dynamic-bean</module>
         <module>springboot-dynamic-datasource</module>
+        <module>springboot-es</module>
         <module>springboot-fastjson</module>
         <module>springboot-global-exception</module>
         <module>springboot-i18n</module>
@@ -30,6 +31,7 @@
         <module>springboot-mybatis</module>
         <module>springboot-mybatis-datasource</module>
         <module>springboot-mybatis-redis</module>
+        <module>springboot-native</module>
         <module>springboot-quartz</module>
         <module>springboot-redis</module>
         <module>springboot-restful</module>
