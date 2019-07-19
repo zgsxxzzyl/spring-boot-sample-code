@@ -45,6 +45,7 @@
         <module>springboot-web-freemarker</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
+        <module>springboot-enterprise</module>
     </modules>
     <build>
         <plugins>

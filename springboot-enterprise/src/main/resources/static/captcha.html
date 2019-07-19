@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="./js/jquery-3.3.1.js"></script>
+
+<body>
+<img id="img">
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/api/captcha/captchaImage",
+            type: "GET",
+            dataType: "json", //指定服务器返回的数据类型
+            success: function (data) {
+                $("#img").attr('src', data.data)
+            }
+        });
+    });
+
+</script>
