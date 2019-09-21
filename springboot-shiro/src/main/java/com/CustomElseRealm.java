@@ -27,6 +27,4 @@ public class CustomElseRealm implements Realm {
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(username, password, getName());
         return simpleAuthenticationInfo;
     }
-
-
 }
