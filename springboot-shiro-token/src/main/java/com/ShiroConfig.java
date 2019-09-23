@@ -38,11 +38,12 @@ public class ShiroConfig {
 
 
     @Bean("securityManager")
-    public SecurityManager securityManager(SessionDAOConfig sessionDAOConfig) {
+    public SecurityManager securityManager() {
         DefaultWebSecurityManager def = new DefaultWebSecurityManager();
         def.setRealm(myRealm);
         // 自定义session管理 使用redis
         SessionConfig sessionConfig = new SessionConfig();
+        SessionDAOConfig sessionDAOConfig = new SessionDAOConfig();
         sessionConfig.setSessionDAO(sessionDAOConfig);
         //sessionConfig.setSessionDAO(new SessionDaoConfig());
         def.setSessionManager(sessionConfig);

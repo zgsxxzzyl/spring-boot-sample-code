@@ -3,13 +3,11 @@ package com;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.ValidatingSession;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
-import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component("sessionDAOConfig")
 public class SessionDAOConfig extends EnterpriseCacheSessionDAO {
     private Map<Serializable, Session> sessionMap = new HashMap<>();
 
