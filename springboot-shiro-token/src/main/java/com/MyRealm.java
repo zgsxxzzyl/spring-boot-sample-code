@@ -23,6 +23,8 @@ public class MyRealm extends AuthorizingRealm {
         String username = (String) principalCollection.getPrimaryPrincipal();
         System.out.println(username);
         SimpleAuthorizationInfo sim = new SimpleAuthorizationInfo();
+//        sim.setRoles();
+//        sim.setStringPermissions();
         if (username.equals(Constant.USERNAME)) {
             sim.addRole(Constant.ROLE1);
         } else {
