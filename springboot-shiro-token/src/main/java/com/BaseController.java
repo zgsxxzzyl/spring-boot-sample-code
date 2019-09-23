@@ -24,10 +24,12 @@ public class BaseController {
         Subject subject = SecurityUtils.getSubject();
         map.put("token", subject.getSession().getId());
         try {
+            //Cookies创建
+            token.setRememberMe(true);
             subject.login(token);
             Session session = subject.getSession();
             //这里设置session过期时间
-            session.setTimeout(25000);
+            session.setTimeout(60 * 1000);
             session.setAttribute("currentuser", username);
         } catch (Exception e) {
             map.put("code", 204);
