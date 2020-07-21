@@ -8,10 +8,8 @@ public class ClassScaner {
 
     public static <T> List<T> scan(String packages, Class<T> t) {
         List<T> list = new ArrayList();
-
         return list;
     }
-
 
     public static void main(String[] args) {
         List<String> scan = ClassScaner.scan(packages, String.class);
