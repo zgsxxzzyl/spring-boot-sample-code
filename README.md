@@ -10,43 +10,43 @@
   - freemarker
   - thymeleaf
 * servlet listener filter interceptor
-  - [基础使用](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-sample)
+  - [基础使用](https://github.com/spring-boot-sample-code/tree/master/springboot-sample)
 * 数据库连接池
   - hikari
 * fastjson
-  - [springboot默认使用jackson来处理消息](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-fastjson)
+  - [springboot默认使用jackson来处理消息](https://github.com/spring-boot-sample-code/tree/master/springboot-fastjson)
 * shiro
-  - [shiro](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro)
-  - [springboot-shiro-multi](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-shiro-multi)
+  - [shiro](https://github.com/spring-boot-sample-code/tree/master/springboot-shiro)
+  - [springboot-shiro-multi](https://github.com/spring-boot-sample-code/tree/master/springboot-shiro-multi)
 * 分布式session共享
   - @EnableRedisHttpSession
 * 消息队列
   - activemq
 * 持久化
-  - [mybatis](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis) [mybatis多数据源](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis-datasource)
-  - [jpa](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-jpa)
+  - [mybatis](https://github.com/spring-boot-sample-code/tree/master/springboot-mybatis) [mybatis多数据源](https://github.com/spring-boot-sample-code/tree/master/springboot-mybatis-datasource)
+  - [jpa](https://github.com/spring-boot-sample-code/tree/master/springboot-jpa)
 * redis
-  - [使用Redis做缓存](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-redis)
-  - [redis与mybati集成](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-mybatis-redis)
+  - [使用Redis做缓存](https://github.com/spring-boot-sample-code/tree/master/springboot-redis)
+  - [redis与mybati集成](https://github.com/spring-boot-sample-code/tree/master/springboot-mybatis-redis)
 * 缓存
   - ehcache
 * restful
-  - [mybatis实现restful](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-restful)
-  - [swagger](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-swagger)
+  - [mybatis实现restful](https://github.com/spring-boot-sample-code/tree/master/springboot-restful)
+  - [swagger](https://github.com/spring-boot-sample-code/tree/master/springboot-swagger)
 * 注解定时任务
-  - [基于quartz注解实现的定时任务](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-quartz)
-  - [基于spring实现的定时任务,ThreadPoolTaskScheduler](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-schedule)
+  - [基于quartz注解实现的定时任务](https://github.com/spring-boot-sample-code/tree/master/springboot-quartz)
+  - [基于spring实现的定时任务,ThreadPoolTaskScheduler](https://github.com/spring-boot-sample-code/tree/master/springboot-schedule)
 * undertow
   - 用java编写的灵活的高性能Web服务器，提供基于NIO的阻塞和非阻塞API。
-  - [Enable HTTPS/HTTP2 in Undertow](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-undertow)
+  - [Enable HTTPS/HTTP2 in Undertow](https://github.com/spring-boot-sample-code/tree/master/springboot-undertow)
 * lombok
 * rome
 * thumbnailator
   - 一个图片压缩工具
-* [websocket](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-websocket)
+* [websocket](https://github.com/spring-boot-sample-code/tree/master/springboot-websocket)
 * 语言
   - i8n
-* [动态注册bean](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-dynamic-bean)
+* [动态注册bean](https://github.com/spring-boot-sample-code/tree/master/springboot-dynamic-bean)
 ```
         ApplicationContext applicationContext = (ApplicationContext) SpringApplication.run(SpringbootDynamicBeanApplication.class, args);
         //获取BeanFactory
@@ -88,9 +88,9 @@ ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(Serv
 WebApplicationContext wac = ContextLoader.getCurrentWebApplicationContext();
 ```
 
-* [基于注解实现的动态切换数据源](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-dynamic-datasource)
-* [全局异常处理](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-global-exception)
-* [多语言](https://github.com/HumanNature/spring-boot-sample-code/tree/master/springboot-i18n)
+* [基于注解实现的动态切换数据源](https://github.com/spring-boot-sample-code/tree/master/springboot-dynamic-datasource)
+* [全局异常处理](https://github.com/spring-boot-sample-code/tree/master/springboot-global-exception)
+* [多语言](https://github.com/spring-boot-sample-code/tree/master/springboot-i18n)
 
 
 * 分布式事务(未实现)
