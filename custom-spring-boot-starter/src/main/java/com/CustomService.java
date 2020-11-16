@@ -1,8 +1,11 @@
 package com;
 
-//@Component
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomService {
-    //    @Autowired
+    @Autowired
     private CustomProperties customProperties;
 
     public CustomService() {
