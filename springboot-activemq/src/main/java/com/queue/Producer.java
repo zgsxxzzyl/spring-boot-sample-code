@@ -1,6 +1,5 @@
 package com.queue;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -26,6 +25,5 @@ public class Producer {
     public void send() {
         this.jmsMessagingTemplate.convertAndSend(queue, "hi,activeMQ");
     }
-
 
 }

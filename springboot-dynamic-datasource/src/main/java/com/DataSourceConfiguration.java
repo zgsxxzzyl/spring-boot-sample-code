@@ -35,7 +35,6 @@ public class DataSourceConfiguration {
         return masterDataSourceProperties().initializeDataSourceBuilder().build();
     }
 
-
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.slave1")
     public DataSourceProperties slave1DataSourceProperties() {

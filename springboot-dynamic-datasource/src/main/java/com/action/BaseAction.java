@@ -21,7 +21,6 @@ public class BaseAction {
         return userDao.queryAll();
     }
 
-
     @RequestMapping("b")
     @TargetDataSource("slave1")
     public List<User> other() {

@@ -30,7 +30,6 @@ public class LoginController {
         return true;
     }
 
-
     @RequestMapping(path = "/layout")
     public boolean layout() {
         return true;

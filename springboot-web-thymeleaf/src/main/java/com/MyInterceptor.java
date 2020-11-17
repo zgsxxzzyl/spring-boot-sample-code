@@ -29,6 +29,7 @@ public class MyInterceptor implements HandlerInterceptor {
 
     /**
      * 该方法将在请求处理之后，DispatcherServlet进行视图返回渲染之前进行调用，可以在这个方法中对Controller 处理之后的ModelAndView 对象进行操作
+     *
      * @param request
      * @param response
      * @param handler
@@ -44,6 +45,7 @@ public class MyInterceptor implements HandlerInterceptor {
 
     /**
      * 该方法也是需要当前对应的Interceptor的preHandle方法的返回值为true时才会执行，该方法将在整个请求结束之后，也就是在DispatcherServlet 渲染了对应的视图之后执行。
+     *
      * @param request
      * @param response
      * @param handler

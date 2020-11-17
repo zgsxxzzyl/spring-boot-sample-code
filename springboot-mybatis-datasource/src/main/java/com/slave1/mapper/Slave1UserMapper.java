@@ -8,10 +8,8 @@ import org.apache.ibatis.type.JdbcType;
 
 import java.util.List;
 
-
 //@Mapper //配置了@MapperScan可以省略
 public interface Slave1UserMapper {
-
 
     /**
      * 绑定枚举类型

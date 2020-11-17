@@ -19,7 +19,6 @@ public interface UserDao {
     )
     public List<User> queryAll();
 
-
     /**
      * 参数中包含enum
      *

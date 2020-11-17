@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class DynamicDataSourceContextHolder {
 
-
     /**
      * 存放当前线程使用的数据源类型信息
      */

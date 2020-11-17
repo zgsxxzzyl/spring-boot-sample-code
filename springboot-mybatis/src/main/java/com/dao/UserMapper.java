@@ -7,7 +7,6 @@ import org.apache.ibatis.type.JdbcType;
 
 import java.util.List;
 
-
 //@Mapper //配置了@MapperScan可以省略
 public interface UserMapper {
 

@@ -29,6 +29,5 @@ public class SpringbootSample {
         User userDemo = (User) run.getBean("userDemo");
         System.out.println(userDemo.toString());
 
-
     }
 }

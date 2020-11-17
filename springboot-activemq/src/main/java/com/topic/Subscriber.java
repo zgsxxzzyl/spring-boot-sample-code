@@ -11,7 +11,6 @@ public class Subscriber {
         System.out.println("1===>> " + text);
     }
 
-
     @JmsListener(destination = "test-topic", containerFactory = "jmsListenerContainerTopic")
     public void subscribe2(String text) {
         System.out.println("2===>> " + text);

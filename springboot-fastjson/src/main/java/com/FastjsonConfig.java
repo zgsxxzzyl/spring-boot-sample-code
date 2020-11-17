@@ -19,6 +19,7 @@ public class FastjsonConfig extends WebMvcConfigurationSupport {
 
     /**
      * springboot默认使用jackson来处理消息
+     *
      * @param converters
      */
     @Override

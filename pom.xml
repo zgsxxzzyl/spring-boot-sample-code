@@ -7,7 +7,6 @@
     <artifactId>spring-boot-sample-code</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-
     <developers>
         <developer>
             <id>zgsxxzzyl</id>
@@ -48,12 +47,10 @@
         <module>springboot-websocket</module>
         <module>springboot-enterprise</module>
     </modules>
-
     <properties>
         <jdk.version>1.8</jdk.version>
         <encoding>UTF-8</encoding>
     </properties>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -69,10 +66,8 @@
             </plugins>
         </pluginManagement>
     </build>
-
     <dependencyManagement>
         <dependencies>
         </dependencies>
     </dependencyManagement>
-
 </project>

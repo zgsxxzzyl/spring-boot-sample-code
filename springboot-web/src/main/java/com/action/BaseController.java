@@ -19,7 +19,6 @@ public class BaseController {
         return JSONObject.toJSONString(user);
     }
 
-
     @ModelAttribute("user")
     public User addAccount() {
         return new User("jz", "123");

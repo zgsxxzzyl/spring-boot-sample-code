@@ -41,7 +41,6 @@ public class BaseController {
         return "index";
     }
 
-
     @RequestMapping("/changeSessionLanauage")
     public String changeSessionLanauage(HttpServletRequest request, String lang) {
         log.info(lang);

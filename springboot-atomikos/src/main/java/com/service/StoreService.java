@@ -15,5 +15,4 @@ public interface StoreService {
 
     public void storeWithUnChecked(Customer customer, Order order);
 
-
 }

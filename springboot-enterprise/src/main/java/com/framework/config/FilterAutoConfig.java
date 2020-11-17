@@ -1,6 +1,5 @@
 package com.framework.config;
 
-
 import com.framework.common.xss.XssFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,6 @@ public class FilterAutoConfig {
 
     @Autowired
     private FilterConfig filterConfig;
-
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Bean

@@ -17,12 +17,10 @@ public class BaseAction {
     @Autowired
     private Slave1UserMapper slave1UserMapper;
 
-
     @RequestMapping("a")
     public List<User> master() {
         return masterUserMapper.queryAll();
     }
-
 
     @RequestMapping("b")
     public List<User> slave() {

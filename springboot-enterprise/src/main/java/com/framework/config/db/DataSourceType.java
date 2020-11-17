@@ -1,6 +1,5 @@
 package com.framework.config.db;
 
-
 /**
  * 数据源
  *

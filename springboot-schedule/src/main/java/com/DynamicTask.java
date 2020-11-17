@@ -57,7 +57,6 @@ public class DynamicTask {
         return "DynamicTask.editCron";
     }
 
-
     class MyRunnable implements Runnable {
         @Override
         public void run() {

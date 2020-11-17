@@ -32,5 +32,4 @@ public class CustomConfiguration {
         return dataSource;
     }
 
-
 }

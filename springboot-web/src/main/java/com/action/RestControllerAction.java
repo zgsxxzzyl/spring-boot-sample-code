@@ -13,23 +13,19 @@ public class RestControllerAction {
         return new ModelAndView("redirect:/static.html");
     }
 
-
     @RequestMapping("/de2")
     public ModelAndView de2() {
         return new ModelAndView("forward:/static.html");
     }
-
 
     @RequestMapping("/de3")
     public ModelAndView de3() {
         return new ModelAndView("redirect:/template");
     }
 
-
     @RequestMapping("/de4")
     public String de4() {
         return "de4";
     }
-
 
 }

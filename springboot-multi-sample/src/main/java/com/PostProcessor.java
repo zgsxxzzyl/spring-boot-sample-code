@@ -3,7 +3,6 @@ package com;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
-
 /**
  * 监听bean注入的过程
  */

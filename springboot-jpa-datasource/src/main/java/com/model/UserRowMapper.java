@@ -1,6 +1,5 @@
 package com.model;
 
-
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

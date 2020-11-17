@@ -12,10 +12,8 @@
             <AppenderRef ref="logService"/>
             <AppenderRef ref="STDOUT"/>
         </Logger>-->
-
         <Root level="INFO">
             <AppenderRef ref="STDOUT"/>
         </Root>
     </Loggers>
-
 </Configuration>
