@@ -23,6 +23,7 @@
         <module>springboot-es</module>
         <module>springboot-fastjson</module>
         <module>springboot-global-exception</module>
+        <module>springboot-hessian</module>
         <module>springboot-i18n</module>
         <module>springboot-jpa</module>
         <module>springboot-jpa-datasource</module>
