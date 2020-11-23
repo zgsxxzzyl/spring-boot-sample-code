@@ -50,6 +50,7 @@
     <properties>
         <jdk.version>1.8</jdk.version>
         <encoding>UTF-8</encoding>
+        <spring-boot-starter-parent.version>2.4.0</spring-boot-starter-parent.version>
     </properties>
     <build>
         <pluginManagement>
