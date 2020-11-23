@@ -1,5 +1,6 @@
-package com;
+package com.client;
 
+import com.RemoteService;
 import com.caucho.hessian.client.HessianProxyFactory;
 
 public class HessionClient {
