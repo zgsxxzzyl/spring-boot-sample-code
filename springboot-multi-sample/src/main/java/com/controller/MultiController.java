@@ -1,5 +1,10 @@
-package com;
+package com.controller;
 
+import com.bean.BeanDemo;
+import com.bean.User;
+import com.support.EventPublisherUtil;
+import com.support.SpringUtil;
+import com.support.UserEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;

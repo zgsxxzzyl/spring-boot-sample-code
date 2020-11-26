@@ -1,5 +1,6 @@
-package com;
+package com.support;
 
+import com.bean.User;
 import lombok.Data;
 import org.springframework.context.ApplicationEvent;
 
