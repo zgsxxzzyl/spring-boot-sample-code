@@ -27,6 +27,7 @@
         <module>springboot-i18n</module>
         <module>springboot-jpa</module>
         <module>springboot-jpa-datasource</module>
+        <module>springboot-lifecycle</module>
         <module>springboot-multi-sample</module>
         <module>springboot-mybatis</module>
         <module>springboot-mybatis-datasource</module>
