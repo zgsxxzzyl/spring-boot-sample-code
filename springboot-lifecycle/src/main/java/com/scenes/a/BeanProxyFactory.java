@@ -7,6 +7,7 @@ import org.springframework.aop.framework.ProxyFactory;
 import java.util.Map;
 
 public class BeanProxyFactory {
+
     public static Object createProxy(String name, Class type, Map<String, Object> candidates) {
         ProxyFactory proxyFactory = new ProxyFactory();
         proxyFactory.setInterfaces(type);
@@ -19,9 +20,9 @@ public class BeanProxyFactory {
 
         public VersionRoutingMethodInterceptor(String name, Map<String, Object> beans) {
             this.targetObject = beans.get(name);
-            if (this.targetObject == null) {
+            /*if (this.targetObject == null) {
                 this.targetObject = beans.get("");
-            }
+            }*/
         }
 
         @Override
