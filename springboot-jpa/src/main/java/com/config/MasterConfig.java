@@ -1,6 +1,5 @@
 package com.config;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +11,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
 
-@Slf4j
 @Configuration
 @EnableJpaRepositories(basePackages = "com.repository.master", transactionManagerRef = "transactionManager")
 public class MasterConfig {

@@ -1,13 +1,11 @@
 package com.interceptor;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@Slf4j
 public class MyInterceptor implements HandlerInterceptor {
     /**
      * 该方法将在请求处理之前进行调用，只有该方法返回true，才会继续执行后续的Interceptor和Controller，当返回值为true 时就会继续调用下一个Interceptor的preHandle 方法，如果已经是最后一个Interceptor的时候就会是调用当前请求的Controller方法；
@@ -21,8 +19,8 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //        response.sendRedirect("/sys/login");
-        log.trace("MyInterceptor --> ");
-        log.error("MyInterceptor --> ");
+//        log.trace("MyInterceptor --> ");
+//        log.error("MyInterceptor --> ");
         return true;
     }
 
