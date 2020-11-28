@@ -2,10 +2,15 @@ spring:
   main:
     banner-mode: 'off'
   datasource:
-    url:
-    username:
-    password:
-    driverClassName:
-
+#    oracle:
+#      url:
+#      username:
+#      password:
+#      driverClassName:
+    mysql:
+      jdbcUrl: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+      username: root
+      password: root
+      driverClassName: com.mysql.cj.jdbc.Driver
 
 

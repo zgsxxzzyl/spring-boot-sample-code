@@ -16,13 +16,13 @@ public class OracleDataSourceConfig {
 
     @Primary
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource.mysql")
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
 
     @Bean(name = "jdbcTemplate")
-    public JdbcTemplate masterJdbcTemplate(DataSource dataSource) {
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
 }
