@@ -18,6 +18,7 @@ public class AutoFitBeanPostProcessor implements BeanPostProcessor {
 
     /**
      * 初始化每个bean对象，获取到对象的属性，遍历属性，当存在符合AutoFit注解的时候，执行handleAutoFit
+     *
      * @param bean
      * @param beanName
      * @return
@@ -34,7 +35,7 @@ public class AutoFitBeanPostProcessor implements BeanPostProcessor {
                             + " @Class " + aClass.getName());
                 }
                 try {
-                    handleAutoFit(field,bean,field.getType());
+                    handleAutoFit(field, bean, field.getType());
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
@@ -44,19 +45,18 @@ public class AutoFitBeanPostProcessor implements BeanPostProcessor {
     }
 
     /**
-     *
      * @param field
      * @param bean
      * @param type
      */
-    private void handleAutoFit(Field field,Object bean,Class type) throws IllegalAccessException {
+    private void handleAutoFit(Field field, Object bean, Class type) throws IllegalAccessException {
         Map<String, Object> candidates = this.applicationContext.getBeansOfType(type);
         field.setAccessible(true);
-        if(candidates.size() > 1){
+        if (candidates.size() > 1) {
             throw new IllegalArgumentException("Find more than 2 beans for type: " + type);
         }
         //给我们关注的对象添加代理
-        field.set(bean,BeanProxyFactory.createProxy(field.getAnnotation(AutoFit.class).value(), type, candidates));
+        field.set(bean, BeanProxyFactory.createProxy(field.getAnnotation(AutoFit.class).value(), type, candidates));
 //        field.set(bean, candidates.values().iterator().next());
     }
 }

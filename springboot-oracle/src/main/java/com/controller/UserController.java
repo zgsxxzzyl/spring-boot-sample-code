@@ -20,14 +20,14 @@ public class UserController {
     }
 
     @PostMapping("/add")
-    public User add(@RequestParam(name = "username",required = true) String name) {
+    public User add(@RequestParam(name = "username", required = true) String name) {
         User user = new User();
         user.setUsername(name);
         return userRepository.save(user);
     }
 
     @DeleteMapping("/del")
-    public void del(Long id){
+    public void del(Long id) {
         userRepository.deleteById(id);
     }
 
