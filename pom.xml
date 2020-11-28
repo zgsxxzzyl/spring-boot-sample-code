@@ -33,6 +33,7 @@
         <module>springboot-mybatis-datasource</module>
         <module>springboot-mybatis-redis</module>
         <module>springboot-native</module>
+        <module>springboot-oracle</module>
         <module>springboot-quartz</module>
         <module>springboot-redis</module>
         <module>springboot-restful</module>

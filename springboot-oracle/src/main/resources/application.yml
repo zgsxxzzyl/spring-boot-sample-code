@@ -1,0 +1,11 @@
+spring:
+  main:
+    banner-mode: 'off'
+  datasource:
+    url:
+    username:
+    password:
+    driverClassName:
+
+
+
