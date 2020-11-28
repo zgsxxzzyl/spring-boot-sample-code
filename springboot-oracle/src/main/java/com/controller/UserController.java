@@ -3,9 +3,7 @@ package com.controller;
 import com.dao.UserRepository;
 import com.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,10 +19,16 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    public User add(String name) {
+    @PostMapping("/add")
+    public User add(@RequestParam(name = "username",required = true) String name) {
         User user = new User();
         user.setUsername(name);
         return userRepository.save(user);
+    }
+
+    @DeleteMapping("/del")
+    public void del(Long id){
+        userRepository.deleteById(id);
     }
 
     public void delete(String name) {

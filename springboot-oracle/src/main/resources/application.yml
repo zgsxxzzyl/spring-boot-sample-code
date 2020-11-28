@@ -1,4 +1,9 @@
 spring:
+  devtools:
+    restart:
+      exclude: static/**
+#  resources:
+#    static-locations: classpath:/static/
   main:
     banner-mode: 'off'
   datasource:
