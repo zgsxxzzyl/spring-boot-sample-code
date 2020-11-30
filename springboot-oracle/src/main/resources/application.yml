@@ -1,4 +1,6 @@
 spring:
+  jpa:
+    open-in-view: true
   devtools:
     restart:
       exclude: static/**
@@ -17,5 +19,6 @@ spring:
 #      username: root
 #      password: root
 #      driverClassName: com.mysql.cj.jdbc.Driver
-
-
+logging:
+  level:
+    root: error
