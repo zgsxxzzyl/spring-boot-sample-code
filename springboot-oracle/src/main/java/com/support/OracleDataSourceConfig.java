@@ -16,7 +16,7 @@ public class OracleDataSourceConfig {
 
     @Primary
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.mysql")
+    @ConfigurationProperties(prefix = "spring.datasource.oracle")
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }

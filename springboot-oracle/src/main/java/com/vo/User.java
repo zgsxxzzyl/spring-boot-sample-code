@@ -4,11 +4,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "T_USER")
+@Table(name = "T_USERS")
+@SequenceGenerator(name = "ID_SEQ", sequenceName = "seq_Id", allocationSize = 1)    //定义一个生成主键的序列
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ID_SEQ")
     private Long id;
     private String username;
 
