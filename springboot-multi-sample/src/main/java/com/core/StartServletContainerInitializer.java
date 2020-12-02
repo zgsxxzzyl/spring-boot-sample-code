@@ -28,7 +28,6 @@ public class StartServletContainerInitializer implements ServletContainerInitial
                     } catch (ServletException e1) {
                         e1.printStackTrace();
                     }
-
                 }
             });
         }

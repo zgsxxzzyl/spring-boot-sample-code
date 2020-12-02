@@ -23,5 +23,4 @@ public class HandlerContext {
         }
         return (AbstractHandler) BeanTool.getBean(clazz);
     }
-
 }

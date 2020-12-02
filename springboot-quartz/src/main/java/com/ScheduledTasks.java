@@ -27,5 +27,4 @@ public class ScheduledTasks {
     private SimpleDateFormat dateFormat() {
         return new SimpleDateFormat("HH:mm:ss");
     }
-
 }

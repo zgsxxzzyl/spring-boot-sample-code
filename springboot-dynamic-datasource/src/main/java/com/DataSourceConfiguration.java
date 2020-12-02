@@ -76,5 +76,4 @@ public class DataSourceConfiguration {
     public PlatformTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dynamicDataSource());
     }
-
 }

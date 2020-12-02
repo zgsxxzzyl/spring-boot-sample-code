@@ -31,5 +31,4 @@ public class CustomConfiguration {
         dataSource.setPoolPreparedStatements(false);//是否缓存preparedStatement，也就是PSCache
         return dataSource;
     }
-
 }

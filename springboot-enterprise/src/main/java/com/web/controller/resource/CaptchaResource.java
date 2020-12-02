@@ -53,7 +53,6 @@ public class CaptchaResource extends BaseController {
                 capStr = code = captchaProducer.createText();
                 bi = captchaProducer.createImage(capStr);
             }
-
             File file = new File("captcha.jpg");
             ImageIO.write(bi, "jpg", file);
             InputStream in = new FileInputStream(file);

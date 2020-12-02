@@ -27,5 +27,4 @@ public class RestControllerAction {
     public String de4() {
         return "de4";
     }
-
 }

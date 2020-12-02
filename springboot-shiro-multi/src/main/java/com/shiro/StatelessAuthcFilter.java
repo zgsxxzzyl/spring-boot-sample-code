@@ -18,5 +18,4 @@ public class StatelessAuthcFilter extends AccessControlFilter {
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         return true;
     }
-
 }

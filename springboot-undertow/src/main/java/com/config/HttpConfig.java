@@ -19,5 +19,4 @@ public class HttpConfig {
         factory.addBuilderCustomizers(builder -> builder.setServerOption(UndertowOptions.ENABLE_HTTP2, true));
         return factory;
     }
-
 }

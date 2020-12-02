@@ -41,5 +41,4 @@ public interface BaseAction<T, Id extends Serializable> {
      * @return
      */
     public boolean update(T t);
-
 }

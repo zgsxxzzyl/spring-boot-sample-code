@@ -14,5 +14,4 @@ import java.lang.annotation.*;
 public @interface HandlerType {
 
     String value();
-
 }

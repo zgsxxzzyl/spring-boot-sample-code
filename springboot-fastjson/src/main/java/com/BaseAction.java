@@ -16,5 +16,4 @@ public class BaseAction {
         user.setCurTime(new Date());
         return user;
     }
-
 }

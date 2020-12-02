@@ -24,10 +24,8 @@ public class SpringBootSample {
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
         beanDefinitionBuilder.addPropertyValue("username", "张三");
         beanDefinitionBuilder.addPropertyValue("password", "张三的密码");
-
         defaultListableBeanFactory.registerBeanDefinition("userDemo", beanDefinitionBuilder.getBeanDefinition());
         User userDemo = (User) run.getBean("userDemo");
         System.out.println(userDemo.toString());
-
     }
 }

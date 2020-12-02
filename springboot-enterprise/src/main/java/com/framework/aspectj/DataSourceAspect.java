@@ -23,7 +23,6 @@ public class DataSourceAspect {
     @Before("@annotation(targetDataSource)")
     public void changeDataSource(JoinPoint joinPoint, TargetDataSource targetDataSource) {
         String dsType = targetDataSource.value().name();
-
         if (!DynamicDataSourceContextHolder.isContainsDataSource(dsType)) {
         } else {
             DynamicDataSourceContextHolder.setDateSoureType(dsType);

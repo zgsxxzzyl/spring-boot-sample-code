@@ -35,5 +35,4 @@ public class BaseAction {
     public List<User> slave1() {
         return slave1JdbcTemplate.query("SELECT * FROM USER", new UserRowMapper());
     }
-
 }

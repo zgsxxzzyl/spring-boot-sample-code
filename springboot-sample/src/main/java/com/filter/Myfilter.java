@@ -22,9 +22,7 @@ public class Myfilter implements Filter {
         String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
         String requestURI = request.getRequestURI();
         String contextPath = request.getContextPath();
-
 //        response.sendRedirect("");
-
         filterChain.doFilter(new XssHttpServletRequestWrapperNew((HttpServletRequest) servletRequest), servletResponse);
     }
 

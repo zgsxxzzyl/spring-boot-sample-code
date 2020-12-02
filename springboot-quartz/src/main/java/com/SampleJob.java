@@ -18,5 +18,4 @@ public class SampleJob extends QuartzJobBean {
             throws JobExecutionException {
         System.out.println(String.format("Hello %s!", this.name));
     }
-
 }

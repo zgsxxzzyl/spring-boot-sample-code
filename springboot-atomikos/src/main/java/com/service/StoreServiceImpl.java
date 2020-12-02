@@ -48,5 +48,4 @@ public class StoreServiceImpl implements StoreService {
         orderRepository.save(order);
         int i = 1 / 0;
     }
-
 }

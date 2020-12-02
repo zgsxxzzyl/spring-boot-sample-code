@@ -26,5 +26,4 @@ public class UserServiceImpl implements UserService {
         System.out.println("clear user");
         return;
     }
-
 }

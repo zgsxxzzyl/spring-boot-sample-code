@@ -43,5 +43,4 @@ public class EventPublisherUtil implements ApplicationContextAware, ApplicationE
     public void publishEvent(Object eventObject) {
         publisher.publishEvent(eventObject);
     }
-
 }

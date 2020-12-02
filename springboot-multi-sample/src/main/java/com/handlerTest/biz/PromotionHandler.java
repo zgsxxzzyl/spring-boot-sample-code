@@ -18,5 +18,4 @@ public class PromotionHandler extends AbstractHandler {
     public String handle(OrderDTO dto) {
         return "处理促销订单";
     }
-
 }

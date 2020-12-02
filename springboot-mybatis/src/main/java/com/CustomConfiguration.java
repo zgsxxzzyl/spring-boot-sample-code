@@ -31,9 +31,7 @@ public class CustomConfiguration {
         dataSource.setPoolPreparedStatements(false);//是否缓存preparedStatement，也就是PSCache
         return dataSource;
     }
-
     //配置mybatis的分页插件pageHelper并再pom文件中加入相应依赖即可
-
     /**
      * 不配置这个也可以生效
      * @return

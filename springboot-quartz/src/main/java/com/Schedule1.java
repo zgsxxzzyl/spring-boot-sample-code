@@ -15,7 +15,6 @@ public class Schedule1 {
     public Trigger sampleJobTrigger() {
         SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
                 .withIntervalInSeconds(2).repeatForever();
-
         return TriggerBuilder.newTrigger().forJob(sampleJobDetail())
                 .withIdentity("sampleTrigger").withSchedule(scheduleBuilder).build();
     }

@@ -15,7 +15,6 @@ public class Myfilter implements Filter {
         System.out.println("doFilter");
 //        HttpServletResponse response = (HttpServletResponse) servletResponse;
 //        response.sendRedirect("/index.html");
-
         request.getRequestDispatcher("/static.html").forward(request, response);
         return;
 //        filterChain.doFilter(servletRequest,servletResponse);

@@ -13,7 +13,6 @@ public class SessionConfig extends DefaultWebSessionManager {
     @Override
     protected Serializable getSessionId(ServletRequest request, ServletResponse response) {
         String id = WebUtils.toHttp(request).getHeader("token");
-
         if (!StringUtils.isEmpty(id)) {
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID_SOURCE, "Stateless request");
             request.setAttribute(ShiroHttpServletRequest.REFERENCED_SESSION_ID, id);

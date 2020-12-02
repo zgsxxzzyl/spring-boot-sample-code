@@ -27,10 +27,8 @@ public class BaseController {
         String msg1 = messageSource.getMessage("login.failure.msg", null, locale);
         String[] params = {"Jack Zhang", "今天是星期一"};
         String msg2 = messageSource.getMessage("login.failure.msg", params, locale);
-
         map.put("msg1", msg1);
         map.put("msg2", msg2);
-
         return map;
     }
 

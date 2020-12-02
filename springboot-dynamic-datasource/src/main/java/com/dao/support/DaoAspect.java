@@ -28,7 +28,6 @@ public class DaoAspect {
         String methodName = joinPoint.getSignature().getName();
         //得到方法的参数的类型
         Class[] argClass = ((MethodSignature) joinPoint.getSignature()).getParameterTypes();
-
         try {
             Method method = className.getMethod(methodName, argClass);
             if (method.isAnnotationPresent(TargetDataSource.class)) {
@@ -39,7 +38,6 @@ public class DaoAspect {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-
     }
 
     @After("@annotation(targetDataSource)")

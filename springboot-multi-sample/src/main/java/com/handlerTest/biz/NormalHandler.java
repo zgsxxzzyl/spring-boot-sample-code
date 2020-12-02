@@ -18,5 +18,4 @@ public class NormalHandler extends AbstractHandler {
     public String handle(OrderDTO dto) {
         return "处理普通订单";
     }
-
 }

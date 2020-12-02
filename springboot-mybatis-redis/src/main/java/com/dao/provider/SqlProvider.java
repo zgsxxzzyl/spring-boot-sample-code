@@ -33,5 +33,4 @@ public class SqlProvider {
         sql.append(values);
         return sql.toString();
     }
-
 }

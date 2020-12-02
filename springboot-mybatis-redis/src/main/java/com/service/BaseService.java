@@ -31,5 +31,4 @@ public class BaseService {
         List<User> users = userMapper.findByName("AAA");
         return JSONObject.toJSONString(users);
     }
-
 }

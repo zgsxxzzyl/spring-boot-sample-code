@@ -22,5 +22,4 @@ public class LanguageConfig {
         slr.setDefaultLocale(Locale.CHINA);
         return slr;
     }
-
 }

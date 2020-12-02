@@ -26,7 +26,6 @@ public class MyFilter implements Filter {
         String scheme = request.getScheme();
         String serverName = request.getServerName();
         int serverPort = request.getServerPort();
-
         System.out.println("request.getCharacterEncoding() --> " + characterEncoding);
         System.out.println("request.getContentType() --> " + contentType);
         System.out.println("request.getLocalName() --> " + localName);
@@ -37,7 +36,6 @@ public class MyFilter implements Filter {
         System.out.println("request.getScheme() --> " + scheme);
         System.out.println("request.getServerName() --> " + serverName);
         System.out.println("request.getServerPort() --> " + serverPort);
-
         Map<String, String[]> parameterMap = request.getParameterMap();
         System.out.println("parameter --> " + JSON.toJSON(parameterMap));
         chain.doFilter(request, response);
@@ -45,6 +43,5 @@ public class MyFilter implements Filter {
 
     @Override
     public void destroy() {
-
     }
 }

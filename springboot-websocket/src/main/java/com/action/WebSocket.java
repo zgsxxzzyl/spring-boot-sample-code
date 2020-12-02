@@ -65,5 +65,4 @@ public class WebSocket {
             webSocket.sendMessage(message);
         }
     }
-
 }

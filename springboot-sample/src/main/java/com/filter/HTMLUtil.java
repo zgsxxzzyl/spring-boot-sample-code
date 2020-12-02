@@ -9,7 +9,6 @@ public class HTMLUtil {
         for (int i = 0; i < 64; i++) {
             TEXT[i] = new char[]{(char) i};
         }
-
         // special HTML characters
         TEXT['\''] = "&#039;".toCharArray(); // 单引号 ('&apos;' doesn't work - it is not by the w3 specs)
         TEXT['"'] = "&quot;".toCharArray(); // 单引号

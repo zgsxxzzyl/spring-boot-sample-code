@@ -21,5 +21,4 @@ public interface Slave1UserMapper {
             @Result(property = "sex", column = "sex", javaType = User.Sex.class, jdbcType = JdbcType.VARCHAR)
     )
     public List<User> queryAll();
-
 }

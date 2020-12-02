@@ -36,5 +36,4 @@ public class HandlerProcessor implements BeanFactoryPostProcessor {
         HandlerContext context = new HandlerContext(handlerMap);
         beanFactory.registerSingleton(HandlerContext.class.getName(), context);
     }
-
 }

@@ -48,5 +48,4 @@ public interface UserMapper {
 
     @Delete({"DELETE FROM USER"})
     public boolean clear();
-
 }

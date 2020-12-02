@@ -30,7 +30,6 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean
     public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         StringRedisTemplate stringRedisTemplate = new StringRedisTemplate(redisConnectionFactory);
-
         //一些配置信息
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
@@ -39,7 +38,6 @@ public class RedisConfig extends CachingConfigurerSupport {
         jackson2JsonRedisSerializer.setObjectMapper(om);
         stringRedisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
         stringRedisTemplate.afterPropertiesSet();
-
         return stringRedisTemplate;
     }
 

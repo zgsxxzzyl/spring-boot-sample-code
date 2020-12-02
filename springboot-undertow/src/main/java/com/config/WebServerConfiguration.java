@@ -55,5 +55,4 @@ public class WebServerConfiguration {
         });
         return undertowFactory;
     }
-
 }

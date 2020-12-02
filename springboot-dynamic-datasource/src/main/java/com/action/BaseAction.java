@@ -49,5 +49,4 @@ public class BaseAction {
         int count = userDao.insertPojo(user);
         return user.getId();
     }
-
 }

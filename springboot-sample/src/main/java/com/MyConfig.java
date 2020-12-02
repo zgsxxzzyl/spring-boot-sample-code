@@ -16,7 +16,6 @@ public class MyConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/user/login/**");
-
     }
 
     private static final String dateTime = "yyyy-MM-dd";

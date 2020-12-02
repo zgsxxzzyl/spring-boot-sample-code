@@ -18,5 +18,4 @@ public class GroupHandler extends AbstractHandler {
     public String handle(OrderDTO dto) {
         return "处理团购订单";
     }
-
 }

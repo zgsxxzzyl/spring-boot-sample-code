@@ -14,5 +14,4 @@ public interface StoreService {
     void storeWithNoRollbackException(Customer customer, Order order) throws NoRollbackException;
 
     public void storeWithUnChecked(Customer customer, Order order);
-
 }

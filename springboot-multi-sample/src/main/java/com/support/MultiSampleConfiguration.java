@@ -9,5 +9,4 @@ public class MultiSampleConfiguration {
     public PostProcessor postProcessor() {
         return new PostProcessor();
     }
-
 }

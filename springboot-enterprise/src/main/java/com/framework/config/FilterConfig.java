@@ -37,5 +37,4 @@ public class FilterConfig {
     public void setUrlPatterns(String urlPatterns) {
         this.urlPatterns = urlPatterns;
     }
-
 }

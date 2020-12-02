@@ -25,10 +25,8 @@ public class SpringBootDynamicBeanApplication {
         //获取动态注册的bean
         User bean = applicationContext.getBean(User.class);
         System.out.println(bean.toString());
-
         //删除bean
         defaultListableBeanFactory.removeBeanDefinition("user");
-
     }
 }
 

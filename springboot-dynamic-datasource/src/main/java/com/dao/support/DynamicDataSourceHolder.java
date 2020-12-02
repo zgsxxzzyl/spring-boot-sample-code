@@ -19,5 +19,4 @@ public class DynamicDataSourceHolder {
     public static void clearDataSource() {
         dataSources.remove();
     }
-
 }

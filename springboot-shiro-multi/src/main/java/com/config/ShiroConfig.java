@@ -27,29 +27,20 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         Map<String, String> filterChainDefinitionMap = new HashMap<>();
-
         filterChainDefinitionMap.put("/**", "user");
-
 //        filterChainDefinitionMap.put("/**", "less");
-
         filterChainDefinitionMap.put("/plugin/**", "anon");
         filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
-
         filterChainDefinitionMap.put("/user/**", "anon");
-
         Map<String, Filter> filters = new HashMap<>();
-
 //        filters.put("less",new StatelessAuthcFilter());
 //        shiroFilterFactoryBean.setFilters(filters);
-
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
-
         shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager());
         shiroFilterFactoryBean.setLoginUrl("/login.html");
 //        shiroFilterFactoryBean.setSuccessUrl("/index.html");
 //        shiroFilterFactoryBean.setUnauthorizedUrl("/403");
-
         return shiroFilterFactoryBean;
     }
 
@@ -88,5 +79,4 @@ public class ShiroConfig {
         defaultWebSessionManager.setSessionListeners(listeners);
         return defaultWebSessionManager;
     }
-
 }

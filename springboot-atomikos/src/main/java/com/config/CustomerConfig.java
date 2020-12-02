@@ -20,7 +20,6 @@ public class CustomerConfig {
 
     @Autowired
     private JpaVendorAdapter jpaVendorAdapter;
-
 //    @Value("${spring.datasource.customer.jdbc-url}")
 //    private String url;
 //    @Value("${spring.datasource.customer.username}")
@@ -49,7 +48,6 @@ public class CustomerConfig {
         HashMap<String, Object> properties = new HashMap<String, Object>();
         properties.put("hibernate.transaction.jta.platform", AtomikosJtaPlatform.class.getName());
         properties.put("javax.persistence.transactionType", "JTA");
-
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setJtaDataSource(customerDataSource());
         entityManager.setJpaVendorAdapter(jpaVendorAdapter);
@@ -58,5 +56,4 @@ public class CustomerConfig {
         entityManager.setJpaPropertyMap(properties);
         return entityManager;
     }
-
 }

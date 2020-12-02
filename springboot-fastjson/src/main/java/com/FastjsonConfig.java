@@ -39,5 +39,4 @@ public class FastjsonConfig extends WebMvcConfigurationSupport {
         //将fastjson添加到视图消息转换列表中
         converters.add(fastConverter);
     }
-
 }

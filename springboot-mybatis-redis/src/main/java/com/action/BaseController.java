@@ -29,5 +29,4 @@ public class BaseController {
         String result = baseService.getAll();
         return result;
     }
-
 }

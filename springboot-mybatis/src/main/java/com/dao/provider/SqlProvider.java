@@ -44,5 +44,4 @@ public class SqlProvider {
             VALUES("name,age,sex", "#{user.name},#{user.age},#{user.sex}");
         }}.toString();
     }
-
 }

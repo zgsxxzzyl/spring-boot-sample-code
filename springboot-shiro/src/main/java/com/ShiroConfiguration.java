@@ -33,7 +33,6 @@ public class ShiroConfiguration {
         filterChainMap.put("/login", "anon");
         filterChainMap.put("/logout", "logout");
         filterChainMap.put("/**", "authc");
-
         //6.设置默认登录的url
         shiroFilterFactoryBean.setLoginUrl("/login.html");
         //7.设置成功之后要跳转的链接
@@ -84,7 +83,6 @@ public class ShiroConfiguration {
         ModularRealmAuthenticator modularRealmAuthenticator = new ModularRealmAuthenticator();
         modularRealmAuthenticator.setAuthenticationStrategy(new AtLeastOneSuccessfulStrategy());
         return modularRealmAuthenticator;
-
     }
 
     @Bean
@@ -107,5 +105,4 @@ public class ShiroConfiguration {
         cookieRememberMeManager.setCookie(simpleCookie());
         return cookieRememberMeManager;
     }
-
 }

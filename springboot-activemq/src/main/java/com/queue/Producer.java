@@ -25,5 +25,4 @@ public class Producer {
     public void send() {
         this.jmsMessagingTemplate.convertAndSend(queue, "hi,activeMQ");
     }
-
 }

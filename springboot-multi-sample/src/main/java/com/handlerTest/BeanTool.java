@@ -30,5 +30,4 @@ public class BeanTool implements ApplicationContextAware {
             applicationContext = context;
         }
     }
-
 }

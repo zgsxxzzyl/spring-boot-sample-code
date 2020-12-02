@@ -8,5 +8,4 @@ package com.handlerTest;
 public abstract class AbstractHandler {
 
     abstract public String handle(OrderDTO dto);
-
 }

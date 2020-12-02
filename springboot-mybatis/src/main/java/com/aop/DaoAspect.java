@@ -12,7 +12,6 @@ public class DaoAspect {
 
     @Pointcut("execution(public * com.dao.UserMapper.*(..))")
     public void daoMethod() {
-
     }
 
     @Before("daoMethod()")

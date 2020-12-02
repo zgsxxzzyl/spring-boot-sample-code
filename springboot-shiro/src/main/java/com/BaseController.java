@@ -16,7 +16,6 @@ public class BaseController {
     }
 
     public boolean validate() {
-
         return false;
     }
 

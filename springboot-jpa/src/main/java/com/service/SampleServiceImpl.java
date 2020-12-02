@@ -21,5 +21,4 @@ public class SampleServiceImpl implements SampleService {
         userRepository.save(user);
 //        int i = 1 / 0;
     }
-
 }

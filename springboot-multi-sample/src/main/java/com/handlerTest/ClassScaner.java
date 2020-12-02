@@ -34,18 +34,15 @@ public class ClassScaner implements ResourceLoaderAware {
     @SafeVarargs
     public static Set<Class<?>> scan(String[] basePackages, Class<? extends Annotation>... annotations) {
         ClassScaner cs = new ClassScaner();
-
         if (ArrayUtils.isNotEmpty(annotations)) {
             for (Class anno : annotations) {
                 cs.addIncludeFilter(new AnnotationTypeFilter(anno));
             }
         }
-
         Set<Class<?>> classes = new HashSet<>();
         for (String s : basePackages) {
             classes.addAll(cs.doScan(s));
         }
-
         return classes;
     }
 
@@ -89,7 +86,6 @@ public class ClassScaner implements ResourceLoaderAware {
                     + "/**/*.class";
             Resource[] resources = this.resourcePatternResolver
                     .getResources(packageSearchPath);
-
             for (int i = 0; i < resources.length; i++) {
                 Resource resource = resources[i];
                 if (resource.isReadable()) {
@@ -124,5 +120,4 @@ public class ClassScaner implements ResourceLoaderAware {
         }
         return false;
     }
-
 }

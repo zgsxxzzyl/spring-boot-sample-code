@@ -54,5 +54,4 @@ public class MainConfig {
         TransactionManager atomikosTransactionManager = atomikosTransactionManager();
         return new JtaTransactionManager(userTransaction, atomikosTransactionManager);
     }
-
 }

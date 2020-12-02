@@ -9,5 +9,4 @@ public class Consumer {
     public void receiveQueue(String text) {
         System.out.println(text);
     }
-
 }
