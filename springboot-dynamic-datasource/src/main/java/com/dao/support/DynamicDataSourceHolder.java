@@ -7,7 +7,7 @@ public class DynamicDataSourceHolder {
 
     //获取数据源
     public static String getDataSource() {
-        return (String) dataSources.get();
+        return dataSources.get();
     }
 
     //设置数据源

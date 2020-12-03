@@ -20,7 +20,6 @@
         <module>springboot-atomikos</module>
         <module>springboot-dynamic-bean</module>
         <module>springboot-dynamic-datasource</module>
-        <module>springboot-es</module>
         <module>springboot-fastjson</module>
         <module>springboot-global-exception</module>
         <module>springboot-hessian</module>
@@ -32,28 +31,25 @@
         <module>springboot-mybatis</module>
         <module>springboot-mybatis-datasource</module>
         <module>springboot-mybatis-redis</module>
-        <module>springboot-native</module>
-        <module>springboot-oracle</module>
         <module>springboot-quartz</module>
         <module>springboot-redis</module>
-        <module>springboot-restful</module>
-        <module>springboot-sample</module>
         <module>springboot-schedule</module>
         <module>springboot-shiro</module>
         <module>springboot-shiro-multi</module>
         <module>springboot-shiro-token</module>
-        <module>springboot-swagger</module>
         <module>springboot-undertow</module>
         <module>springboot-web</module>
+        <module>springboot-web-enterprise</module>
+        <module>springboot-web-es</module>
         <module>springboot-web-freemarker</module>
+        <module>springboot-web-restful</module>
+        <module>springboot-web-sample</module>
+        <module>springboot-web-swagger</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
-        <module>springboot-enterprise</module>
     </modules>
     <properties>
         <jdk.version>1.8</jdk.version>
-        <encoding>UTF-8</encoding>
-        <spring-boot-starter-parent.version>2.4.0</spring-boot-starter-parent.version>
     </properties>
     <build>
         <pluginManagement>
@@ -70,8 +66,4 @@
             </plugins>
         </pluginManagement>
     </build>
-    <dependencyManagement>
-        <dependencies>
-        </dependencies>
-    </dependencyManagement>
 </project>

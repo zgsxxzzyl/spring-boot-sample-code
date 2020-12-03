@@ -11,7 +11,7 @@ public class SpringBootDynamicBeanApplication {
 
     public static void main(String[] args) {
         //获取context
-        ApplicationContext applicationContext = (ApplicationContext) SpringApplication.run(SpringBootDynamicBeanApplication.class, args);
+        ApplicationContext applicationContext = SpringApplication.run(SpringBootDynamicBeanApplication.class, args);
         //获取BeanFactory
         DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory();
         //创建bean信息

@@ -14,8 +14,6 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories(basePackages = "com.repository.master", transactionManagerRef = "transactionManager")
 public class MasterConfig {
-//    @Autowired
-//    private JpaVendorAdapter jpaVendorAdapter;
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.master")
