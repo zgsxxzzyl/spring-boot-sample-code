@@ -18,7 +18,6 @@ public class HessionClient {
         return (T) factory.create(clazz, url);
     }
 
-    //
     public static void main(String[] args) {
         // 服务器暴露出的地址
         String url = "http://localhost:8080/remoteService";
