@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.TDaHyflDAO">
+    <resultMap id="BaseResultMap" type="com.vo.TDaHyfl">
+        <result column="ID" property="id"/>
+        <result column="FDATE" property="fdate"/>
+        <result column="HYFL" property="hyfl"/>
+        <result column="HYSX" property="hysx"/>
+        <result column="HYBK" property="hybk"/>
+        <result column="BZ" property="bz"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.vo.TDaHyfl">
+        <selectKey keyProperty="id" order="BEFORE" resultType="Long">
+            select seq_Id.nextval as id from sys.dual
+        </selectKey>
+        insert into T_DA_HYFL (ID,FDATE, HYFL, HYSX, HYBK, BZ)
+        values (#{id,jdbcType=NUMERIC},#{fdate,jdbcType=DATE}, #{hyfl,jdbcType=VARCHAR}, #{hysx,jdbcType=VARCHAR},
+        #{hybk,jdbcType=VARCHAR}, #{bz,jdbcType=VARCHAR})
+    </insert>
+    <select id="findAll" resultType="com.vo.TDaHyfl">
+        select * from T_DA_HYFL
+    </select>
+</mapper>

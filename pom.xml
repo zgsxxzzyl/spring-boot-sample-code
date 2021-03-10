@@ -47,6 +47,7 @@
         <module>springboot-web-swagger</module>
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
+        <module>springboot-web-mybatis</module>
     </modules>
     <properties>
         <jdk.version>1.8</jdk.version>
