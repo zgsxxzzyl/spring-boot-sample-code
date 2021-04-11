@@ -1,4 +1,4 @@
-package com.deni;
+package com.framework;
 
 import com.vo.User;
 import org.springframework.beans.BeansException;

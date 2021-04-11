@@ -4,21 +4,35 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.entity.User;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 public class BaseController {
+    @PostMapping("array")
+    public Integer[] array(Integer[] ids) {
+        return ids;
+    }
 
-    public String index() {
+    @PostMapping("list")
+    public List array(@RequestParam List ids) {
+        return ids;
+    }
+
+    @RequestMapping("idx")
+    public String index(String name) {
         User user = new User();
-        user.setUsername("123");
+        user.setUsername(name);
         user.setPassword("123");
         return JSONObject.toJSONString(user);
     }
 
+    /**
+     * @return
+     * @ModelAttribute注释的方法会在此controller每个方法执行前被执行，因此对于一个controller映射多个URL的用法来说，要谨慎使用
+     */
     @ModelAttribute("user")
     public User addAccount() {
         return new User("jz", "123");
@@ -45,4 +59,5 @@ public class BaseController {
     public void upload(MultipartFile picture) throws Exception {
         System.out.println(picture.getOriginalFilename());
     }
+
 }
