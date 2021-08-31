@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.CalculateWriteoffSplitMonthMapper">
+    <resultMap id="BaseResultMap" type="com.entity.CalculateWriteoffSplitMonth">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="pd_code" jdbcType="VARCHAR" property="pdCode"/>
+        <result column="amt" jdbcType="DECIMAL" property="amt"/>
+        <result column="sn" jdbcType="VARCHAR" property="sn"/>
+        <result column="wrt_off_acct_start" jdbcType="TIMESTAMP" property="wrtOffAcctStart"/>
+        <result column="wrt_off_acct_end" jdbcType="TIMESTAMP" property="wrtOffAcctEnd"/>
+        <result column="book_entr_tp" jdbcType="VARCHAR" property="bookEntrTp"/>
+        <result column="book_entr_user" jdbcType="VARCHAR" property="bookEntrUser"/>
+        <result column="book_entr_br_bnk" jdbcType="VARCHAR" property="bookEntrBrBnk"/>
+        <result column="book_entr_stat" jdbcType="VARCHAR" property="bookEntrStat"/>
+        <result column="book_entr_rslt_desc" jdbcType="VARCHAR" property="bookEntrRsltDesc"/>
+        <result column="book_entr_tm" jdbcType="TIMESTAMP" property="bookEntrTm"/>
+        <result column="py_dt" jdbcType="VARCHAR" property="pyDt"/>
+        <result column="data_mon" jdbcType="TIMESTAMP" property="dataMon"/>
+        <result column="br_bnk" jdbcType="VARCHAR" property="brBnk"/>
+        <result column="data_tp" jdbcType="VARCHAR" property="dataTp"/>
+        <result column="split_rslt" jdbcType="VARCHAR" property="splitRslt"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, pd_code, amt, sn, wrt_off_acct_start, wrt_off_acct_end, book_entr_tp, book_entr_user, 
+    book_entr_br_bnk, book_entr_stat, book_entr_rslt_desc, book_entr_tm, py_dt, data_mon, 
+    br_bnk, data_tp, split_rslt
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_calculate_writeoff_split_month
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_calculate_writeoff_split_month
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.entity.CalculateWriteoffSplitMonth">
+    insert into t_calculate_writeoff_split_month (id, pd_code, amt, 
+      sn, wrt_off_acct_start, wrt_off_acct_end, 
+      book_entr_tp, book_entr_user, book_entr_br_bnk, 
+      book_entr_stat, book_entr_rslt_desc, book_entr_tm, 
+      py_dt, data_mon, br_bnk, 
+      data_tp, split_rslt)
+    values (#{id,jdbcType=INTEGER}, #{pdCode,jdbcType=VARCHAR}, #{amt,jdbcType=DECIMAL}, 
+      #{sn,jdbcType=VARCHAR}, #{wrtOffAcctStart,jdbcType=TIMESTAMP}, #{wrtOffAcctEnd,jdbcType=TIMESTAMP}, 
+      #{bookEntrTp,jdbcType=VARCHAR}, #{bookEntrUser,jdbcType=VARCHAR}, #{bookEntrBrBnk,jdbcType=VARCHAR}, 
+      #{bookEntrStat,jdbcType=VARCHAR}, #{bookEntrRsltDesc,jdbcType=VARCHAR}, #{bookEntrTm,jdbcType=TIMESTAMP}, 
+      #{pyDt,jdbcType=VARCHAR}, #{dataMon,jdbcType=TIMESTAMP}, #{brBnk,jdbcType=VARCHAR}, 
+      #{dataTp,jdbcType=VARCHAR}, #{splitRslt,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.entity.CalculateWriteoffSplitMonth">
+        insert into t_calculate_writeoff_split_month
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="pdCode != null">
+                pd_code,
+            </if>
+            <if test="amt != null">
+                amt,
+            </if>
+            <if test="sn != null">
+                sn,
+            </if>
+            <if test="wrtOffAcctStart != null">
+                wrt_off_acct_start,
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                wrt_off_acct_end,
+            </if>
+            <if test="bookEntrTp != null">
+                book_entr_tp,
+            </if>
+            <if test="bookEntrUser != null">
+                book_entr_user,
+            </if>
+            <if test="bookEntrBrBnk != null">
+                book_entr_br_bnk,
+            </if>
+            <if test="bookEntrStat != null">
+                book_entr_stat,
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                book_entr_rslt_desc,
+            </if>
+            <if test="bookEntrTm != null">
+                book_entr_tm,
+            </if>
+            <if test="pyDt != null">
+                py_dt,
+            </if>
+            <if test="dataMon != null">
+                data_mon,
+            </if>
+            <if test="brBnk != null">
+                br_bnk,
+            </if>
+            <if test="dataTp != null">
+                data_tp,
+            </if>
+            <if test="splitRslt != null">
+                split_rslt,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="pdCode != null">
+                #{pdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="amt != null">
+                #{amt,jdbcType=DECIMAL},
+            </if>
+            <if test="sn != null">
+                #{sn,jdbcType=VARCHAR},
+            </if>
+            <if test="wrtOffAcctStart != null">
+                #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+            </if>
+            <if test="bookEntrTp != null">
+                #{bookEntrTp,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrUser != null">
+                #{bookEntrUser,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrBrBnk != null">
+                #{bookEntrBrBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrStat != null">
+                #{bookEntrStat,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                #{bookEntrRsltDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrTm != null">
+                #{bookEntrTm,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pyDt != null">
+                #{pyDt,jdbcType=VARCHAR},
+            </if>
+            <if test="dataMon != null">
+                #{dataMon,jdbcType=TIMESTAMP},
+            </if>
+            <if test="brBnk != null">
+                #{brBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="dataTp != null">
+                #{dataTp,jdbcType=VARCHAR},
+            </if>
+            <if test="splitRslt != null">
+                #{splitRslt,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.entity.CalculateWriteoffSplitMonth">
+        update t_calculate_writeoff_split_month
+        <set>
+            <if test="pdCode != null">
+                pd_code = #{pdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="amt != null">
+                amt = #{amt,jdbcType=DECIMAL},
+            </if>
+            <if test="sn != null">
+                sn = #{sn,jdbcType=VARCHAR},
+            </if>
+            <if test="wrtOffAcctStart != null">
+                wrt_off_acct_start = #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                wrt_off_acct_end = #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+            </if>
+            <if test="bookEntrTp != null">
+                book_entr_tp = #{bookEntrTp,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrUser != null">
+                book_entr_user = #{bookEntrUser,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrBrBnk != null">
+                book_entr_br_bnk = #{bookEntrBrBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrStat != null">
+                book_entr_stat = #{bookEntrStat,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                book_entr_rslt_desc = #{bookEntrRsltDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrTm != null">
+                book_entr_tm = #{bookEntrTm,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pyDt != null">
+                py_dt = #{pyDt,jdbcType=VARCHAR},
+            </if>
+            <if test="dataMon != null">
+                data_mon = #{dataMon,jdbcType=TIMESTAMP},
+            </if>
+            <if test="brBnk != null">
+                br_bnk = #{brBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="dataTp != null">
+                data_tp = #{dataTp,jdbcType=VARCHAR},
+            </if>
+            <if test="splitRslt != null">
+                split_rslt = #{splitRslt,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.entity.CalculateWriteoffSplitMonth">
+    update t_calculate_writeoff_split_month
+    set pd_code = #{pdCode,jdbcType=VARCHAR},
+      amt = #{amt,jdbcType=DECIMAL},
+      sn = #{sn,jdbcType=VARCHAR},
+      wrt_off_acct_start = #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+      wrt_off_acct_end = #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+      book_entr_tp = #{bookEntrTp,jdbcType=VARCHAR},
+      book_entr_user = #{bookEntrUser,jdbcType=VARCHAR},
+      book_entr_br_bnk = #{bookEntrBrBnk,jdbcType=VARCHAR},
+      book_entr_stat = #{bookEntrStat,jdbcType=VARCHAR},
+      book_entr_rslt_desc = #{bookEntrRsltDesc,jdbcType=VARCHAR},
+      book_entr_tm = #{bookEntrTm,jdbcType=TIMESTAMP},
+      py_dt = #{pyDt,jdbcType=VARCHAR},
+      data_mon = #{dataMon,jdbcType=TIMESTAMP},
+      br_bnk = #{brBnk,jdbcType=VARCHAR},
+      data_tp = #{dataTp,jdbcType=VARCHAR},
+      split_rslt = #{splitRslt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <resultMap id="BaseResultMap" type="com.entity.CalculateWriteoffSplitMonth">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="pd_code" jdbcType="VARCHAR" property="pdCode"/>
+        <result column="amt" jdbcType="DECIMAL" property="amt"/>
+        <result column="sn" jdbcType="VARCHAR" property="sn"/>
+        <result column="wrt_off_acct_start" jdbcType="TIMESTAMP" property="wrtOffAcctStart"/>
+        <result column="wrt_off_acct_end" jdbcType="TIMESTAMP" property="wrtOffAcctEnd"/>
+        <result column="book_entr_tp" jdbcType="VARCHAR" property="bookEntrTp"/>
+        <result column="book_entr_user" jdbcType="VARCHAR" property="bookEntrUser"/>
+        <result column="book_entr_br_bnk" jdbcType="VARCHAR" property="bookEntrBrBnk"/>
+        <result column="book_entr_stat" jdbcType="VARCHAR" property="bookEntrStat"/>
+        <result column="book_entr_rslt_desc" jdbcType="VARCHAR" property="bookEntrRsltDesc"/>
+        <result column="book_entr_tm" jdbcType="TIMESTAMP" property="bookEntrTm"/>
+        <result column="py_dt" jdbcType="VARCHAR" property="pyDt"/>
+        <result column="data_mon" jdbcType="TIMESTAMP" property="dataMon"/>
+        <result column="br_bnk" jdbcType="VARCHAR" property="brBnk"/>
+        <result column="data_tp" jdbcType="VARCHAR" property="dataTp"/>
+        <result column="split_rslt" jdbcType="VARCHAR" property="splitRslt"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, pd_code, amt, sn, wrt_off_acct_start, wrt_off_acct_end, book_entr_tp, book_entr_user, 
+    book_entr_br_bnk, book_entr_stat, book_entr_rslt_desc, book_entr_tm, py_dt, data_mon, 
+    br_bnk, data_tp, split_rslt
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_calculate_writeoff_split_month
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_calculate_writeoff_split_month
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.entity.CalculateWriteoffSplitMonth">
+    insert into t_calculate_writeoff_split_month (id, pd_code, amt, 
+      sn, wrt_off_acct_start, wrt_off_acct_end, 
+      book_entr_tp, book_entr_user, book_entr_br_bnk, 
+      book_entr_stat, book_entr_rslt_desc, book_entr_tm, 
+      py_dt, data_mon, br_bnk, 
+      data_tp, split_rslt)
+    values (#{id,jdbcType=INTEGER}, #{pdCode,jdbcType=VARCHAR}, #{amt,jdbcType=DECIMAL}, 
+      #{sn,jdbcType=VARCHAR}, #{wrtOffAcctStart,jdbcType=TIMESTAMP}, #{wrtOffAcctEnd,jdbcType=TIMESTAMP}, 
+      #{bookEntrTp,jdbcType=VARCHAR}, #{bookEntrUser,jdbcType=VARCHAR}, #{bookEntrBrBnk,jdbcType=VARCHAR}, 
+      #{bookEntrStat,jdbcType=VARCHAR}, #{bookEntrRsltDesc,jdbcType=VARCHAR}, #{bookEntrTm,jdbcType=TIMESTAMP}, 
+      #{pyDt,jdbcType=VARCHAR}, #{dataMon,jdbcType=TIMESTAMP}, #{brBnk,jdbcType=VARCHAR}, 
+      #{dataTp,jdbcType=VARCHAR}, #{splitRslt,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.entity.CalculateWriteoffSplitMonth">
+        insert into t_calculate_writeoff_split_month
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="pdCode != null">
+                pd_code,
+            </if>
+            <if test="amt != null">
+                amt,
+            </if>
+            <if test="sn != null">
+                sn,
+            </if>
+            <if test="wrtOffAcctStart != null">
+                wrt_off_acct_start,
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                wrt_off_acct_end,
+            </if>
+            <if test="bookEntrTp != null">
+                book_entr_tp,
+            </if>
+            <if test="bookEntrUser != null">
+                book_entr_user,
+            </if>
+            <if test="bookEntrBrBnk != null">
+                book_entr_br_bnk,
+            </if>
+            <if test="bookEntrStat != null">
+                book_entr_stat,
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                book_entr_rslt_desc,
+            </if>
+            <if test="bookEntrTm != null">
+                book_entr_tm,
+            </if>
+            <if test="pyDt != null">
+                py_dt,
+            </if>
+            <if test="dataMon != null">
+                data_mon,
+            </if>
+            <if test="brBnk != null">
+                br_bnk,
+            </if>
+            <if test="dataTp != null">
+                data_tp,
+            </if>
+            <if test="splitRslt != null">
+                split_rslt,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="pdCode != null">
+                #{pdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="amt != null">
+                #{amt,jdbcType=DECIMAL},
+            </if>
+            <if test="sn != null">
+                #{sn,jdbcType=VARCHAR},
+            </if>
+            <if test="wrtOffAcctStart != null">
+                #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+            </if>
+            <if test="bookEntrTp != null">
+                #{bookEntrTp,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrUser != null">
+                #{bookEntrUser,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrBrBnk != null">
+                #{bookEntrBrBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrStat != null">
+                #{bookEntrStat,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                #{bookEntrRsltDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrTm != null">
+                #{bookEntrTm,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pyDt != null">
+                #{pyDt,jdbcType=VARCHAR},
+            </if>
+            <if test="dataMon != null">
+                #{dataMon,jdbcType=TIMESTAMP},
+            </if>
+            <if test="brBnk != null">
+                #{brBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="dataTp != null">
+                #{dataTp,jdbcType=VARCHAR},
+            </if>
+            <if test="splitRslt != null">
+                #{splitRslt,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.entity.CalculateWriteoffSplitMonth">
+        update t_calculate_writeoff_split_month
+        <set>
+            <if test="pdCode != null">
+                pd_code = #{pdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="amt != null">
+                amt = #{amt,jdbcType=DECIMAL},
+            </if>
+            <if test="sn != null">
+                sn = #{sn,jdbcType=VARCHAR},
+            </if>
+            <if test="wrtOffAcctStart != null">
+                wrt_off_acct_start = #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+            </if>
+            <if test="wrtOffAcctEnd != null">
+                wrt_off_acct_end = #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+            </if>
+            <if test="bookEntrTp != null">
+                book_entr_tp = #{bookEntrTp,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrUser != null">
+                book_entr_user = #{bookEntrUser,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrBrBnk != null">
+                book_entr_br_bnk = #{bookEntrBrBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrStat != null">
+                book_entr_stat = #{bookEntrStat,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrRsltDesc != null">
+                book_entr_rslt_desc = #{bookEntrRsltDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="bookEntrTm != null">
+                book_entr_tm = #{bookEntrTm,jdbcType=TIMESTAMP},
+            </if>
+            <if test="pyDt != null">
+                py_dt = #{pyDt,jdbcType=VARCHAR},
+            </if>
+            <if test="dataMon != null">
+                data_mon = #{dataMon,jdbcType=TIMESTAMP},
+            </if>
+            <if test="brBnk != null">
+                br_bnk = #{brBnk,jdbcType=VARCHAR},
+            </if>
+            <if test="dataTp != null">
+                data_tp = #{dataTp,jdbcType=VARCHAR},
+            </if>
+            <if test="splitRslt != null">
+                split_rslt = #{splitRslt,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.entity.CalculateWriteoffSplitMonth">
+    update t_calculate_writeoff_split_month
+    set pd_code = #{pdCode,jdbcType=VARCHAR},
+      amt = #{amt,jdbcType=DECIMAL},
+      sn = #{sn,jdbcType=VARCHAR},
+      wrt_off_acct_start = #{wrtOffAcctStart,jdbcType=TIMESTAMP},
+      wrt_off_acct_end = #{wrtOffAcctEnd,jdbcType=TIMESTAMP},
+      book_entr_tp = #{bookEntrTp,jdbcType=VARCHAR},
+      book_entr_user = #{bookEntrUser,jdbcType=VARCHAR},
+      book_entr_br_bnk = #{bookEntrBrBnk,jdbcType=VARCHAR},
+      book_entr_stat = #{bookEntrStat,jdbcType=VARCHAR},
+      book_entr_rslt_desc = #{bookEntrRsltDesc,jdbcType=VARCHAR},
+      book_entr_tm = #{bookEntrTm,jdbcType=TIMESTAMP},
+      py_dt = #{pyDt,jdbcType=VARCHAR},
+      data_mon = #{dataMon,jdbcType=TIMESTAMP},
+      br_bnk = #{brBnk,jdbcType=VARCHAR},
+      data_tp = #{dataTp,jdbcType=VARCHAR},
+      split_rslt = #{splitRslt,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
