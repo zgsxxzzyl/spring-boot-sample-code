@@ -1,6 +1,8 @@
 package com.action;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/ca")
 public class ControllerAction {
+    @GetMapping("/regex/{id:\\d+}")
+    public Long getUserById(@PathVariable Long id) {
+        return id;
+    }
 
     @RequestMapping("/de5")
     public ModelAndView de5() {
