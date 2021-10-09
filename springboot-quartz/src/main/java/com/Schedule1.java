@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 
 //@Configuration
 public class Schedule1 {
-    @Bean
+
     public JobDetail sampleJobDetail() {
         return JobBuilder.newJob(SampleJob.class).withIdentity("sampleJob")
                 .usingJobData("name", "World").storeDurably().build();
