@@ -17,16 +17,11 @@
     <modules>
         <module>custom-spring-boot-starter</module>
         <module>springboot-activemq</module>
-        <module>springboot-atomikos</module>
-        <module>springboot-dynamic-bean</module>
         <module>springboot-dynamic-datasource</module>
-        <module>springboot-fastjson</module>
-        <module>springboot-global-exception</module>
+        <module>springboot-help</module>
         <module>springboot-hessian</module>
-        <module>springboot-i18n</module>
         <module>springboot-jpa</module>
         <module>springboot-jpa-datasource</module>
-        <module>springboot-lifecycle</module>
         <module>springboot-multi-sample</module>
         <module>springboot-mybatis</module>
         <module>springboot-mybatis-datasource</module>
@@ -38,7 +33,6 @@
         <module>springboot-shiro-multi</module>
         <module>springboot-shiro-token</module>
         <module>springboot-undertow</module>
-        <module>springboot-web</module>
         <module>springboot-web-enterprise</module>
         <module>springboot-web-es</module>
         <module>springboot-web-freemarker</module>

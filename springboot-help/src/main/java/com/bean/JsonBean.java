@@ -1,10 +1,10 @@
-package com;
+package com.bean;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
 import java.util.Date;
 
-public class User {
+public class JsonBean {
     private int id;
     //    @JSONField(serialize = false)
     private String name;
