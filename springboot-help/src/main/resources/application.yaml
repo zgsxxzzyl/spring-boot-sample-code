@@ -1,0 +1,13 @@
+spring:
+  main:
+    banner-mode: 'off'
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  thymeleaf:
+    cache: false
+    suffix: .html
+    servlet:
+      content-type: text/html
+server:
+  port: 80
