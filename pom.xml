@@ -28,7 +28,6 @@
         <module>springboot-mybatis-redis</module>
         <module>springboot-quartz</module>
         <module>springboot-redis</module>
-        <module>springboot-schedule</module>
         <module>springboot-shiro</module>
         <module>springboot-shiro-multi</module>
         <module>springboot-shiro-token</module>
@@ -42,7 +41,6 @@
         <module>springboot-web-thymeleaf</module>
         <module>springboot-websocket</module>
         <module>springboot-web-mybatis</module>
-        <module>springboot-security</module>
         <module>springboot-help</module>
     </modules>
     <properties>

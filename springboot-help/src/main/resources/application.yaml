@@ -9,5 +9,9 @@ spring:
     suffix: .html
     servlet:
       content-type: text/html
+  security:
+    user:
+      name: admin
+      password: admin
 server:
   port: 80
