@@ -1,3 +1,5 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.CustomAutoConfiguration
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.EnvironmentPostProcessorImpl

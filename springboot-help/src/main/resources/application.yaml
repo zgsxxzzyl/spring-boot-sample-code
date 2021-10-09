@@ -13,5 +13,8 @@ spring:
     user:
       name: admin
       password: admin
+remote:
+  config: true
+  url: localhost:8090/settings
 server:
   port: 80
