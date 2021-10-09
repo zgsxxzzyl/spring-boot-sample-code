@@ -12,6 +12,9 @@ import org.springframework.web.context.ServletContextAware;
 
 import javax.servlet.ServletContext;
 
+/**
+ * Spring中Bean的生命周期
+ */
 public class BeanLifecycle implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware, EnvironmentAware,
         EmbeddedValueResolverAware, ResourceLoaderAware, ApplicationEventPublisherAware, MessageSourceAware,
         ApplicationContextAware, ServletContextAware, BeanPostProcessor, InitializingBean, DestructionAwareBeanPostProcessor,
