@@ -4,14 +4,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.dao.UserMapper;
 import com.entity.Test;
 import com.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class BaseService {
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     public String test() {

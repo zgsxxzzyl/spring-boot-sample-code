@@ -2,19 +2,19 @@ package com;
 
 import com.master.mapper.MasterUserMapper;
 import com.slave1.mapper.Slave1UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
 public class BaseAction {
 
-    @Autowired
+    @Resource
     private MasterUserMapper masterUserMapper;
 
-    @Autowired
+    @Resource
     private Slave1UserMapper slave1UserMapper;
 
     @RequestMapping("a")

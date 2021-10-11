@@ -3,17 +3,17 @@ package com.action;
 import com.dao.UserDao;
 import com.dao.support.TargetDataSource;
 import com.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
 @SuppressWarnings("all")
 public class BaseAction {
 
-    @Autowired
+    @Resource
     private UserDao userDao;
 
     @RequestMapping("a")

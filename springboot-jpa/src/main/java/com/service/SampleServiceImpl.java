@@ -2,14 +2,15 @@ package com.service;
 
 import com.model.master.User;
 import com.repository.master.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 @Service
 public class SampleServiceImpl implements SampleService {
 
-    @Autowired
+    @Resource
     private UserRepository userRepository;
 
     @Override

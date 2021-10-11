@@ -2,12 +2,12 @@ package com.action;
 
 import com.dao.UserDao;
 import com.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
@@ -15,7 +15,7 @@ import java.util.List;
 @SuppressWarnings("all")
 public class UserAction implements BaseAction<User, Long> {
 
-    @Autowired
+    @Resource
     private UserDao userDao;
 
     @Override

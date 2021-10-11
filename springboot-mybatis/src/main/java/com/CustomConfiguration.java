@@ -1,16 +1,16 @@
 package com;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
+import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 @Configuration
 public class CustomConfiguration {
-    @Autowired
+    @Resource
     private Environment env;
 
     //destroy-method="close"的作用是当数据库连接不使用的时候,就把该连接重新放到数据池中,方便下次使用调用.
