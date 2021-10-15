@@ -24,7 +24,6 @@ public class LocalDateTimeSerializerConfig {
                 .toFormatter();
     }
 
-
     @Bean
     public LocalDateTimeSerializer localDateTimeSerializer() {
         return new LocalDateTimeSerializer(formatter);

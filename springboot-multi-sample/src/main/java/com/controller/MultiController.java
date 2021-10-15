@@ -5,19 +5,20 @@ import com.bean.User;
 import com.support.EventPublisherUtil;
 import com.support.SpringUtil;
 import com.support.UserEvent;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
 public class MultiController {
 
-    @Autowired
+    @Resource
     BeanDemo beanDemo;
 
-    @Autowired
+    @Resource
     EventPublisherUtil eventPublisherUtil;
 
     @Value("custom.say")

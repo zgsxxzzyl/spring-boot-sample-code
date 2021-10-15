@@ -1,7 +1,6 @@
 package com;
 
 import com.alibaba.fastjson.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,7 +10,7 @@ import javax.annotation.Resource;
 
 @RestController
 public class BaseController {
-    @Autowired
+    @Resource
     private UserService userService;
     @Resource
     private RedisTemplate redisTemplate;

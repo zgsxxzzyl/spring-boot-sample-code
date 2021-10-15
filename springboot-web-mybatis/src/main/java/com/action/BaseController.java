@@ -4,17 +4,17 @@ import com.dao.TDaHyflDAO;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.vo.TDaHyfl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.List;
 
 @RestController
 public class BaseController {
-    @Autowired
+    @Resource
     TDaHyflDAO tDaHyflDAO;
 
     @GetMapping("/add")

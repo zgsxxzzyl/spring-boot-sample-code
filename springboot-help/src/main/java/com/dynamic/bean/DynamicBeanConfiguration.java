@@ -30,7 +30,6 @@ public class DynamicBeanConfiguration implements ApplicationContextAware {
 
     }
 
-
     public void unRegisterBean() {
         DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory();
         //删除bean

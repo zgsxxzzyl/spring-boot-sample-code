@@ -3,27 +3,27 @@ package com.web;
 import com.model.User;
 import com.model.UserRowMapper;
 import com.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
 @RequestMapping("/")
 public class BaseAction {
 
-    @Autowired
+    @Resource
     @Qualifier("masterJdbcTemplate")
     public JdbcTemplate masterJdbcTemplate;
 
-    @Autowired
+    @Resource
     @Qualifier("slave1JdbcTemplate")
     public JdbcTemplate slave1JdbcTemplate;
 
-    @Autowired
+    @Resource
     public UserService userService;
 
     @RequestMapping("/a")

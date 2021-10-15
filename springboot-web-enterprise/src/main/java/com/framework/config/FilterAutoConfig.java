@@ -2,11 +2,11 @@ package com.framework.config;
 
 import com.framework.common.xss.XssFilter;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+import javax.annotation.Resource;
 import javax.servlet.DispatcherType;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ import java.util.Map;
 @EnableConfigurationProperties({FilterConfig.class})
 public class FilterAutoConfig {
 
-    @Autowired
+    @Resource
     private FilterConfig filterConfig;
 
     @SuppressWarnings({"rawtypes", "unchecked"})

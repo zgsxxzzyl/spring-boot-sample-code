@@ -1,10 +1,10 @@
 package com;
 
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/es")
 public class Controller {
 
-    @Autowired
+    @Resource
     PersonRepository personRepository;
 
-    @Autowired
+    @Resource
     ElasticsearchTemplate elasticsearchTemplate;
 
     @RequestMapping("/add")
