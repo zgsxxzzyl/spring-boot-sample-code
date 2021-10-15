@@ -28,6 +28,7 @@
         <module>springboot-mybatis-redis</module>
         <module>springboot-quartz</module>
         <module>springboot-redis</module>
+        <module>springboot-redis-cluster</module>
         <module>springboot-shiro</module>
         <module>springboot-shiro-multi</module>
         <module>springboot-shiro-token</module>
