@@ -3,11 +3,10 @@ package com.filter;
 import com.alibaba.fastjson.JSON;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.util.Map;
 
-@WebFilter(urlPatterns = "/filter/*")
+//@WebFilter(urlPatterns = "/filter/*")
 public class FilterImpl implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {

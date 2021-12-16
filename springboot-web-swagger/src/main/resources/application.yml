@@ -1,0 +1,14 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+level:
+  root: info
+  org.mybatis: debug
+  java.sql: debug
+  org.springframework.web: trace
