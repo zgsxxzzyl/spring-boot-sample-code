@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/log")
 public class LogController {
     private static final Logger logger = LoggerFactory.getLogger(LogController.class);
+
     @GetMapping("/")
-    public void index(){
+    public void index() {
         logger.info("记录日志");
     }
 }
