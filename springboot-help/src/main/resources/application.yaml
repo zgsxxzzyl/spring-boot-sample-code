@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
   main:
     banner-mode: 'off'
   messages:
@@ -17,7 +21,9 @@ remote:
   config: true
   url: localhost:8090/settings
 server:
-  port: 8080
+  port: 8090
+#  servlet:
+#    context-path: "/help"
 management:
   endpoints:
     web:

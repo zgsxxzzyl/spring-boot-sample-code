@@ -5,6 +5,14 @@ public class ResponseVO<T> {
     private String message;
     private T data;
 
+    public static ResponseVO success() {
+        return new ResponseVO("200", "success", null);
+    }
+
+    public static <T> ResponseVO success(T data) {
+        return new ResponseVO("200", "success", data);
+    }
+
     public ResponseVO() {
     }
 
