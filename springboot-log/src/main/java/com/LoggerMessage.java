@@ -1,7 +1,6 @@
 package com;
 
 /**
- * Created by kl on 2017/10/9.
  * Content :日志消息实体，注意，这里为了减少篇幅，省略了get,set代码
  */
 public class LoggerMessage {
