@@ -50,11 +50,11 @@ public class RouteController {
         HttpServletResponse response = requestAttributes.getResponse();
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("公司外使用加密系统方法2021.doc", "utf-8"));
+        response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("系统.doc", "utf-8"));
 
         BufferedOutputStream outputStream = new BufferedOutputStream(response.getOutputStream());
 
-        File file = new File("C:\\Users\\zhangyilong\\Desktop\\公司外使用加密系统方法2021.doc");
+        File file = new File("系统.doc");
 
         FileInputStream fileInputStream = new FileInputStream(file);
         byte[] buff = new byte[2048];
