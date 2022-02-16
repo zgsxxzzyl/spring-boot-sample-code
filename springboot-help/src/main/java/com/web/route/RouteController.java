@@ -16,6 +16,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 @RestController
 @RequestMapping("/route")
@@ -49,7 +50,7 @@ public class RouteController {
         HttpServletResponse response = requestAttributes.getResponse();
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment;filename=demo.txt");
+        response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode("公司外使用加密系统方法2021.doc", "utf-8"));
 
         BufferedOutputStream outputStream = new BufferedOutputStream(response.getOutputStream());
 
