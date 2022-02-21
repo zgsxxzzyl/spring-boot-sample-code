@@ -33,6 +33,11 @@ public class MultiController {
         return demo;
     }
 
+    @RequestMapping("/demo")
+    public String demo() {
+        return "中文";
+    }
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public void test() {
         System.out.println("start");

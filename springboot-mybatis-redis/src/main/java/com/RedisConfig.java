@@ -8,7 +8,6 @@ import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
 
-import javax.annotation.Resource;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -49,7 +48,6 @@ public class RedisConfig {
     class Receiver {
         private CountDownLatch latch;
 
-        @Resource
         public Receiver(CountDownLatch latch) {
             this.latch = latch;
         }
