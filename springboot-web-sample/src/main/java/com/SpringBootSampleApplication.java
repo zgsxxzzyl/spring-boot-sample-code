@@ -13,13 +13,13 @@ import org.springframework.context.ApplicationContext;
 //@ComponentScan(basePackages = {"com.action.LoginController"})
 //@ImportResource(locations = {"classpath:application-bean.xml","file:D:/test/application-bean.xml"})   加载自定义的xml
 @SpringBootApplication
-public class SpringBootSample {
+public class SpringBootSampleApplication {
     public static void main(String[] args) {
 //        SpringApplication springApplication = new SpringApplication(Step1Application.class);
 //        springApplication.setBannerMode(Banner.Mode.OFF);
 //        springApplication.addListeners();
 //        springApplication.run(args);
-        ApplicationContext run = SpringApplication.run(SpringBootSample.class, args);
+        ApplicationContext run = SpringApplication.run(SpringBootSampleApplication.class, args);
         DefaultListableBeanFactory defaultListableBeanFactory = (DefaultListableBeanFactory) run.getAutowireCapableBeanFactory();
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(User.class);
         beanDefinitionBuilder.addPropertyValue("username", "张三");

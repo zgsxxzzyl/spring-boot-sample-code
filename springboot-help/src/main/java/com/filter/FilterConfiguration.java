@@ -1,13 +1,12 @@
 package com.filter;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
 //@Configuration
-@ServletComponentScan
+//@ServletComponentScan
 public class FilterConfiguration {
 
     @Bean

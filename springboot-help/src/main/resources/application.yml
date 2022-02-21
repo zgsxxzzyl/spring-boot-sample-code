@@ -8,6 +8,9 @@ spring:
   messages:
     basename: i18n/messages
     encoding: UTF-8
+  #  http:
+  #    encoding:
+  #      charset: utf-8
   thymeleaf:
     cache: false
     suffix: .html
