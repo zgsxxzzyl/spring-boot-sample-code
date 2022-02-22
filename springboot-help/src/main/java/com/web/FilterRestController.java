@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/filter")
 @RestController
 public class FilterRestController {
-    @GetMapping("/test")
+
+    @RequestMapping(value = "/test")
     public String test() {
         return "被过滤器过滤的请求";
     }
