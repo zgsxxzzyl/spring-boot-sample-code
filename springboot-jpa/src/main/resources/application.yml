@@ -14,4 +14,4 @@ spring:
     banner-mode: 'off'
 
 server:
-  port: 8090
+  port: 8080
