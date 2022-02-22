@@ -1,0 +1,5 @@
+spring:
+  main:
+    banner-mode: 'off'
+custom:
+  say: nihao

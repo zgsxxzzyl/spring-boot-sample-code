@@ -35,3 +35,9 @@ management:
 logging:
   level:
     root: INFO
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
+config:
+  change: INFO
