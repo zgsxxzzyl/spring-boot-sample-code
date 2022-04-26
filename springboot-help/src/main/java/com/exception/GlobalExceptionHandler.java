@@ -15,7 +15,6 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ModelAndView customException(Exception e) {
-        e.printStackTrace();
         ModelAndView mv = new ModelAndView();
         mv.addObject("messages", getFullStackTrace(e));
         mv.setViewName("error");
