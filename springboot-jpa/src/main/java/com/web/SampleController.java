@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.sql.SQLException;
 
 @Controller
 public class SampleController {
@@ -16,5 +17,11 @@ public class SampleController {
     @RequestMapping("/sv1")
     public void ac1() {
         sampleService.saveDemo();
+    }
+
+    @ResponseBody
+    @RequestMapping("/problem")
+    public void problem() throws SQLException {
+        sampleService.problem();
     }
 }
