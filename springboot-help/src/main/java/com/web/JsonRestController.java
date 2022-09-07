@@ -1,9 +1,9 @@
 package com.web;
 
+import com.alibaba.fastjson.JSON;
 import com.bean.JsonBean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.bean.User;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -18,5 +18,16 @@ public class JsonRestController {
         jsonBean.setCurTime(new Date());
         jsonBean.setName("mirror");
         return jsonBean;
+    }
+
+    @PostMapping("/post")
+    public User post(@RequestBody User user) {
+        return user;
+    }
+
+    @PostMapping("/poststr")
+    public User poststr(@RequestBody String user) {
+        System.out.println(user);
+        return JSON.parseObject(user, User.class);
     }
 }

@@ -16,10 +16,10 @@ spring:
     suffix: .html
     servlet:
       content-type: text/html
-  security:
-    user:
-      name: admin
-      password: admin
+#  security:
+#    user:
+#      name: admin
+#      password: admin
 remote:
   config: true
   url: localhost:8090/settings

@@ -15,4 +15,13 @@ public class LogController {
     public void index() {
         logger.info("记录日志");
     }
+
+    @GetMapping("/error")
+    public void error() {
+        try {
+            int i = 123 / 0;
+        } catch (Exception e) {
+            logger.error("错误日志：{}{}", "测试", e);
+        }
+    }
 }

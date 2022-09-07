@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
+/**
+ * 远程配置加载
+ */
 @Order
 @Component
 public class EnvironmentPostProcessorImpl implements EnvironmentAware {
@@ -26,5 +29,4 @@ public class EnvironmentPostProcessorImpl implements EnvironmentAware {
             ((ConfigurableEnvironment) environment).getPropertySources().addLast(propertySource);
         }
     }
-
 }
