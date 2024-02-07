@@ -23,6 +23,14 @@ public class RateLimiterController {
     @Resource
     RateLimiter smoothBursty;
 
+    TPSLimiter tpsLimiter = new TPSLimiter(5, 1);
+
+    @GetMapping("/tpsLimiter")
+    public void tpsLimiter() {
+        tpsLimiter.acquire();
+        System.out.println(LocalDateTime.now());
+    }
+
     /**
      * 平滑突发限流
      */
@@ -40,6 +48,7 @@ public class RateLimiterController {
             semaphore.release();
         }
     }
+
 
     /**
      * 平滑预热限流
