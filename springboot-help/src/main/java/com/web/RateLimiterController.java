@@ -23,7 +23,7 @@ public class RateLimiterController {
     @Resource
     RateLimiter smoothBursty;
 
-    TPSLimiter tpsLimiter = new TPSLimiter(5, 1);
+    TPSLimiter tpsLimiter = new TPSLimiter(10, 1);
 
     @GetMapping("/tpsLimiter")
     public void tpsLimiter() {

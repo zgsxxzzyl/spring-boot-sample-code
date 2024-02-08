@@ -3,11 +3,12 @@ package com.web;
 import java.time.LocalDateTime;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
+/**
+ * TPS限流工具待完善
+ */
 public class TPSLimiter {
 
     private int size;
-
-    private int sum;
 
     private int second;
 
@@ -19,11 +20,10 @@ public class TPSLimiter {
         this.deque = new ConcurrentLinkedDeque<>();
     }
 
-    public void acquire() {
-        LocalDateTime now = LocalDateTime.now();
+    public synchronized void acquire() {
+        LocalDateTime now;
         LocalDateTime start;
-        while (!push(now)) {
-            now = LocalDateTime.now();
+        for (now = LocalDateTime.now(); !push(now); now = LocalDateTime.now()) {
             start = now.minusSeconds(second);
             if (deque.size() > 0) {
                 if (deque.getFirst().isBefore(start)) {
@@ -43,5 +43,4 @@ public class TPSLimiter {
         }
         return false;
     }
-
 }
