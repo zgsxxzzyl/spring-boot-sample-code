@@ -21,11 +21,10 @@ public class TPSLimiter {
     }
 
     public synchronized void acquire() {
-        LocalDateTime now;
-        LocalDateTime start;
+        LocalDateTime now, start;
         for (now = LocalDateTime.now(); !push(now); now = LocalDateTime.now()) {
-            start = now.minusSeconds(second);
             if (deque.size() > 0) {
+                start = now.minusSeconds(second);
                 if (deque.getFirst().isBefore(start)) {
                     deque.removeFirst();
                 }
