@@ -35,7 +35,7 @@ public class TPSLimiter {
         }
     }
 
-    public boolean push(LocalDateTime now) {
+    private boolean push(LocalDateTime now) {
         if (deque.size() < size) {
             deque.addLast(now);
             return true;
