@@ -23,12 +23,13 @@ public class RateLimiterController {
     @Resource
     RateLimiter smoothBursty;
 
-    TPSLimiter tpsLimiter = new TPSLimiter(10, 1);
+    TPSLimiter tpsLimiter = new TPSLimiter(10, 1000000000L);
 
     @GetMapping("/tpsLimiter")
-    public void tpsLimiter() {
+    public void tpsLimiter() throws InterruptedException {
         tpsLimiter.acquire();
-        System.out.println(LocalDateTime.now());
+        System.out.printf("线程：%d，开始时间："+LocalDateTime.now()+"\r\n",Thread.currentThread().getId());
+        Thread.sleep(5000L);
     }
 
     /**
