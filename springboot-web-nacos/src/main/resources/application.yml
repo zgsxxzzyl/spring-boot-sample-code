@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-web-nacos
+  cloud:
+    nacos:
+      config:
+        import-check:
+          enabled: false
+      server-addr: 192.168.96.83:8848  #Ip填你的虚拟机的ip
