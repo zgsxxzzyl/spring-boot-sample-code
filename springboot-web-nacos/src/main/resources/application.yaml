@@ -3,9 +3,12 @@ server:
 spring:
   application:
     name: springboot-web-nacos
+  profiles:
+    active: dev
   cloud:
     nacos:
+      server-addr: 192.168.96.83:8848  #Ip填你的虚拟机的ip
       config:
         import-check:
           enabled: false
-      server-addr: 192.168.96.83:8848  #Ip填你的虚拟机的ip
+        file-extension: yaml
