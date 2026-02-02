@@ -5,10 +5,15 @@ spring:
     name: springboot-web-nacos
   profiles:
     active: dev
+  config:
+    import: "optional:nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}"
+  #    "optional:nacos:"
   cloud:
     nacos:
-      server-addr: 192.168.96.83:8848  #Ip填你的虚拟机的ip
       config:
-        import-check:
-          enabled: false
+        server-addr: http://192.168.96.83:8848
+        #        server-addr: http://192.168.96.83:8848/${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
         file-extension: yaml
+config:
+  text: text
+  textExt: textExt

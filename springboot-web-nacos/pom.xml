@@ -25,6 +25,16 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!--springcloud配置 2021.0.8-->
+        <!-- 服务发现：OpenFeign服务调用 -->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>-->
+        <!-- 负载均衡器 -->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>-->
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
