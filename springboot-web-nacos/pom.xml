@@ -52,6 +52,29 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- SLF4J 核心 API（Logback 依赖此接口） -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version> <!-- 适配 Logback 1.2.13 的稳定版本 -->
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Logback 核心模块 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.2.13</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Logback 经典模块（实现 SLF4J API） -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.13</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

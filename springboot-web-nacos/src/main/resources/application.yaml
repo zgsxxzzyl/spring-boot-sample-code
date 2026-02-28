@@ -6,14 +6,19 @@ spring:
   profiles:
     active: dev
   config:
-    import: "optional:nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}"
-  #    "optional:nacos:"
+    import:
+      - "optional:nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}?group=DEFAULT_GROUP"
+      - "optional:nacos:cfg.properties?group=DEFAULT_GROUP"
   cloud:
     nacos:
       config:
-        server-addr: http://192.168.96.83:8848
+        server-addr: http://127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
         #        server-addr: http://192.168.96.83:8848/${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
         file-extension: yaml
-config:
-  text: text
-  textExt: textExt
+logging:
+  #  config: classpath:logback-custom.xml # 指定日志配置文件加载路径,本地使用
+  #测试环境使用
+  #  config: http://${spring.cloud.nacos.config.server-addr}/nacos/v1/cs/configs?username=${spring.cloud.nacos.username}&password=${spring.cloud.nacos.password}&group=${YSS_PRODUCT}&tenant=${YSS_ENV}&dataId=logback-custom.xml
+  config: http://127.0.0.1:8848/nacos/v1/cs/configs?group=DEFAULT_GROUP&tenant=public&dataId=logback-custom.xml
