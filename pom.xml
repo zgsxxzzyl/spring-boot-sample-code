@@ -52,9 +52,10 @@
         <module>springboot-log</module>
         <module>springboot-route</module>
         <module>springboot-web-nacos</module>
+        <module>springboot-mybatis-plus</module>
     </modules>
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>17</jdk.version>
     </properties>
     <dependencyManagement>
         <dependencies>

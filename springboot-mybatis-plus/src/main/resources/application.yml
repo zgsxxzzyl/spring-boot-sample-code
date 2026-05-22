@@ -1,0 +1,25 @@
+# 服务端口
+server:
+  port: 8080
+
+# 数据库配置
+spring:
+  datasource:
+    # Oracle 驱动
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@//192.168.99.234:1521/SOFAPDB
+    username: SOFABOOT123
+    password: SOFABOOT123
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  # 扫描 mapper.xml 文件
+  mapper-locations: classpath:mapper/*.xml
+  # 实体类包
+  type-aliases-package: com.example.entity
+  configuration:
+    # 开启驼峰命名
+    map-underscore-to-camel-case: true
+    # 打印 SQL（开发用）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
