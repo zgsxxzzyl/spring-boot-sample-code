@@ -8,6 +8,8 @@ import com.example.dto.UserDTO;
 import com.example.entity.UserEntity;
 import com.example.mapper.UserMapper;
 import com.example.mapstruct.UserAssembler;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/test")
+@Tag(name = "测试模块")
 public class TestController {
 
     @Autowired
@@ -28,6 +31,7 @@ public class TestController {
      * LambdaQueryWrapper 使用示例
      */
     @GetMapping("/lambda-query")
+    @Operation(summary = "查询用户")
     public List<UserDTO> lambdaQuery() {
         // 1. 基本用法 - 创建 LambdaQueryWrapper
         LambdaQueryWrapper<UserEntity> wrapper = new LambdaQueryWrapper<>();
