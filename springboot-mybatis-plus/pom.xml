@@ -100,6 +100,18 @@
                             <version>0.2.0</version>
                         </path>
                     </annotationProcessorPaths>
+                    <compilerArgs>
+                        <!-- 禁止在生成的映射器实现类中生成时间戳注释 -->
+                        <arg>-Amapstruct.suppressGeneratorTimestamp=true</arg>
+                        <!-- 禁止在生成的代码中包含 `MapStruct` 版本信息注释 -->
+                        <arg>-Amapstruct.suppressGeneratorVersionInfoComment=true</arg>
+                        <!-- 检查策略：当目标对象中有字段未被映射时编译报错 -->
+                        <arg>-Amapstruct.unmappedTargetPolicy=ERROR</arg>
+                        <!-- 当源对象中有字段未被使用（未映射到目标对象）时忽略 -->
+                        <arg>-Amapstruct.unmappedSourcePolicy=IGNORE</arg>
+                        <!-- 启用详细日志输出 -->
+                        <arg>-Amapstruct.verbose=true</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
