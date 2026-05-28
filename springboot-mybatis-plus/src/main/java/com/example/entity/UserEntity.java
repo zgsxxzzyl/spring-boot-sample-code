@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @TableName("test_user")
-public class User {
+public class UserEntity {
     @TableId(type = IdType.AUTO)
     private Long id;
     private String name;
