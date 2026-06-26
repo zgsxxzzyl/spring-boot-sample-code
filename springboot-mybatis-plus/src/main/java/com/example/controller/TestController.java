@@ -4,6 +4,8 @@ package com.example.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.dto.PageVO;
 import com.example.dto.UserDTO;
 import com.example.entity.UserEntity;
 import com.example.mapper.UserMapper;
@@ -13,6 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,7 +33,7 @@ public class TestController {
     /**
      * LambdaQueryWrapper 使用示例
      */
-    @GetMapping("/lambda-query")
+    @GetMapping("/lambdaQuery")
     @Operation(summary = "查询用户")
     public List<UserDTO> lambdaQuery() {
         // 1. 基本用法 - 创建 LambdaQueryWrapper
@@ -97,5 +100,45 @@ public class TestController {
 
         return userMapper.update(null, updateWrapper);
     }
+
+    /**
+     * 分页查询用户示例
+     *
+     * @param current 当前页，默认1
+     * @param size    每页条数，默认10
+     * @param name    模糊查询姓名（可选）
+     * @param age     年龄（可选）
+     * @return 分页DTO数据
+     */
+    @GetMapping("/pageUser")
+    @Operation(summary = "分页查询用户（带动态条件）")
+    public PageVO<UserDTO> pageUser(
+            @RequestParam(defaultValue = "1") Long current,
+            @RequestParam(defaultValue = "10") Long size,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Integer age
+    ) {
+        // 1. 构建分页对象
+        Page<UserEntity> page = new Page<>(current, size);
+
+        // 2. 构建动态查询条件
+        LambdaQueryWrapper<UserEntity> wrapper = Wrappers.lambdaQuery();
+        wrapper.like(name != null, UserEntity::getName, name)
+                .eq(age != null, UserEntity::getAge, age)
+                .orderByDesc(UserEntity::getCreateTime);
+
+        // 3. 分页查询
+        Page<UserEntity> entityPage = userMapper.selectPage(page, wrapper);
+
+        // 4. entity转DTO，封装分页VO返回
+        List<UserDTO> dtoList = userAssembler.toUserDTOs(entityPage.getRecords());
+        Page<UserDTO> dtoPage = new Page<>();
+        dtoPage.setCurrent(entityPage.getCurrent());
+        dtoPage.setSize(entityPage.getSize());
+        dtoPage.setTotal(entityPage.getTotal());
+        dtoPage.setPages(entityPage.getPages());
+        dtoPage.setRecords(dtoList);
+
+        return PageVO.convert(dtoPage);
+    }
 }
-// ... existing code ...

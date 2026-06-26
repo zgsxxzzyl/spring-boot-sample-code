@@ -38,6 +38,12 @@
             <artifactId>ojdbc11</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!-- Oracle i18n 字符集包，解决ZHS16GBK不识别 -->
+        <dependency>
+            <groupId>com.oracle.database.nls</groupId>
+            <artifactId>orai18n</artifactId>
+            <version>21.9.0.0</version>
+        </dependency>
         <!-- 数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
